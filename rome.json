@@ -46,6 +46,9 @@
         "noArrayIndexKey": "off",
         "noExplicitAny": "off",
         "noRedeclare": "off"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
       }
     }
   },

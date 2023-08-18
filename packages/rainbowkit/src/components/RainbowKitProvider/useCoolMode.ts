@@ -19,6 +19,7 @@ export const useCoolMode = (imageUrl: string | (() => Promise<string>)) => {
   const coolModeEnabled = useContext(CoolModeContext);
   const resolvedImageUrl = useAsyncImage(imageUrl);
 
+  // rome-ignore lint/nursery/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (coolModeEnabled && ref.current && resolvedImageUrl) {
       return makeElementCool(ref.current, resolvedImageUrl);

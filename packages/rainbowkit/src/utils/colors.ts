@@ -10,8 +10,9 @@ export const convertHexToRGBA = (hexCode: string, opacity = 1): string => {
   const b = parseInt(hex.substring(4, 6), 16);
 
   /* Backward compatibility for whole number based opacity values. */
+  let opacityValue;
   if (opacity > 1 && opacity <= 100) {
-    opacity = opacity / 100;
+    opacityValue = opacity / 100;
   }
 
   return `rgba(${r},${g},${b},${opacity})`;

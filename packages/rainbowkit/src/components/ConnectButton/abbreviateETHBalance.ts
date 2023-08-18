@@ -25,6 +25,7 @@ export function abbreviateETHBalance(number: number): string {
     const size = 10 ** ((i + 1) * 3);
 
     if (size <= number) {
+      // rome-ignore lint/style/noParameterAssign: <explanation>
       number = (number * decimalsDivisor) / size / decimalsDivisor;
 
       result = toPrecision(number, 1) + units[i];

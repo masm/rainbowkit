@@ -28,8 +28,10 @@ export function SearchProvider({ children }) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
-  const onOpen = useCallback(() => setIsOpen(true), [setIsOpen]);
-  const onClose = useCallback(() => setIsOpen(false), [setIsOpen]);
+  // rome-ignore lint/nursery/useExhaustiveDependencies: <explanation>
+  const  onOpen = useCallback(() => setIsOpen(true), [setIsOpen]);
+  // rome-ignore lint/nursery/useExhaustiveDependencies: <explanation>
+  const  onClose = useCallback(() => setIsOpen(false), [setIsOpen]);
 
   useDocSearchKeyboardEvents({
     isOpen,

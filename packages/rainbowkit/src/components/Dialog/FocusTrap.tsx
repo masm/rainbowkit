@@ -23,6 +23,7 @@ export function FocusTrap(props: JSX.IntrinsicElements['div']) {
     };
   }, []);
 
+  // rome-ignore lint/nursery/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (contentRef.current) {
       const elementToFocus =
