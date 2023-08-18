@@ -5,7 +5,7 @@ import { pre } from './Pre.css';
 
 export function Pre({ children, className }: BoxProps) {
   return (
-    <Box as="pre" className={clsx(pre, className)}>
+    <Box as='pre' className={clsx(pre, className)}>
       {children}
     </Box>
   );

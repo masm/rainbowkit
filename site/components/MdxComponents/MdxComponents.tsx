@@ -16,17 +16,17 @@ import React, { useState } from 'react';
 import { Announcement } from '../Announcement/Announcement';
 
 export const components = {
-  a: props => <Link {...props} />,
+  a: (props) => <Link {...props} />,
   Announcement,
-  blockquote: props => (
+  blockquote: (props) => (
     <Box
-      as="blockquote"
-      borderColor="fillElevated"
-      borderRadius="3"
-      borderWidth="1"
-      marginBottom="5"
-      paddingTop="5"
-      paddingX="5"
+      as='blockquote'
+      borderColor='fillElevated'
+      borderRadius='3'
+      borderWidth='1'
+      marginBottom='5'
+      paddingTop='5'
+      paddingX='5'
       {...props}
       style={{
         backgroundImage: `radial-gradient(circle at 240px -80px, ${vars.colors.backgroundElevated} 0%, ${vars.colors.fillElevated} 100%)`,
@@ -43,35 +43,35 @@ export const components = {
     );
   },
   CoolMode,
-  h1: props => (
+  h1: (props) => (
     <Text
-      as="h1"
-      marginBottom="1"
-      variant="titleLarge"
-      weight="heavy"
+      as='h1'
+      marginBottom='1'
+      variant='titleLarge'
+      weight='heavy'
       {...props}
     />
   ),
-  h2: props => (
+  h2: (props) => (
     <Text
-      as="h2"
-      color="labelSecondary"
-      marginBottom="6"
-      marginTop="1"
-      variant="title3"
-      weight="medium"
+      as='h2'
+      color='labelSecondary'
+      marginBottom='6'
+      marginTop='1'
+      variant='title3'
+      weight='medium'
       {...props}
     />
   ),
   h3: ({ id, ...props }) => {
     return (
-      <Box id={id} marginBottom="2" marginTop="11" scrollMarginTop="12">
+      <Box id={id} marginBottom='2' marginTop='11' scrollMarginTop='12'>
         <Link href={`#${id}`}>
           <Text
-            as="h3"
-            display="inline"
-            variant="title2"
-            weight="semibold"
+            as='h3'
+            display='inline'
+            variant='title2'
+            weight='semibold'
             {...props}
           />
         </Link>
@@ -79,61 +79,61 @@ export const components = {
     );
   },
   h4: ({ id, ...props }) => (
-    <Box id={id} marginBottom="2" marginTop="10" scrollMarginTop="12">
+    <Box id={id} marginBottom='2' marginTop='10' scrollMarginTop='12'>
       <Link href={`#${id}`}>
         <Text
-          as="h4"
-          display="inline"
-          variant="title3"
-          weight="semibold"
+          as='h4'
+          display='inline'
+          variant='title3'
+          weight='semibold'
           {...props}
         />
       </Link>
     </Box>
   ),
   h5: ({ id, ...props }) => (
-    <Box id={id} marginBottom="2" scrollMarginTop="2">
+    <Box id={id} marginBottom='2' scrollMarginTop='2'>
       <Link href={`#${id}`}>
         <Text
-          as="h5"
-          display="inline"
-          variant="body"
-          weight="semibold"
+          as='h5'
+          display='inline'
+          variant='body'
+          weight='semibold'
           {...props}
         />
       </Link>
     </Box>
   ),
   Img: ({ id, src, ...props }) => (
-    <Box id={id} marginBottom="8">
-      <NextImage layout="responsive" loading="lazy" src={src} {...props} />
+    <Box id={id} marginBottom='8'>
+      <NextImage layout='responsive' loading='lazy' src={src} {...props} />
     </Box>
   ),
   li: ({ children, ...props }) => (
-    <Box alignItems="center" as="li" display="flex" {...props}>
+    <Box alignItems='center' as='li' display='flex' {...props}>
       <Box
-        as="span"
-        backgroundColor="fill"
-        borderRadius="1"
-        display="inline-block"
-        height="1"
-        marginRight="4"
-        width="4"
+        as='span'
+        backgroundColor='fill'
+        borderRadius='1'
+        display='inline-block'
+        height='1'
+        marginRight='4'
+        width='4'
       />
       <Text
-        color="labelSecondary"
+        color='labelSecondary'
         style={{ fontWeight: 500, lineHeight: '25px' }}
-        variant="body"
+        variant='body'
       >
         {children}
       </Text>
     </Box>
   ),
-  p: props => (
+  p: (props) => (
     <Text
-      as="p"
-      color="labelSecondary"
-      marginBottom="5"
+      as='p'
+      color='labelSecondary'
+      marginBottom='5'
       style={{ fontWeight: 500, lineHeight: '25px' }}
       {...props}
     />
@@ -158,26 +158,26 @@ export const components = {
 
     return (
       <Box
-        borderRadius="5"
-        marginY="5"
-        position="relative"
+        borderRadius='5'
+        marginY='5'
+        position='relative'
         ref={preRef}
         style={{ overflow: 'hidden' }}
       >
-        <Pre marginBottom="9" marginTop="5" {...props}>
+        <Pre marginBottom='9' marginTop='5' {...props}>
           {children}
         </Pre>
-        <Box data-copy position="absolute" right="3" top="3">
+        <Box data-copy position='absolute' right='3' top='3'>
           <Button
             onClick={() => setRequestCopy(true)}
-            shape="square"
-            size="xl"
+            shape='square'
+            size='xl'
             style={{
               backgroundColor: `${vars.colors.lightBlue}`,
               boxShadow: `0 0 8px ${vars.colors.fillElevated}`,
             }}
             tabIndex={-1}
-            variant="blue"
+            variant='blue'
           >
             {requestCopy ? <CheckIcon /> : <CopyIcon />}
           </Button>
@@ -186,16 +186,16 @@ export const components = {
       </Box>
     );
   },
-  PropsTable: props => <PropsTable aria-label="Component Props" {...props} />,
-  ul: props => <Box as="ul" marginBottom="5" paddingLeft="3" {...props} />,
-  Video: props => (
+  PropsTable: (props) => <PropsTable aria-label='Component Props' {...props} />,
+  ul: (props) => <Box as='ul' marginBottom='5' paddingLeft='3' {...props} />,
+  Video: (props) => (
     <Box
-      as="video"
+      as='video'
       autoPlay
-      borderRadius="3"
+      borderRadius='3'
       controls
-      display="block"
-      marginBottom="5"
+      display='block'
+      marginBottom='5'
       muted
       playsInline
       style={{ width: '100%' }}

@@ -28,20 +28,20 @@ export function TitleAndMetaTags({
     <Head>
       <title>{title}</title>
 
-      <meta content={description} name="description" />
+      <meta content={description} name='description' />
 
-      <meta content={`${url}${path}`} property="og:url" />
-      <meta content={title} property="og:title" />
-      <meta content={description} property="og:description" />
-      <meta content={imageUrl} property="og:image" />
+      <meta content={`${url}${path}`} property='og:url' />
+      <meta content={title} property='og:title' />
+      <meta content={description} property='og:description' />
+      <meta content={imageUrl} property='og:image' />
 
-      <meta content="@rainbowdotme" name="twitter:site" />
-      <meta content="summary_large_image" name="twitter:card" />
-      <meta content={imageUrl} name="twitter:image" />
+      <meta content='@rainbowdotme' name='twitter:site' />
+      <meta content='summary_large_image' name='twitter:card' />
+      <meta content={imageUrl} name='twitter:image' />
 
-      <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+      <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon' />
 
-      <meta content={color} name="theme-color" />
+      <meta content={color} name='theme-color' />
     </Head>
   );
 }

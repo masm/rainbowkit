@@ -11,7 +11,7 @@ export const PopoverContent = forwardRef<
 >(({ children, ...props }, forwardedRef) => (
   <PopoverPrimitive.Content
     className={content}
-    side="top"
+    side='top'
     sideOffset={5}
     {...props}
     ref={forwardedRef}

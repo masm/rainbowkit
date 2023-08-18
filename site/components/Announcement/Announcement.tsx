@@ -22,31 +22,31 @@ export function Announcement({
 }: AnnouncementProps) {
   return (
     <Box
-      as="div"
-      borderColor="fillElevated"
-      borderRadius="3"
-      borderWidth="1"
+      as='div'
+      borderColor='fillElevated'
+      borderRadius='3'
+      borderWidth='1'
       className={announcement}
-      display="flex"
-      flexDirection="row"
-      justifyContent="space-between"
-      marginBottom="8"
-      paddingBottom="5"
-      paddingTop="5"
-      paddingX="5"
+      display='flex'
+      flexDirection='row'
+      justifyContent='space-between'
+      marginBottom='8'
+      paddingBottom='5'
+      paddingTop='5'
+      paddingX='5'
       {...props}
     >
-      <Box display="flex" flexDirection="column" gap="2">
-        <Text as="h4" display="inline" variant="title3" weight="medium">
+      <Box display='flex' flexDirection='column' gap='2'>
+        <Text as='h4' display='inline' variant='title3' weight='medium'>
           {heading}
         </Text>
-        <Text as="p" color="labelSecondary" style={{ fontWeight: 500 }}>
+        <Text as='p' color='labelSecondary' style={{ fontWeight: 500 }}>
           {subheading}
         </Text>
       </Box>
-      <Box alignItems="center" display="flex" justifyContent="center">
+      <Box alignItems='center' display='flex' justifyContent='center'>
         <Link href={actionUrl}>
-          <Button size="m" variant="blue">
+          <Button size='m' variant='blue'>
             {actionTitle}
           </Button>
         </Link>

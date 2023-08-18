@@ -84,17 +84,17 @@ export function ActionButton({
             borderWidth: '1',
           }
         : {})}
-      borderRadius="actionButton"
+      borderRadius='actionButton'
       className={
         !disabled && touchableStyles({ active: 'shrinkSm', hover: 'grow' })
       }
-      display="block"
+      display='block'
       paddingX={paddingX}
       paddingY={paddingY}
       style={{ willChange: 'transform' }}
       testId={testId}
-      textAlign="center"
-      transition="transform"
+      textAlign='center'
+      transition='transform'
       {...(background ? { background } : {})}
       {...(height ? { height } : {})}
     >
@@ -107,7 +107,7 @@ export function ActionButton({
             : 'modalTextSecondary'
         }
         size={fontSize}
-        weight="bold"
+        weight='bold'
       >
         {label}
       </Text>

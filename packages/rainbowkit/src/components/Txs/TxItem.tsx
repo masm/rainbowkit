@@ -58,29 +58,29 @@ export function TxItem({ tx }: TxProps) {
               transition: 'default',
             }
           : {})}
-        color="modalText"
-        display="flex"
-        flexDirection="row"
-        justifyContent="space-between"
-        padding="8"
-        width="full"
+        color='modalText'
+        display='flex'
+        flexDirection='row'
+        justifyContent='space-between'
+        padding='8'
+        width='full'
       >
         <Box
-          alignItems="center"
-          display="flex"
-          flexDirection="row"
+          alignItems='center'
+          display='flex'
+          flexDirection='row'
           gap={mobile ? '16' : '14'}
         >
           <Box color={color}>
             <Icon />
           </Box>
-          <Box display="flex" flexDirection="column" gap={mobile ? '3' : '1'}>
+          <Box display='flex' flexDirection='column' gap={mobile ? '3' : '1'}>
             <Box>
               <Text
-                color="modalText"
-                font="body"
+                color='modalText'
+                font='body'
                 size={mobile ? '16' : '14'}
-                weight="bold"
+                weight='bold'
               >
                 {tx?.description}
               </Text>
@@ -88,8 +88,8 @@ export function TxItem({ tx }: TxProps) {
             <Box>
               <Text
                 color={tx.status === 'pending' ? 'modalTextSecondary' : color}
-                font="body"
-                size="14"
+                font='body'
+                size='14'
                 weight={mobile ? 'medium' : 'regular'}
               >
                 {confirmationStatus}
@@ -98,7 +98,7 @@ export function TxItem({ tx }: TxProps) {
           </Box>
         </Box>
         {explorerLink && (
-          <Box alignItems="center" color="modalTextDim" display="flex">
+          <Box alignItems='center' color='modalTextDim' display='flex'>
             <ExternalLinkIcon />
           </Box>
         )}

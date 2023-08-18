@@ -24,7 +24,7 @@ export function TransactionStoreProvider({
   // Use existing store if it exists, or lazily create one
   const [store] = useState(
     () =>
-      storeSingleton ?? (storeSingleton = createTransactionStore({ provider }))
+      storeSingleton ?? (storeSingleton = createTransactionStore({ provider })),
   );
 
   // Keep store provider up to date with any wagmi changes

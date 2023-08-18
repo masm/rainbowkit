@@ -10,11 +10,11 @@ export const DisclaimerLink = ({
 }) => {
   return (
     <Box
-      as="a"
-      color="accentColor"
+      as='a'
+      color='accentColor'
       href={href}
-      rel="noreferrer"
-      target="_blank"
+      rel='noreferrer'
+      target='_blank'
     >
       {children}
     </Box>

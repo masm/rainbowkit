@@ -18,7 +18,7 @@ export default function GuidePage({ guide }: GuidePageProps) {
         image={guide.image}
         title={`${guide.title} — RainbowKit`}
       />
-      <Box as="article">
+      <Box as='article'>
         <Component components={components} />
       </Box>
     </>
@@ -26,7 +26,7 @@ export default function GuidePage({ guide }: GuidePageProps) {
 }
 
 export async function getStaticPaths() {
-  const paths = allGuides.map(guide => `/${guide._raw.flattenedPath}`);
+  const paths = allGuides.map((guide) => `/${guide._raw.flattenedPath}`);
   return {
     fallback: false,
     paths,
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const guide = allGuides.find(guide => guide.slug === params.slug);
+  const guide = allGuides.find((guide) => guide.slug === params.slug);
   return {
     props: {
       guide,

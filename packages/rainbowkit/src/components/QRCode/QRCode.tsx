@@ -6,11 +6,11 @@ import { QRCodeBackgroundClassName } from '../ConnectOptions/DesktopOptions.css'
 
 const generateMatrix = (
   value: string,
-  errorCorrectionLevel: QRCodeUtil.QRCodeErrorCorrectionLevel
+  errorCorrectionLevel: QRCodeUtil.QRCodeErrorCorrectionLevel,
 ) => {
   const arr = Array.prototype.slice.call(
     QRCodeUtil.create(value, { errorCorrectionLevel }).modules.data,
-    0
+    0,
   );
   const sqrt = Math.sqrt(arr.length);
   return arr.reduce(
@@ -18,7 +18,7 @@ const generateMatrix = (
       (index % sqrt === 0
         ? rows.push([key])
         : rows[rows.length - 1].push(key)) && rows,
-    []
+    [],
   );
 };
 
@@ -68,7 +68,7 @@ export function QRCode({
             width={cellSize * (7 - i * 2)}
             x={x1 + cellSize * i}
             y={y1 + cellSize * i}
-          />
+          />,
         );
       }
     });
@@ -99,10 +99,10 @@ export function QRCode({
                 <circle
                   cx={i * cellSize + cellSize / 2}
                   cy={j * cellSize + cellSize / 2}
-                  fill="black"
+                  fill='black'
                   key={`circle-${i}-${j}`}
                   r={cellSize / 3} // calculate size of single dots
-                />
+                />,
               );
             }
           }
@@ -118,13 +118,13 @@ export function QRCode({
 
   return (
     <Box
-      borderColor="generalBorder"
-      borderRadius="menuButton"
-      borderStyle="solid"
-      borderWidth="1"
+      borderColor='generalBorder'
+      borderRadius='menuButton'
+      borderStyle='solid'
+      borderWidth='1'
       className={QRCodeBackgroundClassName}
       padding={padding}
-      width="max"
+      width='max'
     >
       <Box
         style={{
@@ -132,23 +132,23 @@ export function QRCode({
           userSelect: 'none',
           width: size,
         }}
-        userSelect="none"
+        userSelect='none'
       >
         <Box
-          display="flex"
-          justifyContent="center"
-          position="relative"
+          display='flex'
+          justifyContent='center'
+          position='relative'
           style={{
             height: 0,
             top: logoPosition,
             width: size,
           }}
-          width="full"
+          width='full'
         >
           <AsyncImage
             background={logoBackground}
             borderColor={{ custom: 'rgba(0, 0, 0, 0.06)' }}
-            borderRadius="13"
+            borderRadius='13'
             height={logoSize}
             src={logoUrl}
             width={logoSize}
@@ -156,14 +156,14 @@ export function QRCode({
         </Box>
         <svg height={size} style={{ all: 'revert' }} width={size}>
           <defs>
-            <clipPath id="clip-wrapper">
+            <clipPath id='clip-wrapper'>
               <rect height={logoWrapperSize} width={logoWrapperSize} />
             </clipPath>
-            <clipPath id="clip-logo">
+            <clipPath id='clip-logo'>
               <rect height={logoSize} width={logoSize} />
             </clipPath>
           </defs>
-          <rect fill="transparent" height={size} width={size} />
+          <rect fill='transparent' height={size} width={size} />
           {dots}
         </svg>
       </Box>

@@ -121,7 +121,7 @@ export type Shadow = keyof typeof shadow;
 const getShapeSizeCompoundVariant = (
   size: Size,
   shape: Shape,
-  width: Sprinkles['size'] | number
+  width: Sprinkles['size'] | number,
 ) => ({
   variants: {
     size,

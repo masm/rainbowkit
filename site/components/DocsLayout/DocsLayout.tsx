@@ -33,7 +33,7 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = React.useState(false);
   const currentPageSlug = router.query.slug;
   const currentPageIndex = allDocsRoutes.findIndex(
-    page => page.slug === currentPageSlug
+    (page) => page.slug === currentPageSlug,
   );
   const previous = allDocsRoutes[currentPageIndex - 1];
   const next = allDocsRoutes[currentPageIndex + 1];
@@ -43,7 +43,7 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
   const ref = useCoolMode(
     '/rainbow.svg',
     !isConnected,
-    true
+    true,
   ) as Ref<HTMLDivElement>;
 
   // Listen to route change so we can programatically close
@@ -62,13 +62,13 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
         <DocsMobileMenuContext.Provider value={docsMobileMenuRef}>
           <DocsMobileMenuSlot>
             <DialogPrimitive.Root onOpenChange={setIsOpen} open={isOpen}>
-              <Box alignItems="center" display={{ lg: 'none', xs: 'flex' }}>
+              <Box alignItems='center' display={{ lg: 'none', xs: 'flex' }}>
                 <DialogPrimitive.Trigger asChild>
                   <Button>Menu</Button>
                 </DialogPrimitive.Trigger>
-                <SearchButton marginLeft="4">
+                <SearchButton marginLeft='4'>
                   {() => (
-                    <Button as="span" shape="circle" variant="gray">
+                    <Button as='span' shape='circle' variant='gray'>
                       <SearchIcon />
                     </Button>
                   )}
@@ -96,8 +96,8 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
                   }}
                 >
                   <Box
-                    backgroundColor="fillElevated"
-                    padding="6"
+                    backgroundColor='fillElevated'
+                    padding='6'
                     style={{ height: '100%', overflow: 'auto' }}
                   >
                     <Sidebar routes={docsRoutes} />
@@ -120,14 +120,14 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
               <>{children}</>
 
               <Box
-                borderTopWidth="1"
-                display="flex"
-                justifyContent="space-between"
-                marginTop="9"
-                paddingTop="8"
+                borderTopWidth='1'
+                display='flex'
+                justifyContent='space-between'
+                marginTop='9'
+                paddingTop='8'
               >
                 {previous && (
-                  <Text weight="semibold">
+                  <Text weight='semibold'>
                     <NextLink
                       href={`/docs/${previous.slug}`}
                       legacyBehavior
@@ -142,7 +142,7 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
                 )}
                 <span aria-hidden />
                 {next && (
-                  <Text weight="semibold">
+                  <Text weight='semibold'>
                     <NextLink
                       href={`/docs/${next.slug}`}
                       legacyBehavior

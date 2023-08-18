@@ -15,7 +15,7 @@ interface Particle {
 export const useCoolMode = (
   imageUrl: string,
   disabled?: boolean,
-  ignoreCoolModeDocsDemo?: boolean
+  ignoreCoolModeDocsDemo?: boolean,
 ) => {
   const ref = useRef<HTMLElement>(null);
   const resolvedImageUrl = imageUrl;
@@ -26,7 +26,7 @@ export const useCoolMode = (
         ref.current,
         resolvedImageUrl,
         disabled,
-        ignoreCoolModeDocsDemo
+        ignoreCoolModeDocsDemo,
       );
     }
   }, [resolvedImageUrl, disabled, ignoreCoolModeDocsDemo]);
@@ -56,7 +56,7 @@ const getContainer = () => {
       'bottom:0',
       'pointer-events:none',
       'z-index:2147483647',
-    ].join(';')
+    ].join(';'),
   );
 
   document.body.appendChild(container);
@@ -70,7 +70,7 @@ function makeElementCool(
   element: HTMLElement,
   imageUrl: string,
   disabled: boolean,
-  ignoreCoolModeDocsDemo: boolean
+  ignoreCoolModeDocsDemo: boolean,
 ): () => void {
   instanceCounter++;
 
@@ -104,7 +104,7 @@ function makeElementCool(
         `top:${top}px`,
         `left:${left}px`,
         `transform:rotate(${spinVal}deg)`,
-      ].join(';')
+      ].join(';'),
     );
 
     container.appendChild(particle);
@@ -123,7 +123,7 @@ function makeElementCool(
   }
 
   function updateParticles() {
-    particles.forEach(p => {
+    particles.forEach((p) => {
       p.left = p.left - p.speedHorz * p.direction;
       p.top = p.top - p.speedUp;
       p.speedUp = Math.min(p.size, p.speedUp - 1);
@@ -133,7 +133,7 @@ function makeElementCool(
         p.top >=
         Math.max(window.innerHeight, document.body.clientHeight) + p.size
       ) {
-        particles = particles.filter(o => o !== p);
+        particles = particles.filter((o) => o !== p);
         p.element.remove();
       }
 
@@ -145,7 +145,7 @@ function makeElementCool(
           `top:${p.top}px`,
           `left:${p.left}px`,
           `transform:rotate(${p.spinVal}deg)`,
-        ].join(';')
+        ].join(';'),
       );
     });
   }

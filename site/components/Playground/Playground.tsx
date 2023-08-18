@@ -75,10 +75,10 @@ export function Playground() {
   const [modalSize, setModalSize] = useState<ModalSizes>('wide');
   const isCompact = modalSize === 'compact';
 
-  const handleModeChange = value => setMode(value);
-  const handleAccentChange = value => setAccent(value);
-  const handleRadiiChange = value => setRadii(value);
-  const handleModalSizeChange = value => setModalSize(value);
+  const handleModeChange = (value) => setMode(value);
+  const handleAccentChange = (value) => setAccent(value);
+  const handleRadiiChange = (value) => setRadii(value);
+  const handleModalSizeChange = (value) => setModalSize(value);
 
   const selectedTheme = THEMES[mode]({
     ...THEMES[mode].accentColors[accent],
@@ -88,10 +88,10 @@ export function Playground() {
   const gradient = gradientColors[accent];
 
   return useMounted() ? (
-    <Box paddingY={{ xs: '11', lg: '12' }} position="relative" zIndex="10">
+    <Box paddingY={{ xs: '11', lg: '12' }} position='relative' zIndex='10'>
       <Box
-        inset="0"
-        position="absolute"
+        inset='0'
+        position='absolute'
         style={{ height: '100%', width: '100%' }}
       >
         {isAndroid() && (
@@ -107,32 +107,32 @@ export function Playground() {
 
         {!isAndroid() && (
           <MeshGradient
-            backgroundColor="#1f4fcc"
+            backgroundColor='#1f4fcc'
             u_c1={gradient[0]}
             u_c2={gradient[1]}
             u_c3={gradient[2]}
           />
         )}
       </Box>
-      <Box position="relative">
+      <Box position='relative'>
         <Wrapper>
           <Text
             align={{ xs: 'left', md: 'center' }}
-            as="h2"
+            as='h2'
             size={{ xs: '7', md: '9' }}
             style={{ lineHeight: 1 }}
-            weight="bold"
+            weight='bold'
           >
             Give RainbowKit a spin
           </Text>
           <Text
             align={{ xs: 'left', md: 'center' }}
-            as="p"
+            as='p'
             marginTop={{ xs: '7', md: '9' }}
-            marginX="auto"
+            marginX='auto'
             size={{ xs: '4', md: '5' }}
             style={{ lineHeight: '28px', maxWidth: 720 }}
-            weight="semibold"
+            weight='semibold'
           >
             Make your Ethereum login experience feel right at home on your
             website. RainbowKit allows you to fully customize color, border
@@ -144,14 +144,14 @@ export function Playground() {
         <Provider>
           <RainbowKitProvider
             chains={chains}
-            id="playground"
+            id='playground'
             modalSize={modalSize}
             theme={selectedTheme}
           >
             <Box
               marginX={{ xs: '0', md: 'auto' }}
               marginY={{ xs: '9', md: '11' }}
-              paddingX="10"
+              paddingX='10'
               style={{
                 maxWidth: 'fit-content',
                 userSelect: 'none',
@@ -205,34 +205,34 @@ export function Playground() {
 
         <Box
           marginX={{ xs: '0', md: 'auto' }}
-          paddingX="10"
+          paddingX='10'
           style={{ maxWidth: 'fit-content' }}
         >
           <Box
-            display="flex"
+            display='flex'
             flexDirection={{ xs: 'column', sm: 'column', md: 'row' }}
-            flexWrap="wrap"
+            flexWrap='wrap'
             gap={{ xs: '8', md: '10' }}
           >
             <Box display={{ xs: 'none', md: 'block' }}>
               <Text
                 size={{ xs: '3', md: '4' }}
                 style={{ mixBlendMode: 'overlay' }}
-                weight="bold"
+                weight='bold'
               >
                 Modal
               </Text>
               <ControlBox>
                 <RadioGroup.Root
-                  name="modalSize"
+                  name='modalSize'
                   onValueChange={handleModalSizeChange}
                   style={{ display: 'inline-flex', gap: 19 }}
                   value={modalSize}
                 >
-                  <Radio activeValue={modalSize} id="modalSize" value="wide">
+                  <Radio activeValue={modalSize} id='modalSize' value='wide'>
                     <WideIcon />
                   </Radio>
-                  <Radio activeValue={modalSize} id="modalSize" value="compact">
+                  <Radio activeValue={modalSize} id='modalSize' value='compact'>
                     <CompactIcon />
                   </Radio>
                 </RadioGroup.Root>
@@ -242,34 +242,34 @@ export function Playground() {
               <Text
                 size={{ xs: '3', md: '4' }}
                 style={{ mixBlendMode: 'overlay' }}
-                weight="bold"
+                weight='bold'
               >
                 Mode
               </Text>
               <ControlBox>
                 <RadioGroup.Root
-                  name="mode"
+                  name='mode'
                   onValueChange={handleModeChange}
                   style={{ display: 'inline-flex', gap: 19 }}
                   value={mode}
                 >
                   <Radio
                     activeValue={mode}
-                    id="mode"
+                    id='mode'
                     style={{ backgroundColor: 'white' }}
-                    value="light"
+                    value='light'
                   />
                   <Radio
                     activeValue={mode}
-                    id="mode"
+                    id='mode'
                     style={{ backgroundColor: '#1A1B1F' }}
-                    value="dark"
+                    value='dark'
                   />
                   <Radio
                     activeValue={mode}
-                    id="mode"
+                    id='mode'
                     style={{ backgroundColor: 'black' }}
-                    value="midnight"
+                    value='midnight'
                   />
                 </RadioGroup.Root>
               </ControlBox>
@@ -278,21 +278,21 @@ export function Playground() {
               <Text
                 size={{ xs: '3', md: '4' }}
                 style={{ mixBlendMode: 'overlay' }}
-                weight="bold"
+                weight='bold'
               >
                 Accent
               </Text>
               <ControlBox>
                 <RadioGroup.Root
-                  name="mode"
+                  name='mode'
                   onValueChange={handleAccentChange}
                   style={{ display: 'inline-flex', gap: 19, flexWrap: 'wrap' }}
                   value={accent}
                 >
-                  {(Object.keys(gradientColors) as Accents[]).map(color => (
+                  {(Object.keys(gradientColors) as Accents[]).map((color) => (
                     <Radio
                       activeValue={accent}
-                      id="accent"
+                      id='accent'
                       key={color}
                       style={{
                         backgroundColor: THEMES[mode]({
@@ -309,40 +309,40 @@ export function Playground() {
               <Text
                 size={{ xs: '3', md: '4' }}
                 style={{ mixBlendMode: 'overlay' }}
-                weight="bold"
+                weight='bold'
               >
                 Radius
               </Text>
               <ControlBox>
                 <RadioGroup.Root
-                  name="mode"
+                  name='mode'
                   onValueChange={handleRadiiChange}
                   style={{ display: 'inline-flex', gap: 19 }}
                   value={radii}
                 >
                   <Radio
                     activeValue={radii}
-                    data-label="L"
-                    id="radii"
-                    value="large"
+                    data-label='L'
+                    id='radii'
+                    value='large'
                   />
                   <Radio
                     activeValue={radii}
-                    data-label="M"
-                    id="radii"
-                    value="medium"
+                    data-label='M'
+                    id='radii'
+                    value='medium'
                   />
                   <Radio
                     activeValue={radii}
-                    data-label="S"
-                    id="radii"
-                    value="small"
+                    data-label='S'
+                    id='radii'
+                    value='small'
                   />
                   <Radio
                     activeValue={radii}
-                    data-label="—"
-                    id="radii"
-                    value="none"
+                    data-label='—'
+                    id='radii'
+                    value='none'
                   />
                 </RadioGroup.Root>
               </ControlBox>
@@ -357,10 +357,10 @@ export function Playground() {
 function ControlBox(props) {
   return (
     <Box
-      alignItems="flex-start"
-      display="flex"
-      flexDirection="column"
-      gap="4"
+      alignItems='flex-start'
+      display='flex'
+      flexDirection='column'
+      gap='4'
       marginTop={{ md: '5', xs: '3' }}
       {...props}
     />

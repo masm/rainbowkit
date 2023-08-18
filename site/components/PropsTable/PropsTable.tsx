@@ -25,32 +25,32 @@ export function PropsTable({
   'aria-label': ariaLabel,
   data,
 }: {
-  'data': PropDef[];
+  data: PropDef[];
   'aria-label'?: string;
 }) {
   return (
     <Box
       aria-label={ariaLabel}
       className={regionWrapper}
-      marginBottom="9"
-      role="region"
+      marginBottom='9'
+      role='region'
       tabIndex={0}
     >
-      <Box as="table" className={table}>
-        <Box as="thead">
-          <Box as="tr">
-            <Box as="th" className={th}>
+      <Box as='table' className={table}>
+        <Box as='thead'>
+          <Box as='tr'>
+            <Box as='th' className={th}>
               Prop
             </Box>
-            <Box as="th" className={th}>
+            <Box as='th' className={th}>
               Type
             </Box>
-            <Box as="th" className={th}>
+            <Box as='th' className={th}>
               Default
             </Box>
           </Box>
         </Box>
-        <Box as="tbody">
+        <Box as='tbody'>
           {data.map(
             (
               {
@@ -61,10 +61,10 @@ export function PropsTable({
                 type,
                 typeSimple,
               },
-              i
+              i,
             ) => (
-              <Box as="tr" key={`${name}-${i}`}>
-                <Box as="td" className={td}>
+              <Box as='tr' key={`${name}-${i}`}>
+                <Box as='td' className={td}>
                   <Code>
                     {name}
                     {required ? '*' : null}
@@ -73,11 +73,11 @@ export function PropsTable({
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
-                          marginLeft="2"
-                          shape="circle"
-                          size="xs"
+                          marginLeft='2'
+                          shape='circle'
+                          size='xs'
                           style={{ verticalAlign: 'middle' }}
-                          variant="ghost"
+                          variant='ghost'
                         >
                           <InfoIcon />
                         </Button>
@@ -86,17 +86,17 @@ export function PropsTable({
                     </Popover>
                   )}
                 </Box>
-                <Box as="td" className={td}>
+                <Box as='td' className={td}>
                   <Code>{Boolean(typeSimple) ? typeSimple : type} </Code>
                   {Boolean(typeSimple) && (
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
-                          marginLeft="2"
-                          shape="circle"
-                          size="xs"
+                          marginLeft='2'
+                          shape='circle'
+                          size='xs'
                           style={{ verticalAlign: 'middle' }}
-                          variant="ghost"
+                          variant='ghost'
                         >
                           <InfoIcon />
                         </Button>
@@ -107,11 +107,11 @@ export function PropsTable({
                     </Popover>
                   )}
                 </Box>
-                <Box as="td" className={td}>
+                <Box as='td' className={td}>
                   {Boolean(defaultValue) ? <Code>{defaultValue}</Code> : <>–</>}
                 </Box>
               </Box>
-            )
+            ),
           )}
         </Box>
       </Box>

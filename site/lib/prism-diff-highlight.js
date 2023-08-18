@@ -1,7 +1,7 @@
 // https://github.com/PrismJS/prism/blob/master/plugins/diff-highlight/prism-diff-highlight.js
 /* eslint-disable no-useless-escape */
 // eslint-disable-next-line import/no-commonjs
-module.exports = Prism => {
+module.exports = (Prism) => {
   var LANGUAGE_REGEX = /diff-([\w-]+)/i;
   var HTML_TAG =
     /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/gi;
@@ -11,9 +11,9 @@ module.exports = Prism => {
       /__/g,
       function () {
         return HTML_TAG.source;
-      }
+      },
     ),
-    'gi'
+    'gi',
   );
 
   var PREFIXES = Prism.languages.diff.PREFIXES;

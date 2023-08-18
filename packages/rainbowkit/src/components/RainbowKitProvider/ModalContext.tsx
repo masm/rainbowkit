@@ -113,7 +113,7 @@ export function ModalProvider({ children }: ModalProviderProps) {
           openAccountModal,
           openChainModal,
           openConnectModal,
-        ]
+        ],
       )}
     >
       {children}

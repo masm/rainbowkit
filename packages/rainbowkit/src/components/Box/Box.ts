@@ -34,12 +34,12 @@ export const Box = React.forwardRef<HTMLElement, Props>(
     });
 
     return React.createElement(as, {
-      'className': clsx(atomicClasses, className),
+      className: clsx(atomicClasses, className),
       ...nativeProps,
       'data-testid': testId ? `rk-${testId.replace(/^rk-/, '')}` : undefined,
       ref,
     });
-  }
+  },
 );
 
 export type BoxProps = Parameters<typeof Box>[0];

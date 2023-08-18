@@ -65,7 +65,7 @@ export const Button = React.forwardRef(
       variant = 'contrast',
       ...boxProps
     }: Props,
-    ref: React.Ref<HTMLButtonElement>
+    ref: React.Ref<HTMLButtonElement>,
   ) => {
     return (
       <Box
@@ -80,12 +80,12 @@ export const Button = React.forwardRef(
         as={boxProps.as ?? 'button'}
         style={style}
       >
-        {prefix && <Box display="inline-flex">{prefix}</Box>}
+        {prefix && <Box display='inline-flex'>{prefix}</Box>}
         {children}
-        {suffix && <Box display="inline-flex">{suffix}</Box>}
+        {suffix && <Box display='inline-flex'>{suffix}</Box>}
       </Box>
     );
-  }
+  },
 );
 
 Button.displayName = 'Button';

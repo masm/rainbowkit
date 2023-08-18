@@ -55,11 +55,11 @@ export function ConnectButton({
 
         return (
           <Box
-            display="flex"
-            gap="12"
+            display='flex'
+            gap='12'
             {...(!ready && {
               'aria-hidden': true,
-              'style': {
+              style: {
                 opacity: 0,
                 pointerEvents: 'none',
                 userSelect: 'none',
@@ -70,16 +70,16 @@ export function ConnectButton({
               <>
                 {chain && (chains.length > 1 || unsupportedChain) && (
                   <Box
-                    alignItems="center"
-                    aria-label="Chain Selector"
-                    as="button"
+                    alignItems='center'
+                    aria-label='Chain Selector'
+                    as='button'
                     background={
                       unsupportedChain
                         ? 'connectButtonBackgroundError'
                         : 'connectButtonBackground'
                     }
-                    borderRadius="connectButton"
-                    boxShadow="connectButton"
+                    borderRadius='connectButton'
+                    boxShadow='connectButton'
                     className={touchableStyles({
                       active: 'shrink',
                       hover: 'grow',
@@ -89,58 +89,58 @@ export function ConnectButton({
                         ? 'connectButtonTextError'
                         : 'connectButtonText'
                     }
-                    display={mapResponsiveValue(chainStatus, value =>
-                      value === 'none' ? 'none' : 'flex'
+                    display={mapResponsiveValue(chainStatus, (value) =>
+                      value === 'none' ? 'none' : 'flex',
                     )}
-                    fontFamily="body"
-                    fontWeight="bold"
-                    gap="6"
+                    fontFamily='body'
+                    fontWeight='bold'
+                    gap='6'
                     key={
                       // Force re-mount to prevent CSS transition
                       unsupportedChain ? 'unsupported' : 'supported'
                     }
                     onClick={openChainModal}
-                    paddingX="10"
-                    paddingY="8"
+                    paddingX='10'
+                    paddingY='8'
                     testId={
                       unsupportedChain ? 'wrong-network-button' : 'chain-button'
                     }
-                    transition="default"
-                    type="button"
+                    transition='default'
+                    type='button'
                   >
                     {unsupportedChain ? (
                       <Box
-                        alignItems="center"
-                        display="flex"
-                        height="24"
-                        paddingX="4"
+                        alignItems='center'
+                        display='flex'
+                        height='24'
+                        paddingX='4'
                       >
                         Wrong network
                       </Box>
                     ) : (
-                      <Box alignItems="center" display="flex" gap="6">
+                      <Box alignItems='center' display='flex' gap='6'>
                         {chain.hasIcon ? (
                           <Box
-                            display={mapResponsiveValue(chainStatus, value =>
+                            display={mapResponsiveValue(chainStatus, (value) =>
                               value === 'full' || value === 'icon'
                                 ? 'block'
-                                : 'none'
+                                : 'none',
                             )}
-                            height="24"
-                            width="24"
+                            height='24'
+                            width='24'
                           >
                             <AsyncImage
                               alt={chain.name ?? 'Chain icon'}
                               background={chain.iconBackground}
-                              borderRadius="full"
-                              height="24"
+                              borderRadius='full'
+                              height='24'
                               src={chain.iconUrl}
-                              width="24"
+                              width='24'
                             />
                           </Box>
                         ) : null}
                         <Box
-                          display={mapResponsiveValue(chainStatus, value => {
+                          display={mapResponsiveValue(chainStatus, (value) => {
                             if (value === 'icon' && !chain.iconUrl) {
                               return 'block'; // Show the chain name if there is no iconUrl
                             }
@@ -160,31 +160,31 @@ export function ConnectButton({
 
                 {!unsupportedChain && (
                   <Box
-                    alignItems="center"
-                    as="button"
-                    background="connectButtonBackground"
-                    borderRadius="connectButton"
-                    boxShadow="connectButton"
+                    alignItems='center'
+                    as='button'
+                    background='connectButtonBackground'
+                    borderRadius='connectButton'
+                    boxShadow='connectButton'
                     className={touchableStyles({
                       active: 'shrink',
                       hover: 'grow',
                     })}
-                    color="connectButtonText"
-                    display="flex"
-                    fontFamily="body"
-                    fontWeight="bold"
+                    color='connectButtonText'
+                    display='flex'
+                    fontFamily='body'
+                    fontWeight='bold'
                     onClick={openAccountModal}
-                    testId="account-button"
-                    transition="default"
-                    type="button"
+                    testId='account-button'
+                    transition='default'
+                    type='button'
                   >
                     {account.displayBalance && (
                       <Box
-                        display={mapResponsiveValue(showBalance, value =>
-                          value ? 'block' : 'none'
+                        display={mapResponsiveValue(showBalance, (value) =>
+                          value ? 'block' : 'none',
                         )}
-                        padding="8"
-                        paddingLeft="12"
+                        padding='8'
+                        paddingLeft='12'
                       >
                         {account.displayBalance}
                       </Box>
@@ -197,28 +197,28 @@ export function ConnectButton({
                           ? 'connectButtonInnerBackground'
                           : 'connectButtonBackground'
                       }
-                      borderColor="connectButtonBackground"
-                      borderRadius="connectButton"
-                      borderStyle="solid"
-                      borderWidth="2"
-                      color="connectButtonText"
-                      fontFamily="body"
-                      fontWeight="bold"
-                      paddingX="8"
-                      paddingY="6"
-                      transition="default"
+                      borderColor='connectButtonBackground'
+                      borderRadius='connectButton'
+                      borderStyle='solid'
+                      borderWidth='2'
+                      color='connectButtonText'
+                      fontFamily='body'
+                      fontWeight='bold'
+                      paddingX='8'
+                      paddingY='6'
+                      transition='default'
                     >
                       <Box
-                        alignItems="center"
-                        display="flex"
-                        gap="6"
-                        height="24"
+                        alignItems='center'
+                        display='flex'
+                        gap='6'
+                        height='24'
                       >
                         <Box
-                          display={mapResponsiveValue(accountStatus, value =>
+                          display={mapResponsiveValue(accountStatus, (value) =>
                             value === 'full' || value === 'avatar'
                               ? 'block'
-                              : 'none'
+                              : 'none',
                           )}
                         >
                           <Avatar
@@ -229,12 +229,14 @@ export function ConnectButton({
                           />
                         </Box>
 
-                        <Box alignItems="center" display="flex" gap="6">
+                        <Box alignItems='center' display='flex' gap='6'>
                           <Box
-                            display={mapResponsiveValue(accountStatus, value =>
-                              value === 'full' || value === 'address'
-                                ? 'block'
-                                : 'none'
+                            display={mapResponsiveValue(
+                              accountStatus,
+                              (value) =>
+                                value === 'full' || value === 'address'
+                                  ? 'block'
+                                  : 'none',
                             )}
                           >
                             {account.displayName}
@@ -248,21 +250,21 @@ export function ConnectButton({
               </>
             ) : (
               <Box
-                as="button"
-                background="accentColor"
-                borderRadius="connectButton"
-                boxShadow="connectButton"
+                as='button'
+                background='accentColor'
+                borderRadius='connectButton'
+                boxShadow='connectButton'
                 className={touchableStyles({ active: 'shrink', hover: 'grow' })}
-                color="accentColorForeground"
-                fontFamily="body"
-                fontWeight="bold"
-                height="40"
-                key="connect"
+                color='accentColorForeground'
+                fontFamily='body'
+                fontWeight='bold'
+                height='40'
+                key='connect'
                 onClick={openConnectModal}
-                paddingX="14"
-                testId="connect-button"
-                transition="default"
-                type="button"
+                paddingX='14'
+                testId='connect-button'
+                transition='default'
+                type='button'
               >
                 {label}
               </Box>

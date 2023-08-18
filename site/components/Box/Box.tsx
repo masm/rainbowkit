@@ -37,7 +37,7 @@ export const Box = React.forwardRef<HTMLElement, Props>(
       ...nativeProps,
       ref,
     });
-  }
+  },
 );
 
 export type BoxProps = Parameters<typeof Box>[0];

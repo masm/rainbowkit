@@ -102,36 +102,36 @@ export function UsedBy() {
   return (
     <>
       <Text
-        align="center"
-        as="p"
+        align='center'
+        as='p'
         marginTop={{ md: '0', xs: '11' }}
-        marginX="auto"
+        marginX='auto'
         size={{ md: '5', xs: '4' }}
         style={{ lineHeight: '28px', maxWidth: 720 }}
-        weight="semibold"
+        weight='semibold'
       >
         The siqqest Web3 teams are using RainbowKit to improve their products,
         delight their users and save time when building.
       </Text>
 
-      <Box marginTop={{ md: '11', xs: '10' }} marginX="auto">
+      <Box marginTop={{ md: '11', xs: '10' }} marginX='auto'>
         <Box className={grid}>
-          {frens.map(fren => (
+          {frens.map((fren) => (
             <Link
               href={fren.url}
               key={fren.name}
               style={{ textDecoration: 'none' }}
             >
-              <Box textAlign="center">
+              <Box textAlign='center'>
                 <Box
-                  as="span"
-                  borderRadius="round"
-                  display="inline-block"
+                  as='span'
+                  borderRadius='round'
+                  display='inline-block'
                   height={{
                     lg: '_48',
                     xs: '11',
                   }}
-                  overflow="hidden"
+                  overflow='hidden'
                   style={{
                     boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.4)',
                   }}
@@ -143,20 +143,20 @@ export function UsedBy() {
                   <NextImage
                     alt={fren.name}
                     height={64}
-                    layout="responsive"
+                    layout='responsive'
                     src={`/frens/${fren.asset}.png`}
                     width={64}
                   />
                 </Box>
                 <Text
-                  color="labelSecondary"
-                  marginTop="2"
+                  color='labelSecondary'
+                  marginTop='2'
                   size={{
                     lg: '3',
                     xs: '2',
                   }}
                   variant={null}
-                  weight="semibold"
+                  weight='semibold'
                 >
                   {fren.name}
                 </Text>

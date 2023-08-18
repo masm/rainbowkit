@@ -35,17 +35,17 @@ export const ModalSelection = ({
 
   return (
     <Box
-      display="flex"
-      flexDirection="column"
+      display='flex'
+      flexDirection='column'
       onMouseEnter={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
       ref={coolModeRef}
     >
       <Box
         as={as}
-        borderRadius="menuButton"
-        borderStyle="solid"
-        borderWidth="1"
+        borderRadius='menuButton'
+        borderStyle='solid'
+        borderWidth='1'
         className={
           !currentlySelected
             ? [
@@ -58,11 +58,11 @@ export const ModalSelection = ({
         }
         disabled={currentlySelected}
         onClick={onClick}
-        padding="5"
+        padding='5'
         style={{ willChange: 'transform' }}
         testId={testId}
-        transition="default"
-        width="full"
+        transition='default'
+        width='full'
         {...(currentlySelected
           ? {
               background: 'accentColor',
@@ -77,19 +77,19 @@ export const ModalSelection = ({
         <Box
           color={currentlySelected ? 'accentColorForeground' : 'modalText'}
           disabled={!ready}
-          fontFamily="body"
-          fontSize="16"
-          fontWeight="bold"
-          transition="default"
+          fontFamily='body'
+          fontSize='16'
+          fontWeight='bold'
+          transition='default'
         >
-          <Box alignItems="center" display="flex" flexDirection="row" gap="12">
+          <Box alignItems='center' display='flex' flexDirection='row' gap='12'>
             <AsyncImage
               background={iconBackground}
               {...(isMouseOver ? {} : { borderColor: 'actionButtonBorder' })}
-              borderRadius="6"
-              height="28"
+              borderRadius='6'
+              height='28'
               src={iconUrl}
-              width="28"
+              width='28'
             />
             <Box>
               <Box style={{ marginTop: recent ? -2 : undefined }}>{name}</Box>
@@ -98,9 +98,9 @@ export const ModalSelection = ({
                   color={
                     currentlySelected ? 'accentColorForeground' : 'accentColor'
                   }
-                  size="12"
+                  size='12'
                   style={{ lineHeight: 1, marginTop: -1 }}
-                  weight="medium"
+                  weight='medium'
                 >
                   Recent
                 </Text>

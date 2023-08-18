@@ -3,7 +3,7 @@
  */
 const units = ['k', 'm', 'b', 't'];
 
-export function toPrecision(number: number, precision: number = 1) {
+export function toPrecision(number: number, precision = 1) {
   return number
     .toString()
     .replace(new RegExp(`(.+\\.\\d{${precision}})\\d+`), '$1')

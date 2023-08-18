@@ -16,7 +16,7 @@ export function ConnectModal({ onClose, open }: ConnectModalProps) {
   if (connectionStatus === 'disconnected') {
     return (
       <Dialog onClose={onClose} open={open} titleId={titleId}>
-        <DialogContent bottomSheetOnMobile padding="0" wide>
+        <DialogContent bottomSheetOnMobile padding='0' wide>
           <ConnectOptions onClose={onClose} />
         </DialogContent>
       </Dialog>
@@ -26,7 +26,7 @@ export function ConnectModal({ onClose, open }: ConnectModalProps) {
   if (connectionStatus === 'unauthenticated') {
     return (
       <Dialog onClose={onClose} open={open} titleId={titleId}>
-        <DialogContent bottomSheetOnMobile padding="0">
+        <DialogContent bottomSheetOnMobile padding='0'>
           <SignIn onClose={onClose} />
         </DialogContent>
       </Dialog>

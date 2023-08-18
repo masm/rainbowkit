@@ -65,15 +65,15 @@ export function ProfileDetails({
 
   return (
     <>
-      <Box display="flex" flexDirection="column">
-        <Box background="profileForeground" padding="16">
+      <Box display='flex' flexDirection='column'>
+        <Box background='profileForeground' padding='16'>
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="column"
+            alignItems='center'
+            display='flex'
+            flexDirection='column'
             gap={mobile ? '16' : '12'}
-            justifyContent="center"
-            margin="8"
+            justifyContent='center'
+            margin='8'
             style={{ textAlign: 'center' }}
           >
             <Box
@@ -94,30 +94,30 @@ export function ProfileDetails({
               />
             </Box>
             <Box
-              display="flex"
-              flexDirection="column"
+              display='flex'
+              flexDirection='column'
               gap={mobile ? '4' : '0'}
-              textAlign="center"
+              textAlign='center'
             >
-              <Box textAlign="center">
+              <Box textAlign='center'>
                 <Text
-                  as="h1"
-                  color="modalText"
+                  as='h1'
+                  color='modalText'
                   id={titleId}
                   size={mobile ? '20' : '18'}
-                  weight="heavy"
+                  weight='heavy'
                 >
                   {accountName}
                 </Text>
               </Box>
               {balanceData && (
-                <Box textAlign="center">
+                <Box textAlign='center'>
                   <Text
-                    as="h1"
-                    color="modalTextSecondary"
+                    as='h1'
+                    color='modalTextSecondary'
                     id={titleId}
                     size={mobile ? '16' : '14'}
-                    weight="semibold"
+                    weight='semibold'
                   >
                     {displayBalance} {balanceData.symbol}
                   </Text>
@@ -126,11 +126,11 @@ export function ProfileDetails({
             </Box>
           </Box>
           <Box
-            display="flex"
-            flexDirection="row"
-            gap="8"
-            margin="2"
-            marginTop="16"
+            display='flex'
+            flexDirection='row'
+            gap='8'
+            margin='2'
+            marginTop='16'
           >
             <ProfileDetailsAction
               action={copyAddressAction}
@@ -140,14 +140,14 @@ export function ProfileDetails({
             <ProfileDetailsAction
               action={onDisconnect}
               icon={<DisconnectIcon />}
-              label="Disconnect"
-              testId="disconnect-button"
+              label='Disconnect'
+              testId='disconnect-button'
             />
           </Box>
         </Box>
         {showRecentTransactions && (
           <>
-            <Box background="generalBorder" height="1" marginTop="-1" />
+            <Box background='generalBorder' height='1' marginTop='-1' />
             <Box>
               <TxList address={address} />
             </Box>

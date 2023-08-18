@@ -26,18 +26,18 @@ export default function Home() {
 
   return (
     <Box
-      backgroundColor="background"
-      data-mode="dark"
+      backgroundColor='background'
+      data-mode='dark'
       ref={ref}
       style={{ minHeight: '100vh', overflow: 'hidden' }}
     >
-      <TitleAndMetaTags color="black" />
+      <TitleAndMetaTags color='black' />
       <Header darkMode />
       <Wrapper>
-        <Box marginTop="11" textAlign="center">
+        <Box marginTop='11' textAlign='center'>
           <Text
-            as="h1"
-            marginBottom="3"
+            as='h1'
+            marginBottom='3'
             size={{ xs: '5', md: '8' }}
             style={{
               backgroundImage: `linear-gradient(270deg, ${vars.colors.purple50} 0%, ${vars.colors.blue50} 100%)`,
@@ -46,34 +46,34 @@ export default function Home() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}
-            weight="bold"
+            weight='bold'
           >
             RainbowKit
           </Text>
           <Text
-            as="h2"
-            marginBottom="5"
+            as='h2'
+            marginBottom='5'
             size={{ xs: '7', md: '9' }}
             style={{ lineHeight: 1 }}
-            weight="bold"
+            weight='bold'
           >
             The best way to connect a wallet
           </Text>
           <Text
-            as="p"
-            marginBottom="10"
+            as='p'
+            marginBottom='10'
             size={{ xs: '4', md: '5' }}
             style={{ lineHeight: 1 }}
-            weight="semibold"
+            weight='semibold'
           >
             Designed for everyone. Built for developers.
           </Text>
-          <Box marginBottom="8">
+          <Box marginBottom='8'>
             <InstallScript />
           </Box>
           <Box marginBottom={{ xs: '0', md: '11' }}>
-            <NextLink href="/docs" legacyBehavior passHref>
-              <Button as="a" size="xl" variant="purpleGradient">
+            <NextLink href='/docs' legacyBehavior passHref>
+              <Button as='a' size='xl' variant='purpleGradient'>
                 View the Docs
               </Button>
             </NextLink>
@@ -84,7 +84,7 @@ export default function Home() {
       <Hero />
 
       <Box
-        backgroundColor="backgroundElevated"
+        backgroundColor='backgroundElevated'
         paddingBottom={{ xs: '11', md: '12' }}
         paddingTop={{ xs: '12', md: '10', lg: '0' }}
         style={{
@@ -99,27 +99,27 @@ export default function Home() {
       <Playground />
 
       <Box
-        backgroundColor="backgroundElevated"
+        backgroundColor='backgroundElevated'
         paddingY={{ xs: '11', lg: '12' }}
       >
         <Wrapper>
           <Text
             align={{ xs: 'left', md: 'center' }}
-            as="h2"
+            as='h2'
             size={{ xs: '7', md: '9' }}
             style={{ lineHeight: 1 }}
-            weight="bold"
+            weight='bold'
           >
             Rainbow 🤝 Developers
           </Text>
           <Text
             align={{ xs: 'left', md: 'center' }}
-            as="p"
+            as='p'
             marginTop={{ xs: '7', md: '9' }}
-            marginX="auto"
+            marginX='auto'
             size={{ xs: '4', md: '5' }}
             style={{ lineHeight: '28px', maxWidth: 720 }}
-            weight="semibold"
+            weight='semibold'
           >
             RainbowKit provides a fast, easy and highly customizable way for
             developers to add a great wallet experience to their application. We
@@ -127,15 +127,15 @@ export default function Home() {
             amazing products and communities for their users.
           </Text>
 
-          <Box marginTop={{ xs: '10', md: '11' }} marginX="auto">
+          <Box marginTop={{ xs: '10', md: '11' }} marginX='auto'>
             <Box
-              as="ul"
-              display="flex"
-              flexWrap="wrap"
+              as='ul'
+              display='flex'
+              flexWrap='wrap'
               left={{ lg: '9' }}
               marginLeft={{ md: '10', lg: '11' }}
               paddingLeft={{ md: '3', lg: '11' }}
-              position="relative"
+              position='relative'
             >
               {[
                 'Easy Installation',
@@ -146,20 +146,20 @@ export default function Home() {
                 'Custom Chains',
                 'App Store and Google Play Integration',
                 'Custom Connect Button',
-              ].map(value => (
+              ].map((value) => (
                 <Box
-                  alignItems="center"
-                  as="li"
-                  display="flex"
-                  gap="4"
+                  alignItems='center'
+                  as='li'
+                  display='flex'
+                  gap='4'
                   key={value}
-                  marginBottom="5"
+                  marginBottom='5'
                   width={{ xs: 'full', md: '1/2' }}
                 >
-                  <Box as="span" flexShrink={0}>
+                  <Box as='span' flexShrink={0}>
                     <TickIcon />
                   </Box>
-                  <Text weight="bold">{value}</Text>
+                  <Text weight='bold'>{value}</Text>
                 </Box>
               ))}
             </Box>
@@ -167,12 +167,12 @@ export default function Home() {
               marginTop={{ xs: '5', md: '11' }}
               textAlign={{ xs: 'left', md: 'center' }}
             >
-              <NextLink href="/docs" legacyBehavior passHref>
+              <NextLink href='/docs' legacyBehavior passHref>
                 <Button
-                  as="a"
-                  size="xl"
+                  as='a'
+                  size='xl'
                   style={{ alignSelf: 'flex-start' }}
-                  variant="purpleGradient"
+                  variant='purpleGradient'
                 >
                   View the Docs
                 </Button>
@@ -183,56 +183,56 @@ export default function Home() {
       </Box>
 
       <Box
-        backgroundColor="backgroundElevated"
-        data-mode="light"
+        backgroundColor='backgroundElevated'
+        data-mode='light'
         paddingY={{ xs: '11', lg: '12' }}
       >
         <Wrapper>
           <Text
             align={{ xs: 'left', md: 'center' }}
-            as="h2"
+            as='h2'
             size={{ xs: '7', md: '9' }}
             style={{ lineHeight: '1' }}
-            weight="bold"
+            weight='bold'
           >
             Made with ❤️ by your frens at{' '}
             <Box
-              as="span"
+              as='span'
               display={{ md: 'none' }}
-              marginLeft="2"
-              position="relative"
-              top="3"
+              marginLeft='2'
+              position='relative'
+              top='3'
             >
               <NextImage
-                alt="Rainbow logo"
+                alt='Rainbow logo'
                 height={36}
-                src="/rainbow-logo.png"
+                src='/rainbow-logo.png'
                 width={36}
               />
             </Box>
             <Box
-              as="span"
+              as='span'
               display={{ xs: 'none', md: 'inline' }}
-              marginLeft="2"
-              position="relative"
-              top="3"
+              marginLeft='2'
+              position='relative'
+              top='3'
             >
               <NextImage
-                alt="Rainbow logo"
+                alt='Rainbow logo'
                 height={56}
-                src="/rainbow-logo.png"
+                src='/rainbow-logo.png'
                 width={56}
               />
             </Box>
           </Text>
           <Text
             align={{ xs: 'left', md: 'center' }}
-            as="p"
-            marginX="auto"
+            as='p'
+            marginX='auto'
             marginY={{ xs: '7', md: '9' }}
             size={{ xs: '4', md: '5' }}
             style={{ lineHeight: '28px', maxWidth: 720 }}
-            weight="semibold"
+            weight='semibold'
           >
             Building RainbowKit has been an incredibly fun effort across many
             people at Rainbow and our frens at other companies. We&apos;re
@@ -241,73 +241,73 @@ export default function Home() {
           </Text>
 
           <Box
-            display="flex"
+            display='flex'
             flexDirection={{ xs: 'column', sm: 'row' }}
             gap={{ xs: '5', sm: '8' }}
-            justifyContent="center"
+            justifyContent='center'
           >
             <Button
-              as="a"
-              href="https://twitter.com/rainbowdotme"
+              as='a'
+              href='https://twitter.com/rainbowdotme'
               shadow
-              size="xl"
-              variant="blueGradient"
+              size='xl'
+              variant='blueGradient'
             >
               <Box
-                as="span"
+                as='span'
                 marginX={{ sm: '4' }}
-                textAlign="center"
-                width="full"
+                textAlign='center'
+                width='full'
               >
                 Follow us on Twitter
               </Box>
             </Button>
             <Button
-              as="a"
-              href="https://github.com/rainbow-me/rainbowkit/discussions/new?category=feedback"
+              as='a'
+              href='https://github.com/rainbow-me/rainbowkit/discussions/new?category=feedback'
               shadow
-              size="xl"
-              target="_blank"
-              variant="pinkGradient"
+              size='xl'
+              target='_blank'
+              variant='pinkGradient'
             >
-              <Box as="span" textAlign="center" width="full">
+              <Box as='span' textAlign='center' width='full'>
                 Share feedback with us
               </Box>
             </Button>
           </Box>
 
           <Box
-            display="flex"
-            flexDirection="column"
-            gap="6"
-            justifyContent="center"
+            display='flex'
+            flexDirection='column'
+            gap='6'
+            justifyContent='center'
             marginTop={{ xs: '11', lg: '12' }}
-            textAlign="center"
+            textAlign='center'
           >
-            <Text size="4" weight="bold">
+            <Text size='4' weight='bold'>
               <Link
-                href="https://github.com/rainbow-me/rainbowkit"
-                variant="gray"
+                href='https://github.com/rainbow-me/rainbowkit'
+                variant='gray'
               >
                 <span data-emoji>👾</span> github
               </Link>
             </Text>
-            <Text size="4" weight="bold">
-              <Link href="https://rainbow.me/media-kit.zip" variant="gray">
+            <Text size='4' weight='bold'>
+              <Link href='https://rainbow.me/media-kit.zip' variant='gray'>
                 <span data-emoji>⬇️</span> media kit
               </Link>
             </Text>
-            <Text size="4" weight="bold">
-              <Link href="https://rainbow.me/terms-of-use" variant="gray">
+            <Text size='4' weight='bold'>
+              <Link href='https://rainbow.me/terms-of-use' variant='gray'>
                 <span data-emoji>📜</span> terms of use
               </Link>
             </Text>
-            <Text size="4" weight="bold">
-              <Link href="https://rainbow.me/privacy" variant="gray">
+            <Text size='4' weight='bold'>
+              <Link href='https://rainbow.me/privacy' variant='gray'>
                 <span data-emoji>🔒</span> privacy policy
               </Link>
             </Text>
-            <Text color="labelTertiary" size="4" weight="bold">
+            <Text color='labelTertiary' size='4' weight='bold'>
               © Rainbow
             </Text>
           </Box>
@@ -329,27 +329,27 @@ function InstallScript() {
 
   return (
     <Box
-      alignItems="center"
-      backgroundColor="fillElevated"
-      borderRadius="round"
-      color="label"
+      alignItems='center'
+      backgroundColor='fillElevated'
+      borderRadius='round'
+      color='label'
       display={{ xs: 'none', md: 'inline-flex' }}
-      fontSize="2"
-      paddingX="7"
+      fontSize='2'
+      paddingX='7'
       style={{ height: 44, lineHeight: 1 }}
     >
       <code>{code}</code>
       <Button
-        marginLeft="7"
+        marginLeft='7'
         onClick={() => setRequestCopy(true)}
         ref={ref}
-        shape="circle"
-        size="xs"
+        shape='circle'
+        size='xs'
         style={{
           color: requestCopy ? vars.colors.green : vars.colors.labelTertiary,
         }}
         tabIndex={-1}
-        variant="ghost"
+        variant='ghost'
       >
         {requestCopy ? <CheckIcon /> : <CopyIcon />}
       </Button>

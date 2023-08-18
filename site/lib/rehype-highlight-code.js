@@ -36,7 +36,7 @@ export const rehypeHighlightCode = () => {
     }
   };
 
-  return tree => {
+  return (tree) => {
     visit(tree, 'element', visitor);
   };
 };

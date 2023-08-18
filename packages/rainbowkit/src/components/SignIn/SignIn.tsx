@@ -24,9 +24,9 @@ export function SignIn({ onClose }: { onClose: () => void }) {
   const getNonce = useCallback(async () => {
     try {
       const nonce = await authAdapter.getNonce();
-      setState(x => ({ ...x, nonce }));
+      setState((x) => ({ ...x, nonce }));
     } catch (error) {
-      setState(x => ({
+      setState((x) => ({
         ...x,
         errorMessage: 'Error preparing message, please retry!',
         status: 'idle',
@@ -61,7 +61,7 @@ export function SignIn({ onClose }: { onClose: () => void }) {
         return;
       }
 
-      setState(x => ({
+      setState((x) => ({
         ...x,
         errorMessage: undefined,
         status: 'signing',
@@ -77,20 +77,20 @@ export function SignIn({ onClose }: { onClose: () => void }) {
       } catch (error) {
         if (error instanceof UserRejectedRequestError) {
           // It's not really an "error" so we silently ignore and reset to idle state
-          return setState(x => ({
+          return setState((x) => ({
             ...x,
             status: 'idle',
           }));
         }
 
-        return setState(x => ({
+        return setState((x) => ({
           ...x,
           errorMessage: 'Error signing message, please retry!',
           status: 'idle',
         }));
       }
 
-      setState(x => ({ ...x, status: 'verifying' }));
+      setState((x) => ({ ...x, status: 'verifying' }));
 
       try {
         const verified = await authAdapter.verify({ message, signature });
@@ -101,7 +101,7 @@ export function SignIn({ onClose }: { onClose: () => void }) {
           throw new Error();
         }
       } catch (error) {
-        return setState(x => ({
+        return setState((x) => ({
           ...x,
           errorMessage: 'Error verifying signature, please retry!',
           status: 'idle',
@@ -116,68 +116,68 @@ export function SignIn({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <Box position="relative">
+    <Box position='relative'>
       <Box
-        display="flex"
-        paddingRight="16"
-        paddingTop="16"
-        position="absolute"
-        right="0"
+        display='flex'
+        paddingRight='16'
+        paddingTop='16'
+        position='absolute'
+        right='0'
       >
         <CloseButton onClose={onClose} />
       </Box>
       <Box
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
+        alignItems='center'
+        display='flex'
+        flexDirection='column'
         gap={mobile ? '32' : '24'}
-        padding="24"
-        paddingX="18"
+        padding='24'
+        paddingX='18'
         style={{ paddingTop: mobile ? '60px' : '36px' }}
       >
         <Box
-          alignItems="center"
-          display="flex"
-          flexDirection="column"
+          alignItems='center'
+          display='flex'
+          flexDirection='column'
           gap={mobile ? '6' : '4'}
           style={{ maxWidth: mobile ? 320 : 280 }}
         >
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="column"
+            alignItems='center'
+            display='flex'
+            flexDirection='column'
             gap={mobile ? '32' : '16'}
           >
             <AsyncImage height={40} src={signInIcon} width={40} />
             <Text
-              color="modalText"
+              color='modalText'
               size={mobile ? '20' : '18'}
-              textAlign="center"
-              weight="heavy"
+              textAlign='center'
+              weight='heavy'
             >
               Verify your account
             </Text>
           </Box>
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="column"
+            alignItems='center'
+            display='flex'
+            flexDirection='column'
             gap={mobile ? '16' : '12'}
           >
             <Text
-              color="modalTextSecondary"
+              color='modalTextSecondary'
               size={mobile ? '16' : '14'}
-              textAlign="center"
+              textAlign='center'
             >
               To finish connecting, you must sign a message in your wallet to
               verify that you are the owner of this account.
             </Text>
             {status === 'idle' && state.errorMessage ? (
               <Text
-                color="error"
+                color='error'
                 size={mobile ? '16' : '14'}
-                textAlign="center"
-                weight="bold"
+                textAlign='center'
+                weight='bold'
               >
                 {state.errorMessage}
               </Text>
@@ -187,10 +187,10 @@ export function SignIn({ onClose }: { onClose: () => void }) {
 
         <Box
           alignItems={!mobile ? 'center' : undefined}
-          display="flex"
-          flexDirection="column"
-          gap="8"
-          width="full"
+          display='flex'
+          flexDirection='column'
+          gap='8'
+          width='full'
         >
           <ActionButton
             disabled={
@@ -207,33 +207,33 @@ export function SignIn({ onClose }: { onClose: () => void }) {
             }
             onClick={signIn}
             size={mobile ? 'large' : 'medium'}
-            testId="auth-message-button"
+            testId='auth-message-button'
           />
           {mobile ? (
             <ActionButton
-              label="Cancel"
+              label='Cancel'
               onClick={cancel}
-              size="large"
-              type="secondary"
+              size='large'
+              type='secondary'
             />
           ) : (
             <Box
-              as="button"
-              borderRadius="full"
+              as='button'
+              borderRadius='full'
               className={touchableStyles({ active: 'shrink', hover: 'grow' })}
-              display="block"
+              display='block'
               onClick={cancel}
-              paddingX="10"
-              paddingY="5"
-              rel="noreferrer"
+              paddingX='10'
+              paddingY='5'
+              rel='noreferrer'
               style={{ willChange: 'transform' }}
-              target="_blank"
-              transition="default"
+              target='_blank'
+              transition='default'
             >
               <Text
-                color="closeButton"
+                color='closeButton'
                 size={mobile ? '16' : '14'}
-                weight="bold"
+                weight='bold'
               >
                 Cancel
               </Text>

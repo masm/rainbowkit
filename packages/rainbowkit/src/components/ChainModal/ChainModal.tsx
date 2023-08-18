@@ -43,20 +43,20 @@ export function ChainModal({ onClose, open }: ChainModalProps) {
   return (
     <Dialog onClose={onClose} open={open} titleId={titleId}>
       <DialogContent bottomSheetOnMobile>
-        <Box display="flex" flexDirection="column" gap="14">
+        <Box display='flex' flexDirection='column' gap='14'>
           <Box
-            display="flex"
-            flexDirection="row"
-            justifyContent="space-between"
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-between'
           >
-            {mobile && <Box width="30" />}
-            <Box paddingBottom="0" paddingLeft="8" paddingTop="4">
+            {mobile && <Box width='30' />}
+            <Box paddingBottom='0' paddingLeft='8' paddingTop='4'>
               <Text
-                as="h1"
-                color="modalText"
+                as='h1'
+                color='modalText'
                 id={titleId}
                 size={mobile ? '20' : '18'}
-                weight="heavy"
+                weight='heavy'
               >
                 Switch Networks
               </Text>
@@ -64,17 +64,17 @@ export function ChainModal({ onClose, open }: ChainModalProps) {
             <CloseButton onClose={onClose} />
           </Box>
           {unsupportedChain && (
-            <Box marginX="8" textAlign={mobile ? 'center' : 'left'}>
-              <Text color="modalTextSecondary" size="14" weight="medium">
+            <Box marginX='8' textAlign={mobile ? 'center' : 'left'}>
+              <Text color='modalTextSecondary' size='14' weight='medium'>
                 Wrong network detected, switch or disconnect to continue.
               </Text>
             </Box>
           )}
-          <Box display="flex" flexDirection="column" gap="4" padding="2">
+          <Box display='flex' flexDirection='column' gap='4' padding='2'>
             {switchNetwork ? (
               rainbowkitChains.map(
                 ({ iconBackground, iconUrl, id, name }, idx) => {
-                  const chain = chains.find(c => c.id === id);
+                  const chain = chains.find((c) => c.id === id);
                   if (!chain) return null;
 
                   const isCurrentChain = chain.id === activeChain?.id;
@@ -92,26 +92,26 @@ export function ChainModal({ onClose, open }: ChainModalProps) {
                         }
                         testId={`chain-option-${chain.id}`}
                       >
-                        <Box fontFamily="body" fontSize="16" fontWeight="bold">
+                        <Box fontFamily='body' fontSize='16' fontWeight='bold'>
                           <Box
-                            alignItems="center"
-                            display="flex"
-                            flexDirection="row"
-                            justifyContent="space-between"
+                            alignItems='center'
+                            display='flex'
+                            flexDirection='row'
+                            justifyContent='space-between'
                           >
                             <Box
-                              alignItems="center"
-                              display="flex"
-                              flexDirection="row"
-                              gap="4"
+                              alignItems='center'
+                              display='flex'
+                              flexDirection='row'
+                              gap='4'
                               height={chainIconSize}
                             >
                               {iconUrl && (
-                                <Box height="full" marginRight="8">
+                                <Box height='full' marginRight='8'>
                                   <AsyncImage
                                     alt={name ?? chain.name}
                                     background={iconBackground}
-                                    borderRadius="full"
+                                    borderRadius='full'
                                     height={chainIconSize}
                                     src={iconUrl}
                                     width={chainIconSize}
@@ -122,50 +122,50 @@ export function ChainModal({ onClose, open }: ChainModalProps) {
                             </Box>
                             {isCurrentChain && (
                               <Box
-                                alignItems="center"
-                                display="flex"
-                                flexDirection="row"
-                                marginRight="6"
+                                alignItems='center'
+                                display='flex'
+                                flexDirection='row'
+                                marginRight='6'
                               >
                                 <Text
-                                  color="accentColorForeground"
-                                  size="14"
-                                  weight="medium"
+                                  color='accentColorForeground'
+                                  size='14'
+                                  weight='medium'
                                 >
                                   Connected
                                 </Text>
                                 <Box
-                                  background="connectionIndicator"
-                                  borderColor="selectedOptionBorder"
-                                  borderRadius="full"
-                                  borderStyle="solid"
-                                  borderWidth="1"
-                                  height="8"
-                                  marginLeft="8"
-                                  width="8"
+                                  background='connectionIndicator'
+                                  borderColor='selectedOptionBorder'
+                                  borderRadius='full'
+                                  borderStyle='solid'
+                                  borderWidth='1'
+                                  height='8'
+                                  marginLeft='8'
+                                  width='8'
                                 />
                               </Box>
                             )}
                             {switching && (
                               <Box
-                                alignItems="center"
-                                display="flex"
-                                flexDirection="row"
-                                marginRight="6"
+                                alignItems='center'
+                                display='flex'
+                                flexDirection='row'
+                                marginRight='6'
                               >
                                 <Text
-                                  color="modalText"
-                                  size="14"
-                                  weight="medium"
+                                  color='modalText'
+                                  size='14'
+                                  weight='medium'
                                 >
                                   Confirm in Wallet
                                 </Text>
                                 <Box
-                                  background="standby"
-                                  borderRadius="full"
-                                  height="8"
-                                  marginLeft="8"
-                                  width="8"
+                                  background='standby'
+                                  borderRadius='full'
+                                  height='8'
+                                  marginLeft='8'
+                                  width='8'
                                 />
                               </Box>
                             )}
@@ -174,23 +174,23 @@ export function ChainModal({ onClose, open }: ChainModalProps) {
                       </MenuButton>
                       {mobile && idx < rainbowkitChains.length - 1 && (
                         <Box
-                          background="generalBorderDim"
-                          height="1"
-                          marginX="8"
+                          background='generalBorderDim'
+                          height='1'
+                          marginX='8'
                         />
                       )}
                     </Fragment>
                   );
-                }
+                },
               )
             ) : (
               <Box
-                background="generalBorder"
-                borderRadius="menuButton"
-                paddingX="18"
-                paddingY="12"
+                background='generalBorder'
+                borderRadius='menuButton'
+                paddingX='18'
+                paddingY='12'
               >
-                <Text color="modalText" size="14" weight="medium">
+                <Text color='modalText' size='14' weight='medium'>
                   Your wallet does not support switching networks from{' '}
                   {appName ?? 'this app'}. Try switching networks from within
                   your wallet instead.
@@ -199,36 +199,36 @@ export function ChainModal({ onClose, open }: ChainModalProps) {
             )}
             {unsupportedChain && (
               <>
-                <Box background="generalBorderDim" height="1" marginX="8" />
+                <Box background='generalBorderDim' height='1' marginX='8' />
                 <MenuButton
                   onClick={() => disconnect()}
-                  testId="chain-option-disconnect"
+                  testId='chain-option-disconnect'
                 >
                   <Box
-                    color="error"
-                    fontFamily="body"
-                    fontSize="16"
-                    fontWeight="bold"
+                    color='error'
+                    fontFamily='body'
+                    fontSize='16'
+                    fontWeight='bold'
                   >
                     <Box
-                      alignItems="center"
-                      display="flex"
-                      flexDirection="row"
-                      justifyContent="space-between"
+                      alignItems='center'
+                      display='flex'
+                      flexDirection='row'
+                      justifyContent='space-between'
                     >
                       <Box
-                        alignItems="center"
-                        display="flex"
-                        flexDirection="row"
-                        gap="4"
+                        alignItems='center'
+                        display='flex'
+                        flexDirection='row'
+                        gap='4'
                         height={chainIconSize}
                       >
                         <Box
-                          alignItems="center"
-                          color="error"
+                          alignItems='center'
+                          color='error'
                           height={chainIconSize}
-                          justifyContent="center"
-                          marginRight="8"
+                          justifyContent='center'
+                          marginRight='8'
                         >
                           <DisconnectSqIcon size={Number(chainIconSize)} />
                         </Box>

@@ -185,17 +185,17 @@ function Mesh(props) {
       ref.current.material.u_c1 = lerpRGB(
         ref.current.material.u_c1,
         props.u_c1,
-        props.transitionSpeed
+        props.transitionSpeed,
       );
       ref.current.material.u_c2 = lerpRGB(
         ref.current.material.u_c2,
         props.u_c2,
-        props.transitionSpeed
+        props.transitionSpeed,
       );
       ref.current.material.u_c3 = lerpRGB(
         ref.current.material.u_c3,
         props.u_c3,
-        props.transitionSpeed
+        props.transitionSpeed,
       );
     }
   });
@@ -207,9 +207,9 @@ function Mesh(props) {
       rotation={[0, 0, 80]}
       scale={5}
     >
-      <planeGeometry args={[400, 400, 400, 400]} attach="geometry" />
+      <planeGeometry args={[400, 400, 400, 400]} attach='geometry' />
       <gradient
-        attach="material"
+        attach='material'
         u_c1={[29, 100, 192]}
         u_c2={[47, 9, 148]}
         u_c3={[14, 116, 253]}

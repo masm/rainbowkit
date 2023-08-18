@@ -29,33 +29,33 @@ export function Header({
   return (
     <Box className={sticky ? header : undefined} {...props}>
       <Box className={row}>
-        <NextLink href="/" legacyBehavior>
+        <NextLink href='/' legacyBehavior>
           <Box
-            alt="Rainbow logo"
-            as="img"
+            alt='Rainbow logo'
+            as='img'
             className={logo}
-            marginRight="4"
-            src="/rainbow.svg"
+            marginRight='4'
+            src='/rainbow.svg'
             transform={{
               active: 'shrink',
               hover: 'grow',
             }}
-            transitionDuration="100"
-            transitionProperty="transform"
-            transitionTimingFunction="ease"
+            transitionDuration='100'
+            transitionProperty='transform'
+            transitionTimingFunction='ease'
           />
         </NextLink>
 
         <Box
           // eslint-disable-next-line sort-keys-fix/sort-keys-fix
           alignItems={{ xs: 'flex-start', sm: 'center' }}
-          display="flex"
+          display='flex'
           // eslint-disable-next-line sort-keys-fix/sort-keys-fix
           flexDirection={{ xs: 'column', sm: 'row' }}
           // eslint-disable-next-line sort-keys-fix/sort-keys-fix
           gap={{ xs: '1', sm: '4' }}
         >
-          <Text style={{ lineHeight: 1 }} variant="title3" weight="bold">
+          <Text style={{ lineHeight: 1 }} variant='title3' weight='bold'>
             RainbowKit
           </Text>
           <Badge>{RAINBOWKIT_VERSION}</Badge>
@@ -78,12 +78,12 @@ export function Header({
       </Box>
       {docsMobileMenuRef && (
         <Box
-          borderBottomWidth="1"
-          borderColor="separator"
+          borderBottomWidth='1'
+          borderColor='separator'
           display={{ lg: 'none' }}
           // eslint-disable-next-line sort-keys-fix/sort-keys-fix
           paddingX={{ xs: '6', sm: '6', md: '10', lg: '10' }}
-          paddingY="4"
+          paddingY='4'
           ref={docsMobileMenuRef}
         />
       )}

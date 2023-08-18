@@ -13,7 +13,7 @@ import { useThemeRootProps } from '../RainbowKitProvider/RainbowKitProvider';
 import * as styles from './Dialog.css';
 import { FocusTrap } from './FocusTrap';
 
-const stopPropagation: MouseEventHandler<unknown> = event =>
+const stopPropagation: MouseEventHandler<unknown> = (event) =>
   event.stopPropagation();
 
 interface DialogProps {
@@ -37,7 +37,7 @@ export function Dialog({ children, onClose, open, titleId }: DialogProps) {
   const [bodyScrollable, setBodyScrollable] = useState(true);
   useEffect(() => {
     setBodyScrollable(
-      getComputedStyle(window.document.body).overflow !== 'hidden'
+      getComputedStyle(window.document.body).overflow !== 'hidden',
     );
   }, []);
 
@@ -58,20 +58,20 @@ export function Dialog({ children, onClose, open, titleId }: DialogProps) {
                   aria-modal
                   className={styles.overlay}
                   onClick={handleBackdropClick}
-                  position="fixed"
-                  role="dialog"
+                  position='fixed'
+                  role='dialog'
                 >
                   <FocusTrap
                     className={styles.content}
                     onClick={stopPropagation}
-                    role="document"
+                    role='document'
                   >
                     {children}
                   </FocusTrap>
                 </Box>
               </Box>
             </RemoveScroll>,
-            document.body
+            document.body,
           )
         : null}
     </>

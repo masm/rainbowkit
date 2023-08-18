@@ -30,7 +30,7 @@ export function AsyncImage({
   const isRemoteImage = src && /^http/.test(src);
   const [isRemoteImageLoaded, setRemoteImageLoaded] = useReducer(
     () => true,
-    false
+    false,
   );
 
   return (
@@ -39,9 +39,9 @@ export function AsyncImage({
       borderRadius={borderRadius}
       boxShadow={boxShadow}
       height={typeof height === 'string' ? height : undefined}
-      overflow="hidden"
-      position="relative"
-      role="img"
+      overflow='hidden'
+      position='relative'
+      role='img'
       style={{
         background,
         height: typeof height === 'number' ? height : undefined,
@@ -53,15 +53,15 @@ export function AsyncImage({
         {...(isRemoteImage
           ? {
               'aria-hidden': true,
-              'as': 'img',
-              'onLoad': setRemoteImageLoaded,
-              'src': src,
+              as: 'img',
+              onLoad: setRemoteImageLoaded,
+              src: src,
             }
           : {
               backgroundSize: 'cover',
             })}
-        height="full"
-        position="absolute"
+        height='full'
+        position='absolute'
         style={{
           touchCallout: 'none',
           transition: 'opacity .15s linear',
@@ -76,7 +76,7 @@ export function AsyncImage({
                 opacity: src ? 1 : 0,
               }),
         }}
-        width="full"
+        width='full'
       />
       {borderColor ? (
         <Box
@@ -84,11 +84,11 @@ export function AsyncImage({
             ? { style: { borderColor: borderColor.custom } }
             : { borderColor })}
           borderRadius={borderRadius}
-          borderStyle="solid"
-          borderWidth="1"
-          height="full"
-          position="relative"
-          width="full"
+          borderStyle='solid'
+          borderWidth='1'
+          height='full'
+          position='relative'
+          width='full'
         />
       ) : null}
     </Box>

@@ -85,7 +85,7 @@ export function RainbowKitProvider({
 
   if (typeof theme === 'function') {
     throw new Error(
-      'A theme function was provided to the "theme" prop instead of a theme object. You must execute this function to get the resulting theme object.'
+      'A theme function was provided to the "theme" prop instead of a theme object. You must execute this function to get the resulting theme object.',
     );
   }
 
@@ -126,13 +126,15 @@ export function RainbowKitProvider({
                               // characters that terminate values / HTML tags.
                               __html: [
                                 `${selector}{${cssStringFromTheme(
-                                  'lightMode' in theme ? theme.lightMode : theme
+                                  'lightMode' in theme
+                                    ? theme.lightMode
+                                    : theme,
                                 )}}`,
 
                                 'darkMode' in theme
                                   ? `@media(prefers-color-scheme:dark){${selector}{${cssStringFromTheme(
                                       theme.darkMode,
-                                      { extends: theme.lightMode }
+                                      { extends: theme.lightMode },
                                     )}}}`
                                   : null,
                               ].join(''),

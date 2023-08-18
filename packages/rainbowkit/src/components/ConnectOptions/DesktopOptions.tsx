@@ -61,10 +61,10 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
   const { disclaimer: Disclaimer } = useContext(AppContext);
 
   const wallets = useWalletConnectors()
-    .filter(wallet => wallet.ready || !!wallet.extensionDownloadUrl)
+    .filter((wallet) => wallet.ready || !!wallet.extensionDownloadUrl)
     .sort((a, b) => a.groupIndex - b.groupIndex);
 
-  const groupedWallets = groupBy(wallets, wallet => wallet.groupName);
+  const groupedWallets = groupBy(wallets, (wallet) => wallet.groupName);
 
   const connectToWallet = (wallet: WalletConnector) => {
     setConnectionError(false);
@@ -99,7 +99,7 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
         if (callbackFired) return;
         callbackFired = true;
 
-        const sWallet = wallets.find(w => wallet.id === w.id);
+        const sWallet = wallets.find((w) => wallet.id === w.id);
         const uri = await sWallet?.qrCode?.getUri();
         setQrCodeUri(uri);
 
@@ -110,7 +110,7 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
             setSelectedWallet(sWallet);
             changeWalletStep(WalletStep.Connect);
           },
-          uri ? 0 : 50
+          uri ? 0 : 50,
         );
 
         // If the WalletConnect request is rejected, restart the wallet
@@ -135,14 +135,14 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
       changeWalletStep(
         wallet?.extensionDownloadUrl
           ? WalletStep.DownloadOptions
-          : WalletStep.Connect
+          : WalletStep.Connect,
       );
     }
   };
 
   const getWalletDownload = (id: string) => {
     setSelectedOptionId(id);
-    const sWallet = wallets.find(w => id === w.id);
+    const sWallet = wallets.find((w) => id === w.id);
     const isMobile = sWallet?.downloadUrls?.qrCode;
     const isExtension = !!sWallet?.extensionDownloadUrl;
     setSelectedWallet(sWallet);
@@ -160,10 +160,7 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
     setSelectedWallet(undefined);
     setQrCodeUri(undefined);
   };
-  const changeWalletStep = (
-    newWalletStep: WalletStep,
-    isBack: boolean = false
-  ) => {
+  const changeWalletStep = (newWalletStep: WalletStep, isBack = false) => {
     if (
       isBack &&
       newWalletStep === WalletStep.Get &&
@@ -178,7 +175,7 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
     setWalletStep(newWalletStep);
   };
   const [initialWalletStep, setInitialWalletStep] = useState<WalletStep>(
-    WalletStep.None
+    WalletStep.None,
   );
   const [walletStep, setWalletStep] = useState<WalletStep>(WalletStep.None);
 
@@ -300,68 +297,68 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
   }
   return (
     <Box
-      display="flex"
-      flexDirection="row"
+      display='flex'
+      flexDirection='row'
       style={{ maxHeight: compactModeEnabled ? 468 : 504 }}
     >
       {(compactModeEnabled ? walletStep === WalletStep.None : true) && (
         <Box
           className={compactModeEnabled ? sidebarCompactMode : sidebar}
-          display="flex"
-          flexDirection="column"
-          marginTop="16"
+          display='flex'
+          flexDirection='column'
+          marginTop='16'
         >
-          <Box display="flex" justifyContent="space-between">
+          <Box display='flex' justifyContent='space-between'>
             {compactModeEnabled && Disclaimer && (
-              <Box marginLeft="16" width="28">
+              <Box marginLeft='16' width='28'>
                 <InfoButton
                   onClick={() => changeWalletStep(WalletStep.LearnCompact)}
                 />
               </Box>
             )}
             {compactModeEnabled && !Disclaimer && (
-              <Box marginLeft="16" width="28" />
+              <Box marginLeft='16' width='28' />
             )}
             <Box
               marginLeft={compactModeEnabled ? '0' : '6'}
-              paddingBottom="8"
-              paddingTop="2"
-              paddingX="18"
+              paddingBottom='8'
+              paddingTop='2'
+              paddingX='18'
             >
               <Text
-                as="h1"
-                color="modalText"
+                as='h1'
+                color='modalText'
                 id={titleId}
-                size="18"
-                weight="heavy"
+                size='18'
+                weight='heavy'
               >
                 Connect a Wallet
               </Text>
             </Box>
             {compactModeEnabled && (
-              <Box marginRight="16">
+              <Box marginRight='16'>
                 <CloseButton onClose={onClose} />
               </Box>
             )}
           </Box>
-          <Box className={ScrollClassName} paddingBottom="18">
+          <Box className={ScrollClassName} paddingBottom='18'>
             {Object.entries(groupedWallets).map(
               ([groupName, wallets], index) =>
                 wallets.length > 0 && (
                   <Fragment key={index}>
                     {groupName ? (
-                      <Box marginBottom="8" marginTop="16" marginX="6">
+                      <Box marginBottom='8' marginTop='16' marginX='6'>
                         <Text
-                          color="modalTextSecondary"
-                          size="14"
-                          weight="bold"
+                          color='modalTextSecondary'
+                          size='14'
+                          weight='bold'
                         >
                           {groupName}
                         </Text>
                       </Box>
                     ) : null}
-                    <Box display="flex" flexDirection="column" gap="4">
-                      {wallets.map(wallet => {
+                    <Box display='flex' flexDirection='column' gap='4'>
+                      {wallets.map((wallet) => {
                         return (
                           <ModalSelection
                             currentlySelected={wallet.id === selectedOptionId}
@@ -378,48 +375,48 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
                       })}
                     </Box>
                   </Fragment>
-                )
+                ),
             )}
           </Box>
           {compactModeEnabled && (
             <>
-              <Box background="generalBorder" height="1" marginTop="-1" />
+              <Box background='generalBorder' height='1' marginTop='-1' />
               {Disclaimer ? (
-                <Box paddingX="24" paddingY="16" textAlign="center">
+                <Box paddingX='24' paddingY='16' textAlign='center'>
                   <Disclaimer Link={DisclaimerLink} Text={DisclaimerText} />
                 </Box>
               ) : (
                 <Box
-                  alignItems="center"
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingX="24"
-                  paddingY="16"
+                  alignItems='center'
+                  display='flex'
+                  justifyContent='space-between'
+                  paddingX='24'
+                  paddingY='16'
                 >
-                  <Box paddingY="4">
-                    <Text color="modalTextSecondary" size="14" weight="medium">
+                  <Box paddingY='4'>
+                    <Text color='modalTextSecondary' size='14' weight='medium'>
                       New to Ethereum wallets?
                     </Text>
                   </Box>
                   <Box
-                    alignItems="center"
-                    display="flex"
-                    flexDirection="row"
-                    gap="4"
-                    justifyContent="center"
+                    alignItems='center'
+                    display='flex'
+                    flexDirection='row'
+                    gap='4'
+                    justifyContent='center'
                   >
                     <Box
                       className={touchableStyles({
                         active: 'shrink',
                         hover: 'grow',
                       })}
-                      cursor="pointer"
+                      cursor='pointer'
                       onClick={() => changeWalletStep(WalletStep.LearnCompact)}
-                      paddingY="4"
+                      paddingY='4'
                       style={{ willChange: 'transform' }}
-                      transition="default"
+                      transition='default'
                     >
-                      <Text color="accentColor" size="14" weight="bold">
+                      <Text color='accentColor' size='14' weight='bold'>
                         Learn More
                       </Text>
                     </Box>
@@ -433,59 +430,59 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
       {(compactModeEnabled ? walletStep !== WalletStep.None : true) && (
         <>
           {!compactModeEnabled && (
-            <Box background="generalBorder" minWidth="1" width="1" />
+            <Box background='generalBorder' minWidth='1' width='1' />
           )}
           <Box
-            display="flex"
-            flexDirection="column"
-            margin="16"
+            display='flex'
+            flexDirection='column'
+            margin='16'
             style={{ flexGrow: 1 }}
           >
             <Box
-              alignItems="center"
-              display="flex"
-              justifyContent="space-between"
-              marginBottom="12"
+              alignItems='center'
+              display='flex'
+              justifyContent='space-between'
+              marginBottom='12'
             >
-              <Box width="28">
+              <Box width='28'>
                 {headerBackButtonLink && (
                   <Box
-                    as="button"
+                    as='button'
                     className={touchableStyles({
                       active: 'shrinkSm',
                       hover: 'growLg',
                     })}
-                    color="accentColor"
+                    color='accentColor'
                     onClick={() => {
                       headerBackButtonLink &&
                         changeWalletStep(headerBackButtonLink, true);
                       headerBackButtonCallback?.();
                     }}
-                    paddingX="8"
-                    paddingY="4"
+                    paddingX='8'
+                    paddingY='4'
                     style={{
                       boxSizing: 'content-box',
                       height: 17,
                       willChange: 'transform',
                     }}
-                    transition="default"
-                    type="button"
+                    transition='default'
+                    type='button'
                   >
                     <BackIcon />
                   </Box>
                 )}
               </Box>
               <Box
-                display="flex"
-                justifyContent="center"
+                display='flex'
+                justifyContent='center'
                 style={{ flexGrow: 1 }}
               >
                 {headerLabel && (
                   <Text
-                    color="modalText"
-                    size="18"
-                    textAlign="center"
-                    weight="heavy"
+                    color='modalText'
+                    size='18'
+                    textAlign='center'
+                    weight='heavy'
                   >
                     {headerLabel}
                   </Text>
@@ -494,18 +491,18 @@ export function DesktopOptions({ onClose }: { onClose: () => void }) {
               <CloseButton onClose={onClose} />
             </Box>
             <Box
-              display="flex"
-              flexDirection="column"
+              display='flex'
+              flexDirection='column'
               style={{ minHeight: compactModeEnabled ? 396 : 432 }}
             >
               <Box
-                alignItems="center"
-                display="flex"
-                flexDirection="column"
-                gap="6"
-                height="full"
-                justifyContent="center"
-                marginX="8"
+                alignItems='center'
+                display='flex'
+                flexDirection='column'
+                gap='6'
+                height='full'
+                justifyContent='center'
+                marginX='8'
               >
                 {walletContent}
               </Box>

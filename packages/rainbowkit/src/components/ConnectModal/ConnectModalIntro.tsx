@@ -21,51 +21,51 @@ export function ConnectModalIntro({
   return (
     <>
       <Box
-        alignItems="center"
-        color="accentColor"
-        display="flex"
-        flexDirection="column"
-        height="full"
-        justifyContent="space-around"
+        alignItems='center'
+        color='accentColor'
+        display='flex'
+        flexDirection='column'
+        height='full'
+        justifyContent='space-around'
       >
-        <Box marginBottom="10">
+        <Box marginBottom='10'>
           {!compactModeEnabled && (
-            <Text color="modalText" size="18" weight="heavy">
+            <Text color='modalText' size='18' weight='heavy'>
               What is a Wallet?
             </Text>
           )}
         </Box>
         <Box
-          display="flex"
-          flexDirection="column"
-          gap="32"
-          justifyContent="center"
-          marginY="20"
+          display='flex'
+          flexDirection='column'
+          gap='32'
+          justifyContent='center'
+          marginY='20'
           style={{ maxWidth: 312 }}
         >
-          <Box alignItems="center" display="flex" flexDirection="row" gap="16">
-            <Box borderRadius="6" height="48" minWidth="48" width="48">
+          <Box alignItems='center' display='flex' flexDirection='row' gap='16'>
+            <Box borderRadius='6' height='48' minWidth='48' width='48'>
               <AssetsIcon />
             </Box>
-            <Box display="flex" flexDirection="column" gap="4">
-              <Text color="modalText" size="14" weight="bold">
+            <Box display='flex' flexDirection='column' gap='4'>
+              <Text color='modalText' size='14' weight='bold'>
                 A Home for your Digital Assets
               </Text>
-              <Text color="modalTextSecondary" size="14" weight="medium">
+              <Text color='modalTextSecondary' size='14' weight='medium'>
                 Wallets are used to send, receive, store, and display digital
                 assets like Ethereum and NFTs.
               </Text>
             </Box>
           </Box>
-          <Box alignItems="center" display="flex" flexDirection="row" gap="16">
-            <Box borderRadius="6" height="48" minWidth="48" width="48">
+          <Box alignItems='center' display='flex' flexDirection='row' gap='16'>
+            <Box borderRadius='6' height='48' minWidth='48' width='48'>
               <LoginIcon />
             </Box>
-            <Box display="flex" flexDirection="column" gap="4">
-              <Text color="modalText" size="14" weight="bold">
+            <Box display='flex' flexDirection='column' gap='4'>
+              <Text color='modalText' size='14' weight='bold'>
                 A New Way to Log In
               </Text>
-              <Text color="modalTextSecondary" size="14" weight="medium">
+              <Text color='modalTextSecondary' size='14' weight='medium'>
                 Instead of creating new accounts and passwords on every website,
                 just connect your wallet.
               </Text>
@@ -73,33 +73,33 @@ export function ConnectModalIntro({
           </Box>
         </Box>
         <Box
-          alignItems="center"
-          display="flex"
-          flexDirection="column"
-          gap="12"
-          justifyContent="center"
-          margin="10"
+          alignItems='center'
+          display='flex'
+          flexDirection='column'
+          gap='12'
+          justifyContent='center'
+          margin='10'
         >
-          <ActionButton label="Get a Wallet" onClick={getWallet} />
+          <ActionButton label='Get a Wallet' onClick={getWallet} />
           <Box
-            as="a"
+            as='a'
             className={touchableStyles({ active: 'shrink', hover: 'grow' })}
-            display="block"
+            display='block'
             href={learnMoreUrl}
-            paddingX="12"
-            paddingY="4"
-            rel="noreferrer"
+            paddingX='12'
+            paddingY='4'
+            rel='noreferrer'
             style={{ willChange: 'transform' }}
-            target="_blank"
-            transition="default"
+            target='_blank'
+            transition='default'
           >
-            <Text color="accentColor" size="14" weight="bold">
+            <Text color='accentColor' size='14' weight='bold'>
               Learn More
             </Text>
           </Box>
         </Box>
         {Disclaimer && !compactModeEnabled && (
-          <Box marginBottom="8" marginTop="12" textAlign="center">
+          <Box marginBottom='8' marginTop='12' textAlign='center'>
             <Disclaimer Link={DisclaimerLink} Text={DisclaimerText} />
           </Box>
         )}

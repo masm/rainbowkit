@@ -42,10 +42,10 @@ function WalletButton({
 
   return (
     <Box
-      as="button"
+      as='button'
       color={ready ? 'modalText' : 'modalTextSecondary'}
       disabled={!ready}
-      fontFamily="body"
+      fontFamily='body'
       key={id}
       onClick={useCallback(async () => {
         if (id === 'walletConnect') onClose?.();
@@ -100,41 +100,41 @@ function WalletButton({
       ref={coolModeRef}
       style={{ overflow: 'visible', textAlign: 'center' }}
       testId={`wallet-option-${id}`}
-      type="button"
-      width="full"
+      type='button'
+      width='full'
     >
       <Box
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
+        alignItems='center'
+        display='flex'
+        flexDirection='column'
+        justifyContent='center'
       >
-        <Box paddingBottom="8" paddingTop="10">
+        <Box paddingBottom='8' paddingTop='10'>
           <AsyncImage
             background={iconBackground}
-            borderRadius="13"
-            boxShadow="walletLogo"
-            height="60"
+            borderRadius='13'
+            boxShadow='walletLogo'
+            height='60'
             src={iconUrl}
-            width="60"
+            width='60'
           />
         </Box>
-        <Box display="flex" flexDirection="column" textAlign="center">
+        <Box display='flex' flexDirection='column' textAlign='center'>
           <Text
-            as="h2"
+            as='h2'
             color={wallet.ready ? 'modalText' : 'modalTextSecondary'}
-            size="13"
-            weight="medium"
+            size='13'
+            weight='medium'
           >
             {/* Fix button text clipping in Safari: https://stackoverflow.com/questions/41100273/overflowing-button-text-is-being-clipped-in-safari */}
-            <Box as="span" position="relative">
+            <Box as='span' position='relative'>
               {shortName ?? name}
               {!wallet.ready && ' (unsupported)'}
             </Box>
           </Text>
 
           {wallet.recent && (
-            <Text color="accentColor" size="12" weight="medium">
+            <Text color='accentColor' size='12' weight='medium'>
               Recent
             </Text>
           )}
@@ -160,7 +160,7 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
   let headerBackButtonLink: MobileWalletStep | null = null;
 
   const [walletStep, setWalletStep] = useState<MobileWalletStep>(
-    MobileWalletStep.Connect
+    MobileWalletStep.Connect,
   );
 
   const ios = isIOS();
@@ -172,19 +172,19 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
       walletContent = (
         <Box>
           <Box
-            background="profileForeground"
+            background='profileForeground'
             className={styles.scroll}
-            display="flex"
-            paddingBottom="20"
-            paddingTop="6"
+            display='flex'
+            paddingBottom='20'
+            paddingTop='6'
           >
-            <Box display="flex" style={{ margin: '0 auto' }}>
+            <Box display='flex' style={{ margin: '0 auto' }}>
               {wallets
-                .filter(wallet => wallet.ready)
-                .map(wallet => {
+                .filter((wallet) => wallet.ready)
+                .map((wallet) => {
                   return (
-                    <Box key={wallet.id} paddingX="20">
-                      <Box width="60">
+                    <Box key={wallet.id} paddingX='20'>
+                      <Box width='60'>
                         <WalletButton onClose={onClose} wallet={wallet} />
                       </Box>
                     </Box>
@@ -194,30 +194,30 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
           </Box>
 
           <Box
-            background="generalBorder"
-            height="1"
-            marginBottom="32"
-            marginTop="-1"
+            background='generalBorder'
+            height='1'
+            marginBottom='32'
+            marginTop='-1'
           />
 
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="column"
-            gap="32"
-            paddingX="32"
+            alignItems='center'
+            display='flex'
+            flexDirection='column'
+            gap='32'
+            paddingX='32'
             style={{ textAlign: 'center' }}
           >
             <Box
-              display="flex"
-              flexDirection="column"
-              gap="8"
-              textAlign="center"
+              display='flex'
+              flexDirection='column'
+              gap='8'
+              textAlign='center'
             >
-              <Text color="modalText" size="16" weight="bold">
+              <Text color='modalText' size='16' weight='bold'>
                 What is a Wallet?
               </Text>
-              <Text color="modalTextSecondary" size="16">
+              <Text color='modalTextSecondary' size='16'>
                 A wallet is used to send, receive, store, and display digital
                 assets. It&rsquo;s also a new way to log in, without needing to
                 create new accounts and passwords on&nbsp;every&nbsp;website.
@@ -225,24 +225,24 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
             </Box>
           </Box>
 
-          <Box paddingTop="32" paddingX="20">
-            <Box display="flex" gap="14" justifyContent="center">
+          <Box paddingTop='32' paddingX='20'>
+            <Box display='flex' gap='14' justifyContent='center'>
               <ActionButton
-                label="Get a Wallet"
+                label='Get a Wallet'
                 onClick={() => setWalletStep(MobileWalletStep.Get)}
-                size="large"
-                type="secondary"
+                size='large'
+                type='secondary'
               />
               <ActionButton
                 href={learnMoreUrl}
-                label="Learn More"
-                size="large"
-                type="secondary"
+                label='Learn More'
+                size='large'
+                type='secondary'
               />
             </Box>
           </Box>
           {Disclaimer && (
-            <Box marginTop="28" marginX="32" textAlign="center">
+            <Box marginTop='28' marginX='32' textAlign='center'>
               <Disclaimer Link={DisclaimerLink} Text={DisclaimerText} />
             </Box>
           )}
@@ -256,24 +256,24 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
 
       const mobileWallets = wallets
         ?.filter(
-          wallet =>
+          (wallet) =>
             wallet.downloadUrls?.ios ||
             wallet.downloadUrls?.android ||
-            wallet.downloadUrls?.mobile
+            wallet.downloadUrls?.mobile,
         )
         ?.splice(0, 3);
 
       walletContent = (
         <Box>
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="column"
-            height="full"
-            marginBottom="36"
-            marginTop="5"
-            paddingTop="12"
-            width="full"
+            alignItems='center'
+            display='flex'
+            flexDirection='column'
+            height='full'
+            marginBottom='36'
+            marginTop='5'
+            paddingTop='12'
+            width='full'
           >
             {mobileWallets.map((wallet, index) => {
               const { downloadUrls, iconBackground, iconUrl, name } = wallet;
@@ -288,26 +288,26 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
 
               return (
                 <Box
-                  display="flex"
-                  gap="16"
+                  display='flex'
+                  gap='16'
                   key={wallet.id}
-                  paddingX="20"
-                  width="full"
+                  paddingX='20'
+                  width='full'
                 >
                   <Box style={{ minHeight: 48, minWidth: 48 }}>
                     <AsyncImage
                       background={iconBackground}
-                      borderColor="generalBorder"
-                      borderRadius="10"
-                      height="48"
+                      borderColor='generalBorder'
+                      borderRadius='10'
+                      height='48'
                       src={iconUrl}
-                      width="48"
+                      width='48'
                     />
                   </Box>
-                  <Box display="flex" flexDirection="column" width="full">
-                    <Box alignItems="center" display="flex" height="48">
-                      <Box width="full">
-                        <Text color="modalText" size="18" weight="bold">
+                  <Box display='flex' flexDirection='column' width='full'>
+                    <Box alignItems='center' display='flex' height='48'>
+                      <Box width='full'>
+                        <Text color='modalText' size='18' weight='bold'>
                           {name}
                         </Text>
                       </Box>
@@ -316,17 +316,17 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
                           (ios ? downloadUrls?.ios : downloadUrls?.android) ||
                           downloadUrls?.mobile
                         }
-                        label="GET"
-                        size="small"
-                        type="secondary"
+                        label='GET'
+                        size='small'
+                        type='secondary'
                       />
                     </Box>
                     {index < mobileWallets.length - 1 && (
                       <Box
-                        background="generalBorderDim"
-                        height="1"
-                        marginY="10"
-                        width="full"
+                        background='generalBorderDim'
+                        height='1'
+                        marginY='10'
+                        width='full'
                       />
                     )}
                   </Box>
@@ -337,23 +337,23 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
           {/* spacer */}
           <Box style={{ marginBottom: '42px' }} />
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="column"
-            gap="36"
-            paddingX="36"
+            alignItems='center'
+            display='flex'
+            flexDirection='column'
+            gap='36'
+            paddingX='36'
             style={{ textAlign: 'center' }}
           >
             <Box
-              display="flex"
-              flexDirection="column"
-              gap="12"
-              textAlign="center"
+              display='flex'
+              flexDirection='column'
+              gap='12'
+              textAlign='center'
             >
-              <Text color="modalText" size="16" weight="bold">
+              <Text color='modalText' size='16' weight='bold'>
                 Not what you&rsquo;re looking for?
               </Text>
-              <Text color="modalTextSecondary" size="16">
+              <Text color='modalTextSecondary' size='16'>
                 Select a wallet on the main screen to get started with a
                 different wallet provider.
               </Text>
@@ -366,28 +366,28 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
   }
 
   return (
-    <Box display="flex" flexDirection="column" paddingBottom="36">
+    <Box display='flex' flexDirection='column' paddingBottom='36'>
       {/* header section */}
       <Box
         background={
           headerBackgroundContrast ? 'profileForeground' : 'modalBackground'
         }
-        display="flex"
-        flexDirection="column"
-        paddingBottom="4"
-        paddingTop="14"
+        display='flex'
+        flexDirection='column'
+        paddingBottom='4'
+        paddingTop='14'
       >
         <Box
-          display="flex"
-          justifyContent="center"
-          paddingBottom="6"
-          paddingX="20"
-          position="relative"
+          display='flex'
+          justifyContent='center'
+          paddingBottom='6'
+          paddingX='20'
+          position='relative'
         >
           {headerBackButtonLink && (
             <Box
-              display="flex"
-              position="absolute"
+              display='flex'
+              position='absolute'
               style={{
                 left: 0,
                 marginBottom: -20,
@@ -395,46 +395,46 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
               }}
             >
               <Box
-                alignItems="center"
-                as="button"
+                alignItems='center'
+                as='button'
                 className={touchableStyles({
                   active: 'shrinkSm',
                   hover: 'growLg',
                 })}
-                color="accentColor"
-                display="flex"
-                marginLeft="4"
-                marginTop="20"
+                color='accentColor'
+                display='flex'
+                marginLeft='4'
+                marginTop='20'
                 onClick={() => setWalletStep(headerBackButtonLink!)}
-                padding="16"
+                padding='16'
                 style={{ height: 17, willChange: 'transform' }}
-                transition="default"
-                type="button"
+                transition='default'
+                type='button'
               >
                 <BackIcon />
               </Box>
             </Box>
           )}
 
-          <Box marginTop="4" textAlign="center" width="full">
+          <Box marginTop='4' textAlign='center' width='full'>
             <Text
-              as="h1"
-              color="modalText"
+              as='h1'
+              color='modalText'
               id={titleId}
-              size="20"
-              weight="bold"
+              size='20'
+              weight='bold'
             >
               {headerLabel}
             </Text>
           </Box>
 
           <Box
-            alignItems="center"
-            display="flex"
-            height="32"
-            paddingRight="14"
-            position="absolute"
-            right="0"
+            alignItems='center'
+            display='flex'
+            height='32'
+            paddingRight='14'
+            position='absolute'
+            right='0'
           >
             <Box
               style={{ marginBottom: -20, marginTop: -20 }} // Vertical bleed
@@ -444,7 +444,7 @@ export function MobileOptions({ onClose }: { onClose: () => void }) {
           </Box>
         </Box>
       </Box>
-      <Box display="flex" flexDirection="column">
+      <Box display='flex' flexDirection='column'>
         {walletContent}
       </Box>
     </Box>

@@ -82,7 +82,7 @@ export function RainbowKitSiweNextAuthProvider({
           return response?.ok ?? false;
         },
       }),
-    [getSiweMessageOptions]
+    [getSiweMessageOptions],
   );
 
   return (

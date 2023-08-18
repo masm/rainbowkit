@@ -20,29 +20,29 @@ export const MenuButton = React.forwardRef(
       testId,
       ...urlProps
     }: Props,
-    ref: React.Ref<HTMLElement>
+    ref: React.Ref<HTMLElement>,
   ) => {
     const mobile = isMobile();
     return (
       <Box
-        as="button"
-        borderRadius="menuButton"
+        as='button'
+        borderRadius='menuButton'
         disabled={currentlySelected}
-        display="flex"
+        display='flex'
         onClick={onClick}
         ref={ref}
         testId={testId}
-        type="button"
+        type='button'
       >
         <Box
-          borderRadius="menuButton"
+          borderRadius='menuButton'
           className={[
             mobile ? styles.unsetBackgroundOnHover : undefined,
             !currentlySelected && touchableStyles({ active: 'shrink' }),
           ]}
           padding={mobile ? '8' : '6'}
-          transition="default"
-          width="full"
+          transition='default'
+          width='full'
           {...(currentlySelected
             ? {
                 background: 'accentColor',
@@ -63,7 +63,7 @@ export const MenuButton = React.forwardRef(
         </Box>
       </Box>
     );
-  }
+  },
 );
 
 MenuButton.displayName = 'MenuButton';

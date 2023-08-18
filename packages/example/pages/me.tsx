@@ -33,11 +33,11 @@ const Me = ({ address }: MeProps) => {
           }}
         >
           <iframe
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            frameBorder="0"
-            height="480"
-            src="https://www.youtube.com/embed/zLhoDB-ORLQ?rel=0"
+            frameBorder='0'
+            height='480'
+            src='https://www.youtube.com/embed/zLhoDB-ORLQ?rel=0'
             style={{
               height: '100%',
               left: 0,
@@ -45,8 +45,8 @@ const Me = ({ address }: MeProps) => {
               top: 0,
               width: '100%',
             }}
-            title="Oh hai mark"
-            width="853"
+            title='Oh hai mark'
+            width='853'
           />
         </div>
       )}

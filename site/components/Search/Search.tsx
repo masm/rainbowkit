@@ -41,9 +41,9 @@ export function SearchProvider({ children }) {
     <>
       <Head>
         <link
-          crossOrigin="anonymous"
+          crossOrigin='anonymous'
           href={`https://${APP_ID}-dsn.algolia.net`}
-          rel="preconnect"
+          rel='preconnect'
         />
       </Head>
       <SearchContext.Provider
@@ -70,8 +70,8 @@ export function SearchProvider({ children }) {
               },
             }}
             onClose={onClose}
-            placeholder="Search documentation"
-            transformItems={items => {
+            placeholder='Search documentation'
+            transformItems={(items) => {
               return items.map((item, index) => {
                 const a = document.createElement('a');
                 a.href = item.url;
@@ -84,7 +84,7 @@ export function SearchProvider({ children }) {
                 if (item.hierarchy?.lvl0) {
                   item.hierarchy.lvl0 = item.hierarchy.lvl0.replace(
                     /&amp;/g,
-                    '&'
+                    '&',
                   );
                 }
 
@@ -92,7 +92,7 @@ export function SearchProvider({ children }) {
                   item._highlightResult.hierarchy.lvl0.value =
                     item._highlightResult.hierarchy.lvl0.value.replace(
                       /&amp;/g,
-                      '&'
+                      '&',
                     );
                 }
 
@@ -113,7 +113,7 @@ export function SearchProvider({ children }) {
               });
             }}
           />,
-          document.body
+          document.body,
         )}
     </>
   );
@@ -147,7 +147,7 @@ export function SearchButton({ children, ...props }: SearchButtonProps) {
   const [key] = useActionKey();
 
   return (
-    <Box as="button" onClick={onOpen} {...props}>
+    <Box as='button' onClick={onOpen} {...props}>
       {children(key)}
     </Box>
   );

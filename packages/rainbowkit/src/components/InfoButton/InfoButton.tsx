@@ -9,28 +9,28 @@ export const InfoButton = ({
   onClick,
 }: {
   'aria-label'?: string;
-  'onClick': () => void;
+  onClick: () => void;
 }) => {
   const mobile = isMobile();
   return (
     <Box
-      alignItems="center"
+      alignItems='center'
       aria-label={ariaLabel}
-      as="button"
-      background="closeButtonBackground"
-      borderColor="actionButtonBorder"
-      borderRadius="full"
-      borderStyle="solid"
+      as='button'
+      background='closeButtonBackground'
+      borderColor='actionButtonBorder'
+      borderRadius='full'
+      borderStyle='solid'
       borderWidth={mobile ? '0' : '1'}
       className={touchableStyles({ active: 'shrinkSm', hover: 'growLg' })}
-      color="closeButton"
-      display="flex"
+      color='closeButton'
+      display='flex'
       height={mobile ? '30' : '28'}
-      justifyContent="center"
+      justifyContent='center'
       onClick={onClick}
       style={{ willChange: 'transform' }}
-      transition="default"
-      type="button"
+      transition='default'
+      type='button'
       width={mobile ? '30' : '28'}
     >
       <InfoIcon />

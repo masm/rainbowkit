@@ -29,34 +29,34 @@ export function ProfileDetailsAction({
         base: 'profileAction',
         ...(!mobile ? { hover: 'profileActionHover' } : {}),
       }}
-      borderRadius="menuButton"
-      boxShadow="profileDetailsAction"
+      borderRadius='menuButton'
+      boxShadow='profileDetailsAction'
       className={touchableStyles({
         active: 'shrinkSm',
         hover: !mobile ? 'grow' : undefined,
       })}
-      display="flex"
+      display='flex'
       onClick={action}
       padding={mobile ? '6' : '8'}
       style={{ willChange: 'transform' }}
       testId={testId}
-      transition="default"
-      width="full"
+      transition='default'
+      width='full'
     >
       <Box
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
-        gap="1"
-        justifyContent="center"
-        paddingTop="2"
-        width="full"
+        alignItems='center'
+        display='flex'
+        flexDirection='column'
+        gap='1'
+        justifyContent='center'
+        paddingTop='2'
+        width='full'
       >
-        <Box color="modalText" height="max">
+        <Box color='modalText' height='max'>
           {icon}
         </Box>
         <Box>
-          <Text color="modalText" size={mobile ? '12' : '13'} weight="semibold">
+          <Text color='modalText' size={mobile ? '12' : '13'} weight='semibold'>
             {label}
           </Text>
         </Box>

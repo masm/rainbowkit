@@ -55,28 +55,28 @@ export function GetDetail({
 
   return (
     <Box
-      alignItems="center"
-      display="flex"
-      flexDirection="column"
-      height="full"
-      marginTop="18"
-      width="full"
+      alignItems='center'
+      display='flex'
+      flexDirection='column'
+      height='full'
+      marginTop='18'
+      width='full'
     >
       <Box
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
-        gap="28"
-        height="full"
-        width="full"
+        alignItems='center'
+        display='flex'
+        flexDirection='column'
+        gap='28'
+        height='full'
+        width='full'
       >
         {shownWallets
           ?.filter(
-            wallet =>
+            (wallet) =>
               wallet.extensionDownloadUrl ||
-              (wallet.qrCode && wallet.downloadUrls?.qrCode)
+              (wallet.qrCode && wallet.downloadUrls?.qrCode),
           )
-          .map(wallet => {
+          .map((wallet) => {
             const { downloadUrls, iconBackground, iconUrl, id, name, qrCode } =
               wallet;
             const hasMobileCompanionApp = downloadUrls?.qrCode && qrCode;
@@ -85,32 +85,32 @@ export function GetDetail({
 
             return (
               <Box
-                alignItems="center"
-                display="flex"
-                gap="16"
-                justifyContent="space-between"
+                alignItems='center'
+                display='flex'
+                gap='16'
+                justifyContent='space-between'
                 key={wallet.id}
-                width="full"
+                width='full'
               >
                 <Box
-                  alignItems="center"
-                  display="flex"
-                  flexDirection="row"
-                  gap="16"
+                  alignItems='center'
+                  display='flex'
+                  flexDirection='row'
+                  gap='16'
                 >
                   <AsyncImage
                     background={iconBackground}
-                    borderColor="actionButtonBorder"
-                    borderRadius="10"
-                    height="48"
+                    borderColor='actionButtonBorder'
+                    borderRadius='10'
+                    height='48'
                     src={iconUrl}
-                    width="48"
+                    width='48'
                   />
-                  <Box display="flex" flexDirection="column" gap="2">
-                    <Text color="modalText" size="14" weight="bold">
+                  <Box display='flex' flexDirection='column' gap='2'>
+                    <Text color='modalText' size='14' weight='bold'>
                       {name}
                     </Text>
-                    <Text color="modalTextSecondary" size="14" weight="medium">
+                    <Text color='modalTextSecondary' size='14' weight='medium'>
                       {hasMobileAndExtension
                         ? 'Mobile Wallet and Extension'
                         : hasMobileCompanionApp
@@ -121,11 +121,11 @@ export function GetDetail({
                     </Text>
                   </Box>
                 </Box>
-                <Box display="flex" flexDirection="column" gap="4">
+                <Box display='flex' flexDirection='column' gap='4'>
                   <ActionButton
-                    label="GET"
+                    label='GET'
                     onClick={() => getWalletDownload(id)}
-                    type="secondary"
+                    type='secondary'
                   />
                 </Box>
               </Box>
@@ -133,20 +133,20 @@ export function GetDetail({
           })}
       </Box>
       <Box
-        alignItems="center"
-        borderRadius="10"
-        display="flex"
-        flexDirection="column"
-        gap="8"
-        justifyContent="space-between"
-        marginBottom="4"
-        paddingY="8"
+        alignItems='center'
+        borderRadius='10'
+        display='flex'
+        flexDirection='column'
+        gap='8'
+        justifyContent='space-between'
+        marginBottom='4'
+        paddingY='8'
         style={{ maxWidth: 275, textAlign: 'center' }}
       >
-        <Text color="modalText" size="14" weight="bold">
+        <Text color='modalText' size='14' weight='bold'>
           Not what you&rsquo;re looking for?
         </Text>
-        <Text color="modalTextSecondary" size="14" weight="medium">
+        <Text color='modalTextSecondary' size='14' weight='medium'>
           Select a wallet on the left to get started with a different wallet
           provider.
         </Text>
@@ -213,7 +213,7 @@ export function ConnectDetail({
           changeWalletStep(
             hasQrCodeAndExtension
               ? WalletStep.DownloadOptions
-              : WalletStep.Download
+              : WalletStep.Download,
           ),
       }
     : null;
@@ -227,13 +227,13 @@ export function ConnectDetail({
   }, []);
 
   return (
-    <Box display="flex" flexDirection="column" height="full" width="full">
+    <Box display='flex' flexDirection='column' height='full' width='full'>
       {hasQrCode ? (
         <Box
-          alignItems="center"
-          display="flex"
-          height="full"
-          justifyContent="center"
+          alignItems='center'
+          display='flex'
+          height='full'
+          justifyContent='center'
         >
           <QRCode
             logoBackground={iconBackground}
@@ -251,29 +251,29 @@ export function ConnectDetail({
         </Box>
       ) : (
         <Box
-          alignItems="center"
-          display="flex"
-          justifyContent="center"
+          alignItems='center'
+          display='flex'
+          justifyContent='center'
           style={{ flexGrow: 1 }}
         >
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="column"
-            gap="8"
+            alignItems='center'
+            display='flex'
+            flexDirection='column'
+            gap='8'
           >
-            <Box borderRadius="10" height={LOGO_SIZE} overflow="hidden">
+            <Box borderRadius='10' height={LOGO_SIZE} overflow='hidden'>
               <AsyncImage height={LOGO_SIZE} src={iconUrl} width={LOGO_SIZE} />
             </Box>
             <Box
-              alignItems="center"
-              display="flex"
-              flexDirection="column"
-              gap="4"
-              paddingX="32"
+              alignItems='center'
+              display='flex'
+              flexDirection='column'
+              gap='4'
+              paddingX='32'
               style={{ textAlign: 'center' }}
             >
-              <Text color="modalText" size="18" weight="bold">
+              <Text color='modalText' size='18' weight='bold'>
                 {ready
                   ? `Opening ${name}...`
                   : hasExtension
@@ -281,42 +281,42 @@ export function ConnectDetail({
                   : `${name} is not available`}
               </Text>
               {!ready && hasExtension ? (
-                <Box paddingTop="20">
+                <Box paddingTop='20'>
                   <ActionButton
                     href={wallet.extensionDownloadUrl}
-                    label="INSTALL"
-                    type="secondary"
+                    label='INSTALL'
+                    type='secondary'
                   />
                 </Box>
               ) : null}
               {ready && !hasQrCode && (
                 <>
                   <Box
-                    alignItems="center"
-                    display="flex"
-                    flexDirection="column"
-                    justifyContent="center"
+                    alignItems='center'
+                    display='flex'
+                    flexDirection='column'
+                    justifyContent='center'
                   >
                     <Text
-                      color="modalTextSecondary"
-                      size="14"
-                      textAlign="center"
-                      weight="medium"
+                      color='modalTextSecondary'
+                      size='14'
+                      textAlign='center'
+                      weight='medium'
                     >
                       Confirm connection in the extension
                     </Text>
                   </Box>
                   <Box
-                    alignItems="center"
-                    color="modalText"
-                    display="flex"
-                    flexDirection="row"
-                    height="32"
-                    marginTop="8"
+                    alignItems='center'
+                    color='modalText'
+                    display='flex'
+                    flexDirection='row'
+                    height='32'
+                    marginTop='8'
                   >
                     {connectionError ? (
                       <ActionButton
-                        label="RETRY"
+                        label='RETRY'
                         onClick={
                           getDesktopDeepLink
                             ? async () => {
@@ -329,7 +329,7 @@ export function ConnectDetail({
                         }
                       />
                     ) : (
-                      <Box color="modalTextSecondary">
+                      <Box color='modalTextSecondary'>
                         <SpinnerIcon />
                       </Box>
                     )}
@@ -342,24 +342,24 @@ export function ConnectDetail({
       )}
 
       <Box
-        alignItems="center"
-        borderRadius="10"
-        display="flex"
-        flexDirection="row"
-        gap="8"
-        height="28"
-        justifyContent="space-between"
-        marginTop="12"
+        alignItems='center'
+        borderRadius='10'
+        display='flex'
+        flexDirection='row'
+        gap='8'
+        height='28'
+        justifyContent='space-between'
+        marginTop='12'
       >
         {ready && secondaryAction && (
           <>
-            <Text color="modalTextSecondary" size="14" weight="medium">
+            <Text color='modalTextSecondary' size='14' weight='medium'>
               {secondaryAction.description}
             </Text>
             <ActionButton
               label={secondaryAction.label}
               onClick={secondaryAction.onClick}
-              type="secondary"
+              type='secondary'
             />
           </>
         )}
@@ -396,21 +396,21 @@ const DownloadOptionsBox = ({
     !isBrowserCard && iconAccent && getGradientRGBAs(iconAccent);
   return (
     <Box
-      alignItems="center"
-      borderRadius="13"
-      display="flex"
-      justifyContent="center"
-      overflow="hidden"
+      alignItems='center'
+      borderRadius='13'
+      display='flex'
+      justifyContent='center'
+      overflow='hidden'
       paddingX={isCompact ? '18' : '44'}
-      position="relative"
+      position='relative'
       style={{ flex: 1, isolation: 'isolate' }}
-      width="full"
+      width='full'
     >
       <Box
-        borderColor="actionButtonBorder"
-        borderRadius="13"
-        borderStyle="solid"
-        borderWidth="1"
+        borderColor='actionButtonBorder'
+        borderRadius='13'
+        borderStyle='solid'
+        borderWidth='1'
         style={{
           bottom: '0',
           left: '0',
@@ -422,18 +422,18 @@ const DownloadOptionsBox = ({
       />
       {isBrowserCard && (
         <Box
-          background="downloadTopCardBackground"
-          height="full"
-          position="absolute"
+          background='downloadTopCardBackground'
+          height='full'
+          position='absolute'
           style={{
             zIndex: 0,
           }}
-          width="full"
+          width='full'
         >
           <Box
-            display="flex"
-            flexDirection="row"
-            justifyContent="space-between"
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-between'
             style={{
               bottom: '0',
               filter: 'blur(20px)',
@@ -454,10 +454,10 @@ const DownloadOptionsBox = ({
               }}
             >
               <AsyncImage
-                borderRadius="full"
-                height="200"
+                borderRadius='full'
+                height='200'
                 src={iconUrl}
-                width="200"
+                width='200'
               />
             </Box>
             <Box
@@ -471,10 +471,10 @@ const DownloadOptionsBox = ({
               }}
             >
               <AsyncImage
-                borderRadius="full"
-                height="200"
+                borderRadius='full'
+                height='200'
                 src={iconUrl}
-                width="200"
+                width='200'
               />
             </Box>
           </Box>
@@ -482,7 +482,7 @@ const DownloadOptionsBox = ({
       )}
       {!isBrowserCard && gradientRgbas && (
         <Box
-          background="downloadBottomCardBackground"
+          background='downloadBottomCardBackground'
           style={{
             bottom: '0',
             left: '0',
@@ -492,7 +492,7 @@ const DownloadOptionsBox = ({
           }}
         >
           <Box
-            position="absolute"
+            position='absolute'
             style={{
               background: `radial-gradient(50% 50% at 50% 50%, ${gradientRgbas[0]} 0%, ${gradientRgbas[1]} 25%, rgba(0,0,0,0) 100%)`,
               height: 564,
@@ -503,7 +503,7 @@ const DownloadOptionsBox = ({
             }}
           />
           <Box
-            position="absolute"
+            position='absolute'
             style={{
               background: `radial-gradient(50% 50% at 50% 50%, ${gradientRgbas[2]} 0%, rgba(0, 0, 0, 0) 100%)`,
               height: 564,
@@ -516,19 +516,19 @@ const DownloadOptionsBox = ({
         </Box>
       )}
       <Box
-        alignItems="flex-start"
-        display="flex"
-        flexDirection="row"
-        gap="24"
-        height="max"
-        justifyContent="center"
+        alignItems='flex-start'
+        display='flex'
+        flexDirection='row'
+        gap='24'
+        height='max'
+        justifyContent='center'
         style={{ zIndex: 1 }}
       >
         <Box>
           <AsyncImage
-            height="60"
+            height='60'
             src={iconUrl}
-            width="60"
+            width='60'
             {...(iconBackground
               ? {
                   background: iconBackground,
@@ -539,24 +539,24 @@ const DownloadOptionsBox = ({
           />
         </Box>
         <Box
-          display="flex"
-          flexDirection="column"
-          gap="4"
+          display='flex'
+          flexDirection='column'
+          gap='4'
           style={{ flex: 1 }}
-          width="full"
+          width='full'
         >
-          <Text color="modalText" size="14" weight="bold">
+          <Text color='modalText' size='14' weight='bold'>
             {title}
           </Text>
-          <Text color="modalTextSecondary" size="14" weight="medium">
+          <Text color='modalTextSecondary' size='14' weight='medium'>
             {description}
           </Text>
-          <Box marginTop="14" width="max">
+          <Box marginTop='14' width='max'>
             <ActionButton
               href={url}
               label={actionLabel}
               onClick={onAction}
-              size="medium"
+              size='medium'
             />
           </Box>
         </Box>
@@ -586,46 +586,46 @@ export function DownloadOptionsDetail({
 
   return (
     <Box
-      alignItems="center"
-      display="flex"
-      flexDirection="column"
-      gap="24"
-      height="full"
-      marginBottom="8"
-      marginTop="4"
-      width="full"
+      alignItems='center'
+      display='flex'
+      flexDirection='column'
+      gap='24'
+      height='full'
+      marginBottom='8'
+      marginTop='4'
+      width='full'
     >
       <Box
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
-        gap="8"
-        height="full"
-        justifyContent="center"
-        width="full"
+        alignItems='center'
+        display='flex'
+        flexDirection='column'
+        gap='8'
+        height='full'
+        justifyContent='center'
+        width='full'
       >
         {extensionDownloadUrl && (
           <DownloadOptionsBox
             actionLabel={`Add to ${browser}`}
-            description="Access your wallet right from your favorite web browser."
+            description='Access your wallet right from your favorite web browser.'
             iconUrl={getBrowserSrc}
             isCompact={isCompact}
             onAction={() =>
               changeWalletStep(
                 extension?.instructions
                   ? WalletStep.InstructionsExtension
-                  : WalletStep.Connect
+                  : WalletStep.Connect,
               )
             }
             title={`${wallet.name} for ${browser}`}
             url={extensionDownloadUrl}
-            variant="browser"
+            variant='browser'
           />
         )}
         {mobileDownloadUrl && (
           <DownloadOptionsBox
-            actionLabel="Get the app"
-            description="Use the mobile wallet to explore the world of Ethereum."
+            actionLabel='Get the app'
+            description='Use the mobile wallet to explore the world of Ethereum.'
             iconAccent={wallet.iconAccent}
             iconBackground={wallet.iconBackground}
             iconUrl={wallet.iconUrl}
@@ -634,7 +634,7 @@ export function DownloadOptionsDetail({
               changeWalletStep(WalletStep.Download);
             }}
             title={`${wallet.name} for Mobile`}
-            variant="app"
+            variant='app'
           />
         )}
       </Box>
@@ -659,42 +659,42 @@ export function DownloadDetail({
 
   return (
     <Box
-      alignItems="center"
-      display="flex"
-      flexDirection="column"
-      gap="24"
-      height="full"
-      width="full"
+      alignItems='center'
+      display='flex'
+      flexDirection='column'
+      gap='24'
+      height='full'
+      width='full'
     >
       <Box style={{ maxWidth: 220, textAlign: 'center' }}>
-        <Text color="modalTextSecondary" size="14" weight="semibold">
+        <Text color='modalTextSecondary' size='14' weight='semibold'>
           Scan with your phone to download on iOS or Android
         </Text>
       </Box>
-      <Box height="full">
+      <Box height='full'>
         {downloadUrls?.qrCode ? (
           <QRCode logoSize={0} size={268} uri={downloadUrls.qrCode} />
         ) : null}
       </Box>
 
       <Box
-        alignItems="center"
-        borderRadius="10"
-        display="flex"
-        flexDirection="row"
-        gap="8"
-        height="34"
-        justifyContent="space-between"
-        marginBottom="12"
-        paddingY="8"
+        alignItems='center'
+        borderRadius='10'
+        display='flex'
+        flexDirection='row'
+        gap='8'
+        height='34'
+        justifyContent='space-between'
+        marginBottom='12'
+        paddingY='8'
       >
         <ActionButton
-          label="Continue"
+          label='Continue'
           onClick={() =>
             changeWalletStep(
               qrCode?.instructions
                 ? WalletStep.InstructionsMobile
-                : WalletStep.Connect
+                : WalletStep.Connect,
             )
           }
         />
@@ -708,14 +708,14 @@ const stepIcons: Record<
   (wallet: WalletConnector) => ReactNode
 > = {
   create: () => <CreateIcon />,
-  install: wallet => (
+  install: (wallet) => (
     <AsyncImage
       background={wallet.iconBackground}
-      borderColor="generalBorder"
-      borderRadius="10"
-      height="48"
+      borderColor='generalBorder'
+      borderRadius='10'
+      height='48'
       src={wallet.iconUrl}
-      width="48"
+      width='48'
     />
   ),
   refresh: () => <RefreshIcon />,
@@ -731,44 +731,44 @@ export function InstructionMobileDetail({
 }) {
   return (
     <Box
-      alignItems="center"
-      display="flex"
-      flexDirection="column"
-      height="full"
-      width="full"
+      alignItems='center'
+      display='flex'
+      flexDirection='column'
+      height='full'
+      width='full'
     >
       <Box
-        display="flex"
-        flexDirection="column"
-        gap="28"
-        height="full"
-        justifyContent="center"
-        paddingY="32"
+        display='flex'
+        flexDirection='column'
+        gap='28'
+        height='full'
+        justifyContent='center'
+        paddingY='32'
         style={{ maxWidth: 320 }}
       >
         {wallet?.qrCode?.instructions?.steps.map((d, idx) => (
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="row"
-            gap="16"
+            alignItems='center'
+            display='flex'
+            flexDirection='row'
+            gap='16'
             key={idx}
           >
             <Box
-              borderRadius="10"
-              height="48"
-              minWidth="48"
-              overflow="hidden"
-              position="relative"
-              width="48"
+              borderRadius='10'
+              height='48'
+              minWidth='48'
+              overflow='hidden'
+              position='relative'
+              width='48'
             >
               {stepIcons[d.step]?.(wallet)}
             </Box>
-            <Box display="flex" flexDirection="column" gap="4">
-              <Text color="modalText" size="14" weight="bold">
+            <Box display='flex' flexDirection='column' gap='4'>
+              <Text color='modalText' size='14' weight='bold'>
                 {d.title}
               </Text>
-              <Text color="modalTextSecondary" size="14" weight="medium">
+              <Text color='modalTextSecondary' size='14' weight='medium'>
                 {d.description}
               </Text>
             </Box>
@@ -777,27 +777,27 @@ export function InstructionMobileDetail({
       </Box>
 
       <Box
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
-        gap="12"
-        justifyContent="center"
-        marginBottom="16"
+        alignItems='center'
+        display='flex'
+        flexDirection='column'
+        gap='12'
+        justifyContent='center'
+        marginBottom='16'
       >
-        <ActionButton label="Connect" onClick={() => connectWallet(wallet)} />
+        <ActionButton label='Connect' onClick={() => connectWallet(wallet)} />
         <Box
-          as="a"
+          as='a'
           className={touchableStyles({ active: 'shrink', hover: 'grow' })}
-          display="block"
+          display='block'
           href={wallet?.qrCode?.instructions?.learnMoreUrl}
-          paddingX="12"
-          paddingY="4"
-          rel="noreferrer"
+          paddingX='12'
+          paddingY='4'
+          rel='noreferrer'
           style={{ willChange: 'transform' }}
-          target="_blank"
-          transition="default"
+          target='_blank'
+          transition='default'
         >
-          <Text color="accentColor" size="14" weight="bold">
+          <Text color='accentColor' size='14' weight='bold'>
             Learn More
           </Text>
         </Box>
@@ -813,44 +813,44 @@ export function InstructionExtensionDetail({
 }) {
   return (
     <Box
-      alignItems="center"
-      display="flex"
-      flexDirection="column"
-      height="full"
-      width="full"
+      alignItems='center'
+      display='flex'
+      flexDirection='column'
+      height='full'
+      width='full'
     >
       <Box
-        display="flex"
-        flexDirection="column"
-        gap="28"
-        height="full"
-        justifyContent="center"
-        paddingY="32"
+        display='flex'
+        flexDirection='column'
+        gap='28'
+        height='full'
+        justifyContent='center'
+        paddingY='32'
         style={{ maxWidth: 320 }}
       >
         {wallet?.extension?.instructions?.steps.map((d, idx) => (
           <Box
-            alignItems="center"
-            display="flex"
-            flexDirection="row"
-            gap="16"
+            alignItems='center'
+            display='flex'
+            flexDirection='row'
+            gap='16'
             key={idx}
           >
             <Box
-              borderRadius="10"
-              height="48"
-              minWidth="48"
-              overflow="hidden"
-              position="relative"
-              width="48"
+              borderRadius='10'
+              height='48'
+              minWidth='48'
+              overflow='hidden'
+              position='relative'
+              width='48'
             >
               {stepIcons[d.step]?.(wallet)}
             </Box>
-            <Box display="flex" flexDirection="column" gap="4">
-              <Text color="modalText" size="14" weight="bold">
+            <Box display='flex' flexDirection='column' gap='4'>
+              <Text color='modalText' size='14' weight='bold'>
                 {d.title}
               </Text>
-              <Text color="modalTextSecondary" size="14" weight="medium">
+              <Text color='modalTextSecondary' size='14' weight='medium'>
                 {d.description}
               </Text>
             </Box>
@@ -859,30 +859,30 @@ export function InstructionExtensionDetail({
       </Box>
 
       <Box
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
-        gap="12"
-        justifyContent="center"
-        marginBottom="16"
+        alignItems='center'
+        display='flex'
+        flexDirection='column'
+        gap='12'
+        justifyContent='center'
+        marginBottom='16'
       >
         <ActionButton
-          label="Refresh"
+          label='Refresh'
           onClick={window.location.reload.bind(window.location)}
         />
         <Box
-          as="a"
+          as='a'
           className={touchableStyles({ active: 'shrink', hover: 'grow' })}
-          display="block"
+          display='block'
           href={wallet?.extension?.instructions?.learnMoreUrl}
-          paddingX="12"
-          paddingY="4"
-          rel="noreferrer"
+          paddingX='12'
+          paddingY='4'
+          rel='noreferrer'
           style={{ willChange: 'transform' }}
-          target="_blank"
-          transition="default"
+          target='_blank'
+          transition='default'
         >
-          <Text color="accentColor" size="14" weight="bold">
+          <Text color='accentColor' size='14' weight='bold'>
             Learn More
           </Text>
         </Box>

@@ -16,14 +16,14 @@ export const EmojiAvatar: AvatarComponent = ({ address, ensImage, size }) => {
 
   const { color: backgroundColor, emoji } = useMemo(
     () => emojiAvatarForAddress(address),
-    [address]
+    [address],
   );
   return ensImage ? (
     loaded ? (
       <Box
-        backgroundSize="cover"
-        borderRadius="full"
-        position="absolute"
+        backgroundSize='cover'
+        borderRadius='full'
+        position='absolute'
         style={{
           backgroundImage: `url(${ensImage})`,
           backgroundPosition: 'center',
@@ -33,13 +33,13 @@ export const EmojiAvatar: AvatarComponent = ({ address, ensImage, size }) => {
       />
     ) : (
       <Box
-        alignItems="center"
-        backgroundSize="cover"
-        borderRadius="full"
-        color="modalText"
-        display="flex"
-        justifyContent="center"
-        position="absolute"
+        alignItems='center'
+        backgroundSize='cover'
+        borderRadius='full'
+        color='modalText'
+        display='flex'
+        justifyContent='center'
+        position='absolute'
         style={{
           height: size,
           width: size,
@@ -50,10 +50,10 @@ export const EmojiAvatar: AvatarComponent = ({ address, ensImage, size }) => {
     )
   ) : (
     <Box
-      alignItems="center"
-      display="flex"
-      justifyContent="center"
-      overflow="hidden"
+      alignItems='center'
+      display='flex'
+      justifyContent='center'
+      overflow='hidden'
       style={{
         ...(!ensImage && { backgroundColor }),
         height: size,

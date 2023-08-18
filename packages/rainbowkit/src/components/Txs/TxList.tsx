@@ -31,24 +31,24 @@ export function TxList({ address }: TxListProps) {
   return (
     <>
       <Box
-        display="flex"
-        flexDirection="column"
-        gap="10"
-        paddingBottom="2"
-        paddingTop="16"
+        display='flex'
+        flexDirection='column'
+        gap='10'
+        paddingBottom='2'
+        paddingTop='16'
         paddingX={mobile ? '8' : '18'}
       >
         {hasTransactions && (
           <Box
             paddingBottom={mobile ? '4' : '0'}
-            paddingTop="8"
+            paddingTop='8'
             paddingX={mobile ? '12' : '6'}
           >
-            <Box display="flex" justifyContent="space-between">
+            <Box display='flex' justifyContent='space-between'>
               <Text
-                color="modalTextSecondary"
+                color='modalTextSecondary'
                 size={mobile ? '16' : '14'}
-                weight="semibold"
+                weight='semibold'
               >
                 Recent Transactions
               </Text>
@@ -61,22 +61,22 @@ export function TxList({ address }: TxListProps) {
                 }}
               >
                 <Box
-                  as="button"
+                  as='button'
                   background={{
                     hover: 'profileForeground',
                   }}
-                  borderRadius="actionButton"
+                  borderRadius='actionButton'
                   className={touchableStyles({ active: 'shrink' })}
                   onClick={clearRecentTransactions}
                   paddingX={mobile ? '8' : '12'}
                   paddingY={mobile ? '4' : '5'}
-                  transition="default"
-                  type="button"
+                  transition='default'
+                  type='button'
                 >
                   <Text
-                    color="modalTextSecondary"
+                    color='modalTextSecondary'
                     size={mobile ? '16' : '14'}
-                    weight="semibold"
+                    weight='semibold'
                   >
                     Clear All
                   </Text>
@@ -85,14 +85,14 @@ export function TxList({ address }: TxListProps) {
             </Box>
           </Box>
         )}
-        <Box display="flex" flexDirection="column" gap="4">
+        <Box display='flex' flexDirection='column' gap='4'>
           {hasTransactions ? (
-            visibleTxs.map(tx => <TxItem key={tx.hash} tx={tx} />)
+            visibleTxs.map((tx) => <TxItem key={tx.hash} tx={tx} />)
           ) : (
             <>
               <Box padding={mobile ? '12' : '8'}>
                 <Text
-                  color="modalTextDim"
+                  color='modalTextDim'
                   size={mobile ? '16' : '14'}
                   weight={mobile ? 'medium' : 'bold'}
                 >
@@ -101,10 +101,10 @@ export function TxList({ address }: TxListProps) {
               </Box>
               {mobile && (
                 <Box
-                  background="generalBorderDim"
-                  height="1"
-                  marginX="12"
-                  marginY="8"
+                  background='generalBorderDim'
+                  height='1'
+                  marginX='12'
+                  marginY='8'
                 />
               )}
             </>
@@ -112,30 +112,30 @@ export function TxList({ address }: TxListProps) {
         </Box>
       </Box>
       {explorerLink && (
-        <Box paddingBottom="18" paddingX={mobile ? '8' : '18'}>
+        <Box paddingBottom='18' paddingX={mobile ? '8' : '18'}>
           <Box
-            alignItems="center"
-            as="a"
+            alignItems='center'
+            as='a'
             background={{ hover: 'profileForeground' }}
-            borderRadius="menuButton"
+            borderRadius='menuButton'
             className={touchableStyles({ active: 'shrink' })}
-            color="modalTextDim"
-            display="flex"
-            flexDirection="row"
+            color='modalTextDim'
+            display='flex'
+            flexDirection='row'
             href={`${explorerLink}/address/${address}`}
-            justifyContent="space-between"
-            paddingX="8"
-            paddingY="12"
-            rel="noreferrer noopener"
+            justifyContent='space-between'
+            paddingX='8'
+            paddingY='12'
+            rel='noreferrer noopener'
             style={{ willChange: 'transform' }}
-            target="_blank"
-            transition="default"
-            width="full"
+            target='_blank'
+            transition='default'
+            width='full'
             {...(mobile ? { paddingLeft: '12' } : {})}
           >
             <Text
-              color="modalText"
-              font="body"
+              color='modalText'
+              font='body'
               size={mobile ? '16' : '14'}
               weight={mobile ? 'semibold' : 'bold'}
             >

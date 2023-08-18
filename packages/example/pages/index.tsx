@@ -53,10 +53,10 @@ const Example = ({ authEnabled }: AppContextProps) => {
     useState<ChainStatus>(defaultProps.chainStatus.largeScreen);
 
   const [showBalanceSmallScreen, setShowBalanceSmallScreen] = useState<boolean>(
-    defaultProps.showBalance.smallScreen
+    defaultProps.showBalance.smallScreen,
   );
   const [showBalanceLargeScreen, setShowBalanceLargeScreen] = useState<boolean>(
-    defaultProps.showBalance.largeScreen
+    defaultProps.showBalance.largeScreen,
   );
 
   const { chain: activeChain } = useNetwork();
@@ -181,7 +181,7 @@ const Example = ({ authEnabled }: AppContextProps) => {
               <div
                 {...(!ready && {
                   'aria-hidden': true,
-                  'style': {
+                  style: {
                     opacity: 0,
                     pointerEvents: 'none',
                     userSelect: 'none',
@@ -191,7 +191,7 @@ const Example = ({ authEnabled }: AppContextProps) => {
                 {(() => {
                   if (!connected) {
                     return (
-                      <button onClick={openConnectModal} type="button">
+                      <button onClick={openConnectModal} type='button'>
                         Connect Wallet
                       </button>
                     );
@@ -199,7 +199,7 @@ const Example = ({ authEnabled }: AppContextProps) => {
 
                   if (chain.unsupported) {
                     return (
-                      <button onClick={openChainModal} type="button">
+                      <button onClick={openChainModal} type='button'>
                         Wrong network
                       </button>
                     );
@@ -210,7 +210,7 @@ const Example = ({ authEnabled }: AppContextProps) => {
                       <button
                         onClick={openChainModal}
                         style={{ alignItems: 'center', display: 'flex' }}
-                        type="button"
+                        type='button'
                       >
                         {chain.hasIcon && (
                           <div
@@ -235,7 +235,7 @@ const Example = ({ authEnabled }: AppContextProps) => {
                         {chain.name ?? chain.id}
                       </button>
 
-                      <button onClick={openAccountModal} type="button">
+                      <button onClick={openAccountModal} type='button'>
                         {account.displayName}
                         {account.displayBalance
                           ? ` (${account.displayBalance})`
@@ -258,21 +258,21 @@ const Example = ({ authEnabled }: AppContextProps) => {
               <button
                 disabled={!openConnectModal}
                 onClick={openConnectModal}
-                type="button"
+                type='button'
               >
                 Open connect modal
               </button>
               <button
                 disabled={!openChainModal}
                 onClick={openChainModal}
-                type="button"
+                type='button'
               >
                 Open chain modal
               </button>
               <button
                 disabled={!openAccountModal}
                 onClick={openAccountModal}
-                type="button"
+                type='button'
               >
                 Open account modal
               </button>
@@ -287,21 +287,21 @@ const Example = ({ authEnabled }: AppContextProps) => {
               <button
                 disabled={!connected || !sendTransaction}
                 onClick={() => sendTransaction?.()}
-                type="button"
+                type='button'
               >
                 Send Transaction
               </button>
               <button
                 disabled={!connected}
                 onClick={() => signMessage()}
-                type="button"
+                type='button'
               >
                 Sign Message
               </button>
               <button
                 disabled={!connected || activeChain?.id !== 1}
                 onClick={() => signTypedData()}
-                type="button"
+                type='button'
               >
                 Sign Typed Data
               </button>
@@ -339,14 +339,14 @@ const Example = ({ authEnabled }: AppContextProps) => {
               <tbody>
                 <tr>
                   <td>
-                    <label htmlFor="accountStatus">accountStatus</label>
+                    <label htmlFor='accountStatus'>accountStatus</label>
                   </td>
                   <td>
                     <select
-                      id="accountStatus"
-                      onChange={event =>
+                      id='accountStatus'
+                      onChange={(event) =>
                         setAccountStatusSmallScreen(
-                          event.currentTarget.value as AccountStatus
+                          event.currentTarget.value as AccountStatus,
                         )
                       }
                       value={accountStatusSmallScreen}
@@ -358,10 +358,10 @@ const Example = ({ authEnabled }: AppContextProps) => {
                   </td>
                   <td>
                     <select
-                      id="accountStatus"
-                      onChange={event =>
+                      id='accountStatus'
+                      onChange={(event) =>
                         setAccountStatusLargeScreen(
-                          event.currentTarget.value as AccountStatus
+                          event.currentTarget.value as AccountStatus,
                         )
                       }
                       value={accountStatusLargeScreen}
@@ -374,39 +374,39 @@ const Example = ({ authEnabled }: AppContextProps) => {
                 </tr>
                 <tr>
                   <td>
-                    <label htmlFor="showBalance">showBalance</label>
+                    <label htmlFor='showBalance'>showBalance</label>
                   </td>
                   <td>
                     <input
                       checked={showBalanceSmallScreen}
-                      id="showBalance"
-                      onChange={event => {
+                      id='showBalance'
+                      onChange={(event) => {
                         setShowBalanceSmallScreen(event.currentTarget.checked);
                       }}
-                      type="checkbox"
+                      type='checkbox'
                     />
                   </td>
                   <td>
                     <input
                       checked={showBalanceLargeScreen}
-                      id="showBalance"
-                      onChange={event => {
+                      id='showBalance'
+                      onChange={(event) => {
                         setShowBalanceLargeScreen(event.currentTarget.checked);
                       }}
-                      type="checkbox"
+                      type='checkbox'
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label htmlFor="chainStatus">chainStatus</label>
+                    <label htmlFor='chainStatus'>chainStatus</label>
                   </td>
                   <td>
                     <select
-                      id="chainStatus"
-                      onChange={event =>
+                      id='chainStatus'
+                      onChange={(event) =>
                         setChainStatusSmallScreen(
-                          event.currentTarget.value as ChainStatus
+                          event.currentTarget.value as ChainStatus,
                         )
                       }
                       value={chainStatusSmallScreen}
@@ -419,10 +419,10 @@ const Example = ({ authEnabled }: AppContextProps) => {
                   </td>
                   <td>
                     <select
-                      id="chainStatus"
-                      onChange={event =>
+                      id='chainStatus'
+                      onChange={(event) =>
                         setChainStatusLargeScreen(
-                          event.currentTarget.value as ChainStatus
+                          event.currentTarget.value as ChainStatus,
                         )
                       }
                       value={chainStatusLargeScreen}
@@ -453,7 +453,7 @@ function ManageTransactions() {
 
   return (
     <form
-      onSubmit={e => {
+      onSubmit={(e) => {
         e.preventDefault();
 
         addRecentTransaction({
@@ -474,34 +474,34 @@ function ManageTransactions() {
     >
       <h3>Add recent transaction</h3>
       <div style={{ display: 'flex', gap: 12 }}>
-        <label htmlFor="txHash">Hash</label>
+        <label htmlFor='txHash'>Hash</label>
         <input
-          id="txHash"
-          onChange={e => setHash(e.currentTarget.value)}
-          type="text"
+          id='txHash'
+          onChange={(e) => setHash(e.currentTarget.value)}
+          type='text'
           value={hash}
         />
       </div>
       <div style={{ display: 'flex', gap: 12 }}>
-        <label htmlFor="txDescription">Description</label>
+        <label htmlFor='txDescription'>Description</label>
         <input
-          id="txDescription"
-          onChange={e => setDescription(e.currentTarget.value)}
-          type="text"
+          id='txDescription'
+          onChange={(e) => setDescription(e.currentTarget.value)}
+          type='text'
           value={description}
         />
       </div>
       <div style={{ display: 'flex', gap: 12 }}>
-        <label htmlFor="txConfirmations">Confirmations</label>
+        <label htmlFor='txConfirmations'>Confirmations</label>
         <input
-          id="txConfirmations"
-          onChange={e => setConfirmations(e.currentTarget.valueAsNumber)}
-          type="number"
+          id='txConfirmations'
+          onChange={(e) => setConfirmations(e.currentTarget.valueAsNumber)}
+          type='number'
           value={confirmations}
         />
       </div>
       <div>
-        <button disabled={hash.trim().length === 0} type="submit">
+        <button disabled={hash.trim().length === 0} type='submit'>
           Add recent transaction
         </button>
       </div>

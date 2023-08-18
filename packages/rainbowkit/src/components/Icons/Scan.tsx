@@ -8,11 +8,11 @@ export const preloadScanIcon = () => loadImages(src);
 
 export const ScanIcon = () => (
   <AsyncImage
-    background="#515a70"
-    borderColor="generalBorder"
-    borderRadius="10"
-    height="48"
+    background='#515a70'
+    borderColor='generalBorder'
+    borderRadius='10'
+    height='48'
     src={src}
-    width="48"
+    width='48'
   />
 );

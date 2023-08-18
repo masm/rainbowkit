@@ -11,7 +11,7 @@ export function GuidesLayout({ children }: { children: React.ReactNode }) {
   const ref = useCoolMode(
     '/rainbow.svg',
     !isConnected,
-    true
+    true,
   ) as Ref<HTMLDivElement>;
 
   return (

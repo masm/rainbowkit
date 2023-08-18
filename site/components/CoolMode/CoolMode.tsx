@@ -13,24 +13,24 @@ export function CoolMode() {
   const coolTrustRef = useCoolMode('/trust.svg');
 
   return (
-    <Box className={cool} id="cool-mode-demo">
+    <Box className={cool} id='cool-mode-demo'>
       <Box ref={coolRainbowRef}>
-        <CoolButton src="/rainbow.svg">Rainbow</CoolButton>
+        <CoolButton src='/rainbow.svg'>Rainbow</CoolButton>
       </Box>
       <Box ref={coolWalletConnectRef}>
-        <CoolButton src="/walletConnect.svg">WalletConnect</CoolButton>
+        <CoolButton src='/walletConnect.svg'>WalletConnect</CoolButton>
       </Box>
       <Box ref={coolMetaMaskRef}>
-        <CoolButton src="/metaMask.svg">MetaMask</CoolButton>
+        <CoolButton src='/metaMask.svg'>MetaMask</CoolButton>
       </Box>
       <Box ref={coolCoinbaseRef}>
-        <CoolButton src="/coinbase.svg">Coinbase</CoolButton>
+        <CoolButton src='/coinbase.svg'>Coinbase</CoolButton>
       </Box>
       <Box ref={coolArgentRef}>
-        <CoolButton src="/argent.svg">Argent</CoolButton>
+        <CoolButton src='/argent.svg'>Argent</CoolButton>
       </Box>
       <Box ref={coolTrustRef}>
-        <CoolButton src="/trust.svg">Trust</CoolButton>
+        <CoolButton src='/trust.svg'>Trust</CoolButton>
       </Box>
     </Box>
   );
@@ -43,14 +43,14 @@ function CoolButton(props: CoolButtonProps) {
     <Button
       prefix={
         <Box
-          as="img"
-          borderRadius="2"
-          size="7"
+          as='img'
+          borderRadius='2'
+          size='7'
           src={props.src}
           style={{ pointerEvents: 'none' }}
         />
       }
-      size="xl"
+      size='xl'
       {...props}
       style={{
         justifyContent: 'center',

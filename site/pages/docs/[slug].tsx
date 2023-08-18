@@ -18,7 +18,7 @@ export default function DocPage({ doc, sectionName }: DocPageProps) {
         description={doc.description}
         title={`${doc.title} — RainbowKit`}
       />
-      <Box as="article">
+      <Box as='article'>
         <p data-algolia-lvl0 style={{ display: 'none' }}>
           {sectionName}
         </p>
@@ -29,7 +29,7 @@ export default function DocPage({ doc, sectionName }: DocPageProps) {
 }
 
 export async function getStaticPaths() {
-  const paths = allDocs.map(doc => `/${doc._raw.flattenedPath}`);
+  const paths = allDocs.map((doc) => `/${doc._raw.flattenedPath}`);
   return {
     fallback: false,
     paths,
@@ -37,10 +37,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const doc = allDocs.find(doc => doc.slug === params.slug);
+  const doc = allDocs.find((doc) => doc.slug === params.slug);
   const sectionName = docsRoutes.reduce((acc, curr) => {
-    curr.pages.forEach(page =>
-      page.slug === params.slug ? (acc = curr.label) : null
+    curr.pages.forEach((page) =>
+      page.slug === params.slug ? (acc = curr.label) : null,
     );
     return acc;
   }, '');

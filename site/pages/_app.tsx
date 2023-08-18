@@ -54,7 +54,7 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     document.body.setAttribute(
       'data-mode',
-      isDocs || isGuides ? 'light' : 'dark'
+      isDocs || isGuides ? 'light' : 'dark',
     );
   }, [isDocs, isGuides]);
 

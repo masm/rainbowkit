@@ -8,10 +8,10 @@ export const preloadAssetsIcon = () => loadImages(src);
 
 export const AssetsIcon = () => (
   <AsyncImage
-    background="#d0d5de"
-    borderRadius="10"
-    height="48"
+    background='#d0d5de'
+    borderRadius='10'
+    height='48'
     src={src}
-    width="48"
+    width='48'
   />
 );

@@ -30,11 +30,11 @@ export const Code = React.forwardRef(
       style,
       variant = 'primary',
     }: Props,
-    ref: React.Ref<HTMLElement>
+    ref: React.Ref<HTMLElement>,
   ) => {
     return (
       <Box
-        as="code"
+        as='code'
         className={styles.variants({
           variant,
         })}
@@ -52,7 +52,7 @@ export const Code = React.forwardRef(
         {children}
       </Box>
     );
-  }
+  },
 );
 
 Code.displayName = 'Code';
