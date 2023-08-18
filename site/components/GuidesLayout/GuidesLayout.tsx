@@ -1,10 +1,10 @@
+import { content } from './GuidesLayout.css';
 import { Box } from 'components/Box/Box';
 import { Header } from 'components/Header/Header';
 import { Wrapper } from 'components/Wrapper/Wrapper';
 import { useCoolMode } from 'lib/useCoolMode';
 import React, { Ref } from 'react';
 import { useAccount } from 'wagmi';
-import { content } from './GuidesLayout.css';
 
 export function GuidesLayout({ children }: { children: React.ReactNode }) {
   const { isConnected } = useAccount();

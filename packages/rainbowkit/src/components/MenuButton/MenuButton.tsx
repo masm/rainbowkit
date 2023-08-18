@@ -1,8 +1,8 @@
-import React from 'react';
 import { touchableStyles } from '../../css/touchableStyles';
 import { isMobile } from '../../utils/isMobile';
 import { Box } from '../Box/Box';
 import * as styles from './MenuButton.css';
+import React from 'react';
 
 type Props = {
   children?: React.ReactNode;

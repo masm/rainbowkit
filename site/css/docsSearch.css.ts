@@ -1,5 +1,5 @@
-import { globalStyle } from '@vanilla-extract/css';
 import { vars } from './vars.css';
+import { globalStyle } from '@vanilla-extract/css';
 
 const Icon = {
   Book: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxOCAxOCI+CiAgPHBhdGggZmlsbD0iIzAwMCIgZD0iTTMuODAzIDEzLjE1MmMwIDEuMzQyLjcyNiAyLjA2OSAyLjA1NiAyLjA2OWg2LjI3NmMxLjMzIDAgMi4wNTYtLjcyNyAyLjA1Ni0yLjA2OXYtOC43NmMwLTEuMzM1LS43MjYtMi4wNjgtMi4wNTYtMi4wNjhINS44NTljLTEuMzMgMC0yLjA1Ni43MzMtMi4wNTYgMi4wNjl2OC43NlptMy4wNy03LjUxMWEuNDA4LjQwOCAwIDAgMS0uNDIyLS40MTZjMC0uMjI5LjE3Ni0uNDEuNDIyLS40MWg0LjM4M2MuMjQgMCAuNDE2LjE4MS40MTYuNDFhLjQwNy40MDcgMCAwIDEtLjQxNi40MTZINi44NzNabTAgMS43NGEuNDA4LjQwOCAwIDAgMS0uNDIyLS40MTZjMC0uMjI5LjE3Ni0uNDA0LjQyMi0uNDA0aDIuNTQzYS40LjQgMCAwIDEgLjQxNi40MDQuNDA3LjQwNyAwIDAgMS0uNDE2LjQxNkg2Ljg3M1ptLjA4MiA1LjU0M2MtLjQ4NiAwLS43NjgtLjI2NC0uNzY4LS43NjJWOS4wNTFjMC0uNDk4LjI4Mi0uNzU2Ljc2OC0uNzU2aDQuMTAyYy40OTggMCAuNzU1LjI1OC43NTUuNzU2djMuMTExYzAgLjQ5OC0uMjU3Ljc2Mi0uNzU1Ljc2Mkg2Ljk1NVoiLz4KPC9zdmc+")',
@@ -29,8 +29,8 @@ globalStyle('.DocSearch-Container', {
 globalStyle('.DocSearch-Modal', {
   backgroundColor: vars.colors.accent,
   borderRadius: vars.radii[3],
-  margin: `8vh auto`,
-  maxHeight: `calc(100vh - 16vh)`,
+  margin: '8vh auto',
+  maxHeight: 'calc(100vh - 16vh)',
   maxWidth: '640px',
   overflow: 'auto',
 });

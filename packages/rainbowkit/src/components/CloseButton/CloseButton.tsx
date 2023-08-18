@@ -1,8 +1,8 @@
-import React from 'react';
 import { touchableStyles } from '../../css/touchableStyles';
 import { isMobile } from '../../utils/isMobile';
 import { Box } from '../Box/Box';
 import { CloseIcon } from '../Icons/Close';
+import React from 'react';
 
 export const CloseButton = ({
   'aria-label': ariaLabel = 'Close',

@@ -1,7 +1,7 @@
-import { Theme } from 'css/types';
-import React from 'react';
 import { Box, BoxProps } from '../Box/Box';
 import * as styles from './Button.css';
+import { Theme } from 'css/types';
+import React from 'react';
 
 type BaseProps = {
   prefix?: React.ReactElement;

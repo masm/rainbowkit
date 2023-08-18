@@ -1,8 +1,8 @@
-import React from 'react';
 import { touchableStyles } from '../../css/touchableStyles';
 import { isMobile } from '../../utils/isMobile';
 import { Box } from '../Box/Box';
 import { Text } from '../Text/Text';
+import React from 'react';
 
 interface ProfileDetailsActionProps {
   label: string;

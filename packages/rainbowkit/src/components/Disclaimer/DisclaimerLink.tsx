@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
 import { Box } from '../Box/Box';
+import React, { ReactNode } from 'react';
 
 export const DisclaimerLink = ({
   children,

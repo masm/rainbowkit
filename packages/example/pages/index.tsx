@@ -1,3 +1,5 @@
+import { AppContextProps } from '../lib/AppContextProps';
+import { getAuthOptions } from './api/auth/[...nextauth]';
 import {
   ConnectButton,
   useAccountModal,
@@ -17,8 +19,6 @@ import {
   useSignMessage,
   useSignTypedData,
 } from 'wagmi';
-import { AppContextProps } from '../lib/AppContextProps';
-import { getAuthOptions } from './api/auth/[...nextauth]';
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   return {

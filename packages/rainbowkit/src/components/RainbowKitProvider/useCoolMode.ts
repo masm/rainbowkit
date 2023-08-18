@@ -1,6 +1,6 @@
-import { useContext, useEffect, useRef } from 'react';
 import { useAsyncImage } from '../AsyncImage/useAsyncImage';
 import { CoolModeContext } from './CoolModeContext';
+import { useContext, useEffect, useRef } from 'react';
 
 interface Particle {
   direction: number;
@@ -192,10 +192,10 @@ function makeElementCool(element: HTMLElement, imageUrl: string): () => void {
     element.removeEventListener('mouseleave', disableAutoAddParticle);
 
     // Cancel animation loop once animations are done
-    let interval = setInterval(() => {
+    const _interval = setInterval(() => {
       if (animationFrame && particles.length === 0) {
         cancelAnimationFrame(animationFrame);
-        clearInterval(interval);
+        clearInterval(_interval);
 
         // Clean up container if this is the last instance
         if (--instanceCounter === 0) {

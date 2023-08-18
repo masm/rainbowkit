@@ -1,8 +1,7 @@
-import React from 'react';
 import {
+  ResponsiveValue,
   mapResponsiveValue,
   normalizeResponsiveValue,
-  ResponsiveValue,
 } from '../../css/sprinkles.css';
 import { touchableStyles } from '../../css/touchableStyles';
 import { useConnectionStatus } from '../../hooks/useConnectionStatus';
@@ -13,6 +12,7 @@ import { Box } from '../Box/Box';
 import { DropdownIcon } from '../Icons/Dropdown';
 import { useRainbowKitChains } from '../RainbowKitProvider/RainbowKitChainContext';
 import { ConnectButtonRenderer } from './ConnectButtonRenderer';
+import React from 'react';
 
 type AccountStatus = 'full' | 'avatar' | 'address';
 type ChainStatus = 'full' | 'icon' | 'name' | 'none';

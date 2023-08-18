@@ -1,7 +1,7 @@
+import { sprinkles } from './sprinkles.css';
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 import { createVar, style, styleVariants } from '@vanilla-extract/css';
 import { calc } from '@vanilla-extract/css-utils';
-import { sprinkles } from './sprinkles.css';
 
 const hoverScaleValues = {
   grow: 1.025,

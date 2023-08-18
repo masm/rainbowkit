@@ -1,10 +1,9 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { touchableStyles } from '../../css/touchableStyles';
 import { isSafari } from '../../utils/browsers';
 import { groupBy } from '../../utils/groupBy';
 import {
-  useWalletConnectors,
   WalletConnector,
+  useWalletConnectors,
 } from '../../wallets/useWalletConnectors';
 import { Box } from '../Box/Box';
 import { CloseButton } from '../CloseButton/CloseButton';
@@ -20,6 +19,7 @@ import {
   ModalSizeOptions,
 } from '../RainbowKitProvider/ModalSizeContext';
 import { Text } from '../Text/Text';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 
 import {
   ConnectDetail,

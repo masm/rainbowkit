@@ -1,3 +1,4 @@
+import { Announcement } from '../Announcement/Announcement';
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Box } from 'components/Box/Box';
 import { Button } from 'components/Button/Button';
@@ -13,7 +14,6 @@ import copy from 'copy-to-clipboard';
 import { vars } from 'css/vars.css';
 import NextImage from 'next/legacy/image';
 import React, { useState } from 'react';
-import { Announcement } from '../Announcement/Announcement';
 
 export const components = {
   a: (props) => <Link {...props} />,

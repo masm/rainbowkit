@@ -1,9 +1,9 @@
+import { announcement } from './Announcement.css';
 import { Box, BoxProps } from 'components/Box/Box';
 import { Button } from 'components/Button/Button';
 import { Text } from 'components/Text/Text';
 import Link from 'next/link';
 import React from 'react';
-import { announcement } from './Announcement.css';
 
 type AnnouncementProps = {
   heading: string;

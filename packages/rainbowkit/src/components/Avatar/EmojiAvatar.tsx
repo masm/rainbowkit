@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from 'react';
 import { Box } from '../Box/Box';
 import { SpinnerIcon } from '../Icons/Spinner';
 import { AvatarComponent } from '../RainbowKitProvider/AvatarContext';
 import { emojiAvatarForAddress } from './emojiAvatarForAddress';
+import React, { useEffect, useMemo, useState } from 'react';
 
 export const EmojiAvatar: AvatarComponent = ({ address, ensImage, size }) => {
   const [loaded, setLoaded] = useState(false);

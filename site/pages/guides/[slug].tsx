@@ -1,9 +1,9 @@
+import { Guide, allGuides } from '.contentlayer/generated';
 import { Box } from 'components/Box/Box';
 import { components } from 'components/MdxComponents/MdxComponents';
 import { TitleAndMetaTags } from 'components/TitleAndMetaTags/TitleAndMetaTags';
 import { useLiveReload, useMDXComponent } from 'next-contentlayer/hooks';
 import React from 'react';
-import { allGuides, Guide } from '.contentlayer/generated';
 
 type GuidePageProps = { guide: Guide };
 

@@ -1,6 +1,6 @@
+import * as styles from './Text.css';
 import { Box, BoxProps } from 'components/Box/Box';
 import React from 'react';
-import * as styles from './Text.css';
 
 type Props = {
   align?: BoxProps['textAlign'];

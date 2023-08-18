@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import { formatENS } from './formatENS';
+import { describe, expect, it } from 'vitest';
 
 describe('formatENS', () => {
   it('trucates ENS name over 24 characters', () => {
@@ -12,19 +12,19 @@ describe('formatENS', () => {
     expect(formatENS('rainbow.eth')).toEqual('rainbow.eth');
   });
 
-  it(`if 24 characters, do not truncate .eth`, () => {
+  it('if 24 characters, do not truncate .eth', () => {
     expect(formatENS('qwertyuiopasdfghjklzxcvb.eth')).toEqual(
       'qwertyuiopasdfghjklzxcvb.eth',
     );
   });
 
-  it(`Subdomains are taken into account`, () => {
+  it('Subdomains are taken into account', () => {
     expect(formatENS('rainbowrainbowrainbow.rainbowrainbow.eth')).toEqual(
       'rainbowrainbowrainbow.ra...',
     );
   });
 
-  it(`Non .eth names work`, () => {
+  it('Non .eth names work', () => {
     expect(formatENS('qwertyuiopasdfghjklzxcvb.xyz')).toEqual(
       'qwertyuiopasdfghjklzxcvb.xyz',
     );

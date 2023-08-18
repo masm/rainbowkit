@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { useAccount } from 'wagmi';
 import { useChainId } from '../hooks/useChainId';
 import { useTransactionStore } from './TransactionStoreContext';
 import { NewTransaction } from './transactionStore';
+import { useCallback } from 'react';
+import { useAccount } from 'wagmi';
 
 export function useAddRecentTransaction(): (
   transaction: NewTransaction,

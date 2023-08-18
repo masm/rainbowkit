@@ -1,4 +1,3 @@
-import React, { useContext } from 'react';
 import { touchableStyles } from '../../css/touchableStyles';
 import { Box } from '../Box/Box';
 import { ActionButton } from '../Button/ActionButton';
@@ -8,6 +7,7 @@ import { AssetsIcon } from '../Icons/Assets';
 import { LoginIcon } from '../Icons/Login';
 import { AppContext } from '../RainbowKitProvider/AppContext';
 import { Text } from '../Text/Text';
+import React, { useContext } from 'react';
 
 export function ConnectModalIntro({
   compactModeEnabled = false,

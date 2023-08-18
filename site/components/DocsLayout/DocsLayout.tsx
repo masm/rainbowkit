@@ -1,3 +1,9 @@
+import {
+  content,
+  navigationSidebar,
+  navigationSidebarScroller,
+  paginationItem,
+} from './DocsLayout.css';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Box } from 'components/Box/Box';
 import { Button } from 'components/Button/Button';
@@ -21,12 +27,6 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { Ref, useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import {
-  content,
-  navigationSidebar,
-  navigationSidebarScroller,
-  paginationItem,
-} from './DocsLayout.css';
 
 export function DocsLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();

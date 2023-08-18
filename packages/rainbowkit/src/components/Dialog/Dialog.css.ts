@@ -1,5 +1,5 @@
-import { keyframes, style } from '@vanilla-extract/css';
 import { sprinkles } from '../../css/sprinkles.css';
+import { keyframes, style } from '@vanilla-extract/css';
 
 const slideUp = keyframes({
   '0%': { transform: 'translateY(100%)' },

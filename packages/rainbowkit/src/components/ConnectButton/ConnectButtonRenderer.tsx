@@ -1,5 +1,3 @@
-import React, { ReactNode, useContext } from 'react';
-import { useAccount, useBalance, useNetwork } from 'wagmi';
 import { useIsMounted } from '../../hooks/useIsMounted';
 import { useMainnetEnsAvatar } from '../../hooks/useMainnetEnsAvatar';
 import { useMainnetEnsName } from '../../hooks/useMainnetEnsName';
@@ -20,6 +18,8 @@ import { ShowRecentTransactionsContext } from '../RainbowKitProvider/ShowRecentT
 import { abbreviateETHBalance } from './abbreviateETHBalance';
 import { formatAddress } from './formatAddress';
 import { formatENS } from './formatENS';
+import React, { ReactNode, useContext } from 'react';
+import { useAccount, useBalance, useNetwork } from 'wagmi';
 
 const noop = () => {};
 

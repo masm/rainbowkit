@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import { emojiAvatarForAddress } from './emojiAvatarForAddress';
+import { describe, expect, it } from 'vitest';
 
 describe('emojiAvatarForAddress', () => {
   it('supports valid addresses', () => {

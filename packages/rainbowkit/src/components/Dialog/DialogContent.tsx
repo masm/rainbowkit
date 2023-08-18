@@ -1,4 +1,3 @@
-import React, { ReactNode, useContext } from 'react';
 import { isMobile } from '../../utils/isMobile';
 import { Box, BoxProps } from '../Box/Box';
 import {
@@ -6,6 +5,7 @@ import {
   ModalSizeOptions,
 } from '../RainbowKitProvider/ModalSizeContext';
 import * as styles from './DialogContent.css';
+import React, { ReactNode, useContext } from 'react';
 
 interface DialogContentProps {
   children: ReactNode;

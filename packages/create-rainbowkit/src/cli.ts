@@ -1,15 +1,15 @@
 #!/usr/bin/env node
-import { createRequire } from 'module';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { detectPackageManager } from './detectPackageManager';
 import chalk from 'chalk';
 import { Command } from 'commander';
 import cpy from 'cpy';
 import { execa } from 'execa';
 import fs from 'fs-extra';
+import { createRequire } from 'module';
+import path from 'path';
 import prompts from 'prompts';
+import { fileURLToPath } from 'url';
 import validateNpmPackageName from 'validate-npm-package-name';
-import { detectPackageManager } from './detectPackageManager';
 
 // eslint-disable-next-line no-console
 const log = console.log;
@@ -57,7 +57,7 @@ async function run() {
     ];
 
     log();
-    log(chalk.green(`🌈 Welcome to RainbowKit!`));
+    log(chalk.green('🌈 Welcome to RainbowKit!'));
 
     const isValidProjectName = (value: string) =>
       validateNpmPackageName(value).validForNewPackages;
@@ -103,7 +103,7 @@ async function run() {
       throw new FriendlyError(
         [
           chalk.red(
-            `👀 The project name you provided is not a valid package name.`,
+            '👀 The project name you provided is not a valid package name.',
           ),
           `🙏 ${invalidProjectNameErrorMessage}`,
         ].join('\n'),
@@ -114,7 +114,7 @@ async function run() {
       throw new FriendlyError(
         [
           chalk.red(
-            `👀 The project name you provided is a reserved package name.`,
+            '👀 The project name you provided is a reserved package name.',
           ),
           `🙏 Please use a project name other than "${reservedPackageNames.find(
             (x) => x === projectPath,
@@ -129,7 +129,7 @@ async function run() {
       throw new FriendlyError(
         [
           chalk.red(`👀 The target directory "${projectPath}" already exists.`),
-          `🙏 Please remove this directory or choose a different project name.`,
+          '🙏 Please remove this directory or choose a different project name.',
         ].join('\n'),
       );
     }
@@ -206,7 +206,7 @@ async function run() {
     }
 
     if (!options.skipGit) {
-      log(chalk.cyan(`📚 Initializing git repository`));
+      log(chalk.cyan('📚 Initializing git repository'));
       await execa('git', ['init'], { cwd: targetPath });
       await execa('git', ['add', '.'], { cwd: targetPath });
       await execa(
@@ -221,7 +221,7 @@ async function run() {
       );
     }
 
-    log(chalk.green(`🌈 Done! Thanks for using RainbowKit 🙏`));
+    log(chalk.green('🌈 Done! Thanks for using RainbowKit 🙏'));
     log();
     log(
       chalk.cyan(

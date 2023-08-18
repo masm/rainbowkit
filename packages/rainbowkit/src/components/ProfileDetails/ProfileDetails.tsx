@@ -1,5 +1,3 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { useAccount, useBalance, useEnsAvatar, useEnsName } from 'wagmi';
 import { isMobile } from '../../utils/isMobile';
 import { Avatar } from '../Avatar/Avatar';
 import { Box } from '../Box/Box';
@@ -14,6 +12,8 @@ import { ShowRecentTransactionsContext } from '../RainbowKitProvider/ShowRecentT
 import { Text } from '../Text/Text';
 import { TxList } from '../Txs/TxList';
 import { ProfileDetailsAction } from './ProfileDetailsAction';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { useAccount, useBalance, useEnsAvatar, useEnsName } from 'wagmi';
 
 interface ProfileDetailsProps {
   address: ReturnType<typeof useAccount>['address'];

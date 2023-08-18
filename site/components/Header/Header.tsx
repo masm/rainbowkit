@@ -1,8 +1,10 @@
+import pckg from '../../../packages/rainbowkit/package.json';
+import { header, logo, row } from './Header.css';
 import {
   ConnectButton,
+  RainbowKitProvider,
   darkTheme,
   lightTheme,
-  RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { Badge } from 'components/Badge/Badge';
 import { Box } from 'components/Box/Box';
@@ -11,8 +13,6 @@ import { Text } from 'components/Text/Text';
 import { vars } from 'css/vars.css';
 import NextLink from 'next/link';
 import React from 'react';
-import pckg from '../../../packages/rainbowkit/package.json';
-import { header, logo, row } from './Header.css';
 
 const RAINBOWKIT_VERSION = pckg.version;
 

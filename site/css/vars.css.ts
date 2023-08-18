@@ -1,10 +1,10 @@
+import { Mode, tokens } from './tokens';
+import { Theme } from './types';
 import {
   createGlobalTheme,
   createGlobalThemeContract,
 } from '@vanilla-extract/css';
 import deepmerge from 'deepmerge';
-import { Mode, tokens } from './tokens';
-import { Theme } from './types';
 
 const getVarName = (_value: string | null, path: string[]) => path.join('-');
 

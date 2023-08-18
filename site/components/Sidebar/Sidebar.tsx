@@ -1,3 +1,4 @@
+import { link } from './Sidebar.css';
 /* eslint-disable react/jsx-sort-props */
 import { Box } from 'components/Box/Box';
 import { SearchIcon } from 'components/Icons/Search';
@@ -6,7 +7,6 @@ import { Text } from 'components/Text/Text';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { link } from './Sidebar.css';
 
 export function Sidebar({ routes }) {
   return (
@@ -40,7 +40,7 @@ export function Sidebar({ routes }) {
           hover: 'fillElevated',
         }}
         style={{
-          boxShadow: `inset 0 0 0 1px currentColor, 0 0 0 1px currentColor`,
+          boxShadow: 'inset 0 0 0 1px currentColor, 0 0 0 1px currentColor',
           outline: 'none',
         }}
       >

@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import { formatAddress } from './formatAddress';
+import { describe, expect, it } from 'vitest';
 
 describe('formatAddress', () => {
   it('truncates addresses correctly', () => {

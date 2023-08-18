@@ -1,10 +1,10 @@
-import React from 'react';
-import { useAccount, useBalance, useDisconnect } from 'wagmi';
 import { useMainnetEnsAvatar } from '../../hooks/useMainnetEnsAvatar';
 import { useMainnetEnsName } from '../../hooks/useMainnetEnsName';
 import { Dialog } from '../Dialog/Dialog';
 import { DialogContent } from '../Dialog/DialogContent';
 import { ProfileDetails } from '../ProfileDetails/ProfileDetails';
+import React from 'react';
+import { useAccount, useBalance, useDisconnect } from 'wagmi';
 
 export interface AccountModalProps {
   open: boolean;

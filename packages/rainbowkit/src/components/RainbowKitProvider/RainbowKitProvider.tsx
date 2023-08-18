@@ -1,11 +1,9 @@
-import React, { createContext, ReactNode, useContext } from 'react';
-import { useAccount } from 'wagmi';
 import { cssStringFromTheme } from '../../css/cssStringFromTheme';
-import { largeScreenMinWidth, ThemeVars } from '../../css/sprinkles.css';
+import { ThemeVars, largeScreenMinWidth } from '../../css/sprinkles.css';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import { lightTheme } from '../../themes/lightTheme';
 import { TransactionStoreProvider } from '../../transactions/TransactionStoreContext';
-import { AppContext, defaultAppInfo, DisclaimerComponent } from './AppContext';
+import { AppContext, DisclaimerComponent, defaultAppInfo } from './AppContext';
 import { AvatarComponent, AvatarContext, defaultAvatar } from './AvatarContext';
 import { CoolModeContext } from './CoolModeContext';
 import { ModalProvider } from './ModalContext';
@@ -21,6 +19,8 @@ import {
 import { ShowRecentTransactionsContext } from './ShowRecentTransactionsContext';
 import { usePreloadImages } from './usePreloadImages';
 import { clearWalletConnectDeepLink } from './walletConnectDeepLink';
+import React, { ReactNode, createContext, useContext } from 'react';
+import { useAccount } from 'wagmi';
 
 const ThemeIdContext = createContext<string | undefined>(undefined);
 

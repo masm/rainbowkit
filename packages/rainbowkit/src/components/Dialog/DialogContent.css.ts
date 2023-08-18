@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
 import { largeScreenMinWidth, sprinkles } from '../../css/sprinkles.css';
+import { style } from '@vanilla-extract/css';
 
 export const dialogContent = style([
   sprinkles({

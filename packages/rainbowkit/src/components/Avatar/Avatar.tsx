@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
 import { Box } from '../Box/Box';
 import { SpinnerIcon } from '../Icons/Spinner';
 import { AvatarContext } from '../RainbowKitProvider/AvatarContext';
+import React, { useContext } from 'react';
 
 interface AvatarProps {
   address: string;

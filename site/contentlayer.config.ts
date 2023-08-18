@@ -1,12 +1,12 @@
+import { rehypeHighlightCode } from './lib/rehype-highlight-code';
+import { rehypeMetaAttribute } from './lib/rehype-meta-attribute';
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import remarkSlug from 'remark-slug';
-import { rehypeHighlightCode } from './lib/rehype-highlight-code';
-import { rehypeMetaAttribute } from './lib/rehype-meta-attribute';
 
 export const Doc = defineDocumentType(() => ({
   name: 'Doc',
-  filePathPattern: `docs/**/*.mdx`,
+  filePathPattern: 'docs/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {
@@ -28,7 +28,7 @@ export const Doc = defineDocumentType(() => ({
 
 export const Guide = defineDocumentType(() => ({
   name: 'Guide',
-  filePathPattern: `guides/**/*.mdx`,
+  filePathPattern: 'guides/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {

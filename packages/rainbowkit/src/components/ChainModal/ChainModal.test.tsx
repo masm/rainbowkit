@@ -1,9 +1,9 @@
+import { renderWithProviders } from '../../../test/';
+import { ChainModal } from './ChainModal';
 import user from '@testing-library/user-event';
 import React from 'react';
 import { describe, expect, it } from 'vitest';
 import { arbitrum, goerli, mainnet, optimism } from 'wagmi/chains';
-import { renderWithProviders } from '../../../test/';
-import { ChainModal } from './ChainModal';
 
 describe('<ChainModal />', () => {
   it('Unsupported chain', async () => {
@@ -60,9 +60,9 @@ describe('<ChainModal />', () => {
   });
 
   it('Can switch chains', async () => {
-    let onCloseGotCalled = false;
+    const onCloseGotCalled = false;
     const modal = renderWithProviders(
-      <ChainModal onClose={() => (onCloseGotCalled = true)} open />,
+      <ChainModal onClose={() => onCloseGotCalled === true} open />,
       {
         mock: true,
       },
@@ -86,9 +86,9 @@ describe('<ChainModal />', () => {
   });
 
   it('Just closes on switch error (user rejected, or other)', async () => {
-    let onCloseGotCalled = false;
+    const onCloseGotCalled = false;
     const modal = renderWithProviders(
-      <ChainModal onClose={() => (onCloseGotCalled = true)} open />,
+      <ChainModal onClose={() => onCloseGotCalled === true} open />,
       {
         mock: true,
         mockOptions: {
@@ -124,14 +124,14 @@ describe('<ChainModal />', () => {
     });
 
     expect(modal.baseElement).toHaveTextContent(
-      `Your wallet does not support switching networks from`,
+      'Your wallet does not support switching networks from',
     );
   });
 
-  it(`Closes on close button press`, async () => {
-    let onCloseGotCalled = false;
+  it('Closes on close button press', async () => {
+    const onCloseGotCalled = false;
     const modal = renderWithProviders(
-      <ChainModal onClose={() => (onCloseGotCalled = true)} open />,
+      <ChainModal onClose={() => onCloseGotCalled === true} open />,
       {
         mock: true,
       },

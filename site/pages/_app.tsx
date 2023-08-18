@@ -1,14 +1,14 @@
+import { DocsLayout } from '../components/DocsLayout/DocsLayout';
+import { GuidesLayout } from '../components/GuidesLayout/GuidesLayout';
 import '@rainbow-me/rainbowkit/styles.css';
 import { Provider } from 'components/Provider/Provider';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
-import { DocsLayout } from '../components/DocsLayout/DocsLayout';
-import { GuidesLayout } from '../components/GuidesLayout/GuidesLayout';
 
-import { vars } from '../css/vars.css';
-import '../css/global.css';
 import '../css/docsSearch.css';
+import '../css/global.css';
+import { vars } from '../css/vars.css';
 
 const highlightColors = [
   vars.colors.orange,

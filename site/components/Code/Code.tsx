@@ -1,6 +1,6 @@
-import React from 'react';
 import { Box, BoxProps } from '../Box/Box';
 import * as styles from './Code.css';
+import React from 'react';
 
 type Props = {
   children?: React.ReactNode;

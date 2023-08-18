@@ -1,5 +1,3 @@
-import React from 'react';
-import { useNetwork } from 'wagmi';
 import { touchableStyles } from '../../css/touchableStyles';
 import { Transaction } from '../../transactions/transactionStore';
 import { chainToExplorerUrl } from '../../utils/chainToExplorerUrl';
@@ -10,6 +8,8 @@ import { ExternalLinkIcon } from '../Icons/ExternalLink';
 import { SpinnerIcon } from '../Icons/Spinner';
 import { SuccessIcon } from '../Icons/Success';
 import { Text } from '../Text/Text';
+import React from 'react';
+import { useNetwork } from 'wagmi';
 
 const getTxStatusIcon = (status: Transaction['status']) => {
   switch (status) {

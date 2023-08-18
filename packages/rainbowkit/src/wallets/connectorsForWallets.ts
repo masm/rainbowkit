@@ -1,9 +1,9 @@
-import { Connector } from 'wagmi';
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { isHexString } from '../utils/colors';
 import { isMobile } from '../utils/isMobile';
 import { omitUndefinedValues } from '../utils/omitUndefinedValues';
 import { Wallet, WalletInstance, WalletList } from './Wallet';
+import { Connector } from 'wagmi';
+import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 
 interface WalletListItem extends Wallet {
   index: number;

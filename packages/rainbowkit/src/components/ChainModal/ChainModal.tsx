@@ -1,5 +1,3 @@
-import React, { Fragment, useContext } from 'react';
-import { useDisconnect, useNetwork, useSwitchNetwork } from 'wagmi';
 import { isMobile } from '../../utils/isMobile';
 import { AsyncImage } from '../AsyncImage/AsyncImage';
 import { Box } from '../Box/Box';
@@ -11,6 +9,8 @@ import { MenuButton } from '../MenuButton/MenuButton';
 import { AppContext } from '../RainbowKitProvider/AppContext';
 import { useRainbowKitChains } from '../RainbowKitProvider/RainbowKitChainContext';
 import { Text } from '../Text/Text';
+import React, { Fragment, useContext } from 'react';
+import { useDisconnect, useNetwork, useSwitchNetwork } from 'wagmi';
 
 export interface ChainModalProps {
   open: boolean;

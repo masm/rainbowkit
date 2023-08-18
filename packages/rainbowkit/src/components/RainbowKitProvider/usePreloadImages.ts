@@ -1,4 +1,3 @@
-import { useCallback, useEffect } from 'react';
 import { isMobile } from '../../utils/isMobile';
 import { isNotNullish } from '../../utils/isNotNullish';
 import { useWalletConnectors } from '../../wallets/useWalletConnectors';
@@ -8,6 +7,7 @@ import { preloadLoginIcon } from '../Icons/Login';
 import { useAuthenticationStatus } from '../RainbowKitProvider/AuthenticationContext';
 import { signInIcon } from './../SignIn/SignIn';
 import { useRainbowKitChains } from './RainbowKitChainContext';
+import { useCallback, useEffect } from 'react';
 
 export function usePreloadImages() {
   const rainbowKitChains = useRainbowKitChains();

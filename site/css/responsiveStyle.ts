@@ -1,7 +1,7 @@
+import { Breakpoint, breakpoints } from './breakpoints';
 /* eslint-disable sort-destructure-keys/sort-destructure-keys */
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 import { StyleRule } from '@vanilla-extract/css';
-import { Breakpoint, breakpoints } from './breakpoints';
 
 type CSSProps = Omit<StyleRule, '@media' | '@supports'>;
 

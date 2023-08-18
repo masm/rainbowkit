@@ -1,11 +1,11 @@
+import { connectorsForWallets } from '..';
+import { WalletInstance } from './Wallet';
+import { injectedWallet } from './walletConnectors';
 import { describe, expect, it } from 'vitest';
 import { Connector } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 import { WalletConnectLegacyConnector } from 'wagmi/connectors/walletConnectLegacy';
-import { connectorsForWallets } from '..';
-import { WalletInstance } from './Wallet';
-import { injectedWallet } from './walletConnectors';
 
 const getWalletInstances = (
   connector: Connector & { _wallets?: WalletInstance[] },

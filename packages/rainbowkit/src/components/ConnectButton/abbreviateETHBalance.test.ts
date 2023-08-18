@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import { abbreviateETHBalance } from './abbreviateETHBalance';
+import { describe, expect, it } from 'vitest';
 
 const K = 1000;
 const M = 1000 * K;

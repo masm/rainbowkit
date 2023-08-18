@@ -1,8 +1,8 @@
+import { walletConnectWallet } from './walletConnectWallet';
 import { describe, expect, expectTypeOf, it } from 'vitest';
 import { mainnet } from 'wagmi/chains';
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { WalletConnectLegacyConnector } from 'wagmi/connectors/walletConnectLegacy';
-import { walletConnectWallet } from './walletConnectWallet';
 
 describe('walletConnectWallet', () => {
   const chains = [mainnet];

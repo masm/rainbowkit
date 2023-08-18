@@ -1,6 +1,6 @@
-import React, { useReducer } from 'react';
 import { Box, BoxProps } from '../Box/Box';
 import { AsyncImageSrc, useAsyncImage } from './useAsyncImage';
+import React, { useReducer } from 'react';
 
 type CustomBorderColor = {
   custom: string;

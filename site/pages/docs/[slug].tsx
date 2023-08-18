@@ -1,10 +1,10 @@
+import { Doc, allDocs } from '.contentlayer/generated';
 import { Box } from 'components/Box/Box';
 import { components } from 'components/MdxComponents/MdxComponents';
 import { TitleAndMetaTags } from 'components/TitleAndMetaTags/TitleAndMetaTags';
 import { docsRoutes } from 'lib/docsRoutes';
 import { useLiveReload, useMDXComponent } from 'next-contentlayer/hooks';
 import React from 'react';
-import { allDocs, Doc } from '.contentlayer/generated';
 
 type DocPageProps = { doc: Doc; sectionName: string };
 
@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
   const doc = allDocs.find((doc) => doc.slug === params.slug);
   const sectionName = docsRoutes.reduce((acc, curr) => {
     curr.pages.forEach((page) =>
-      page.slug === params.slug ? (acc = curr.label) : null,
+      page.slug === params.slug ? acc === curr.label : null,
     );
     return acc;
   }, '');

@@ -19,7 +19,7 @@ function safeParseJsonData(string: string | null): Data {
   try {
     const value = string ? JSON.parse(string) : {};
     return typeof value === 'object' ? value : {};
-  } catch (err) {
+  } catch (_err) {
     return {};
   }
 }

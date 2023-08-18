@@ -1,5 +1,6 @@
 /* eslint-disable no-extra-boolean-cast */
 
+import { regionWrapper, table, td, th } from './PropsTable.css';
 import { Box } from 'components/Box/Box';
 import { Button } from 'components/Button/Button';
 import { Code } from 'components/Code/Code';
@@ -10,7 +11,6 @@ import {
   PopoverTrigger,
 } from 'components/Popover/Popover';
 import React from 'react';
-import { regionWrapper, table, td, th } from './PropsTable.css';
 
 type PropDef = {
   name: string;
@@ -87,7 +87,7 @@ export function PropsTable({
                   )}
                 </Box>
                 <Box as='td' className={td}>
-                  <Code>{Boolean(typeSimple) ? typeSimple : type} </Code>
+                  <Code>{typeSimple ? typeSimple : type} </Code>
                   {Boolean(typeSimple) && (
                     <Popover>
                       <PopoverTrigger asChild>
@@ -108,7 +108,7 @@ export function PropsTable({
                   )}
                 </Box>
                 <Box as='td' className={td}>
-                  {Boolean(defaultValue) ? <Code>{defaultValue}</Code> : <>–</>}
+                  {defaultValue ? <Code>{defaultValue}</Code> : <>–</>}
                 </Box>
               </Box>
             ),

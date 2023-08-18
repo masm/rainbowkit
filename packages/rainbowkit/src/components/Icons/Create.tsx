@@ -1,6 +1,6 @@
-import React from 'react';
 import { AsyncImage } from '../AsyncImage/AsyncImage';
 import { loadImages } from '../AsyncImage/useAsyncImage';
+import React from 'react';
 
 const src = async () => (await import('./create.svg')).default;
 

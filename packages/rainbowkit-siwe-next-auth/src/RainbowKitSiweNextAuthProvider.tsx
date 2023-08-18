@@ -1,6 +1,6 @@
 import {
-  createAuthenticationAdapter,
   RainbowKitAuthenticationProvider,
+  createAuthenticationAdapter,
 } from '@rainbow-me/rainbowkit';
 import { getCsrfToken, signIn, signOut, useSession } from 'next-auth/react';
 import React, { ReactNode, useMemo } from 'react';

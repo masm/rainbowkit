@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest';
 import { lightTheme } from '../themes/lightTheme';
 import { cssObjectFromTheme } from './cssObjectFromTheme';
+import { describe, expect, it } from 'vitest';
 
 describe('cssObjectFromTheme', () => {
   it('converts themes to CSS-in-JS objects', () => {

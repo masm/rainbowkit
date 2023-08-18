@@ -1,8 +1,8 @@
+import { Chain } from '../components/RainbowKitProvider/RainbowKitChainContext';
 /* eslint-disable @typescript-eslint/unified-signatures */
 /* eslint-disable no-redeclare */
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { WalletConnectLegacyConnector } from 'wagmi/connectors/walletConnectLegacy';
-import { Chain } from '../components/RainbowKitProvider/RainbowKitChainContext';
 
 type SerializedOptions = string;
 const sharedConnectors = new Map<

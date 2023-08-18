@@ -1,5 +1,5 @@
-import React from 'react';
 import { Box, BoxProps } from '../Box/Box';
+import React from 'react';
 
 export type TextProps = {
   id?: string;

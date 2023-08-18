@@ -1,15 +1,15 @@
+import {
+  MODAL_COMPACT_SIZE,
+  MODAL_SIZE,
+  PHONE_SIZE,
+  compactModalWrapper,
+  heroWrapper,
+  modalWrapper,
+  phoneWrapper,
+} from './Hero.css';
 import { Box } from 'components/Box/Box';
 import NextImage from 'next/legacy/image';
 import React from 'react';
-import {
-  compactModalWrapper,
-  heroWrapper,
-  MODAL_COMPACT_SIZE,
-  MODAL_SIZE,
-  modalWrapper,
-  PHONE_SIZE,
-  phoneWrapper,
-} from './Hero.css';
 
 export function Hero() {
   return (

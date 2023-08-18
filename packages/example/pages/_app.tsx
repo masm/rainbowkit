@@ -1,15 +1,19 @@
 import './global.css';
-import '@rainbow-me/rainbowkit/styles.css';
 import {
   AvatarComponent,
+  DisclaimerComponent,
+  RainbowKitProvider,
   connectorsForWallets,
   darkTheme,
-  DisclaimerComponent,
   getDefaultWallets,
   lightTheme,
   midnightTheme,
-  RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
+import {
+  GetSiweMessageOptions,
+  RainbowKitSiweNextAuthProvider,
+} from '@rainbow-me/rainbowkit-siwe-next-auth';
+import '@rainbow-me/rainbowkit/styles.css';
 import {
   argentWallet,
   bitKeepWallet,
@@ -32,21 +36,18 @@ import {
   xdefiWallet,
   zerionWallet,
 } from '@rainbow-me/rainbowkit/wallets';
-import {
-  GetSiweMessageOptions,
-  RainbowKitSiweNextAuthProvider,
-} from '@rainbow-me/rainbowkit-siwe-next-auth';
 
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
+import { AppContextProps } from '../lib/AppContextProps';
 import type { Session } from 'next-auth';
 import { SessionProvider, signOut } from 'next-auth/react';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import {
+  WagmiConfig,
   configureChains,
   createConfig,
   useDisconnect,
-  WagmiConfig,
 } from 'wagmi';
 import {
   arbitrum,
@@ -60,7 +61,6 @@ import {
 } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { AppContextProps } from '../lib/AppContextProps';
 
 const RAINBOW_TERMS = 'https://rainbow.me/terms-of-use';
 

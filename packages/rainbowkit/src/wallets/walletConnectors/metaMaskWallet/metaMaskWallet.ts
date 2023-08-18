@@ -1,6 +1,3 @@
-/* eslint-disable sort-keys-fix/sort-keys-fix */
-import type { MetaMaskConnectorOptions } from '@wagmi/core/connectors/metaMask';
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
 import { Chain } from '../../../components/RainbowKitProvider/RainbowKitChainContext';
 import { getWalletConnectUri } from '../../../utils/getWalletConnectUri';
 import { isAndroid, isIOS } from '../../../utils/isMobile';
@@ -10,6 +7,9 @@ import type {
   WalletConnectConnectorOptions,
   WalletConnectLegacyConnectorOptions,
 } from '../../getWalletConnectConnector';
+/* eslint-disable sort-keys-fix/sort-keys-fix */
+import type { MetaMaskConnectorOptions } from '@wagmi/core/connectors/metaMask';
+import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
 
 export interface MetaMaskWalletLegacyOptions {
   projectId?: string;

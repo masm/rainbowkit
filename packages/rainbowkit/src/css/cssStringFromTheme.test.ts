@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest';
 import { lightTheme } from '../themes/lightTheme';
 import { cssStringFromTheme } from './cssStringFromTheme';
+import { describe, expect, it } from 'vitest';
 
 describe('cssStringFromTheme', () => {
   it('converts themes to CSS strings', () => {

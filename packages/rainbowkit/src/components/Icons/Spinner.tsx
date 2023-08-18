@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
 import { SpinnerIconClassName, SpinnerIconPathClassName } from './Icons.css';
+import React, { useMemo } from 'react';
 
 const useRandomId = (prefix: string) =>
   useMemo(

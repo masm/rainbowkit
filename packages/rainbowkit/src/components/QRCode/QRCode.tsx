@@ -1,8 +1,8 @@
-import QRCodeUtil from 'qrcode';
-import React, { ReactElement, useMemo } from 'react';
 import { AsyncImage } from '../AsyncImage/AsyncImage';
 import { Box, BoxProps } from '../Box/Box';
 import { QRCodeBackgroundClassName } from '../ConnectOptions/DesktopOptions.css';
+import QRCodeUtil from 'qrcode';
+import React, { ReactElement, useMemo } from 'react';
 
 const generateMatrix = (
   value: string,
@@ -48,7 +48,7 @@ export function QRCode({
     const dots: ReactElement[] = [];
     const matrix = generateMatrix(uri, ecl);
     const cellSize = size / matrix.length;
-    let qrList = [
+    const qrList = [
       { x: 0, y: 0 },
       { x: 1, y: 0 },
       { x: 0, y: 1 },

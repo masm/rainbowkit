@@ -1,4 +1,3 @@
-import { Connector, useConnect } from 'wagmi';
 import { flatten } from '../utils/flatten';
 import { indexBy } from '../utils/indexBy';
 import { isNotNullish } from '../utils/isNotNullish';
@@ -9,6 +8,7 @@ import {
 import { WalletInstance } from './Wallet';
 import { getExtensionDownloadUrl, getMobileDownloadUrl } from './downloadUrls';
 import { addRecentWalletId, getRecentWalletIds } from './recentWalletIds';
+import { Connector, useConnect } from 'wagmi';
 
 export interface WalletConnector extends WalletInstance {
   ready?: boolean;

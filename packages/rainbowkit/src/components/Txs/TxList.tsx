@@ -1,5 +1,3 @@
-import React, { useContext } from 'react';
-import { useAccount, useNetwork } from 'wagmi';
 import { touchableStyles } from '../../css/touchableStyles';
 import { useClearRecentTransactions } from '../../transactions/useClearRecentTransactions';
 import { useRecentTransactions } from '../../transactions/useRecentTransactions';
@@ -8,6 +6,8 @@ import { isMobile } from '../../utils/isMobile';
 import { Box } from '../Box/Box';
 import { ExternalLinkIcon } from '../Icons/ExternalLink';
 import { AppContext } from '../RainbowKitProvider/AppContext';
+import React, { useContext } from 'react';
+import { useAccount, useNetwork } from 'wagmi';
 
 import { Text } from '../Text/Text';
 import { TxItem } from './TxItem';

@@ -1,6 +1,3 @@
-/* eslint-disable sort-keys-fix/sort-keys-fix */
-import type { InjectedConnectorOptions } from '@wagmi/core';
-import { InjectedConnector } from 'wagmi/connectors/injected';
 import type { Chain } from '../../../components/RainbowKitProvider/RainbowKitChainContext';
 import { getWalletConnectUri } from '../../../utils/getWalletConnectUri';
 import { isAndroid } from '../../../utils/isMobile';
@@ -10,6 +7,9 @@ import type {
   WalletConnectLegacyConnectorOptions,
 } from '../../getWalletConnectConnector';
 import { getWalletConnectConnector } from '../../getWalletConnectConnector';
+/* eslint-disable sort-keys-fix/sort-keys-fix */
+import type { InjectedConnectorOptions } from '@wagmi/core';
+import { InjectedConnector } from 'wagmi/connectors/injected';
 
 declare global {
   interface Window {

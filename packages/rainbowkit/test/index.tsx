@@ -1,17 +1,17 @@
+import { RainbowKitProvider } from '../src/components/RainbowKitProvider/RainbowKitProvider';
+import type { RainbowKitProviderProps } from '../src/components/RainbowKitProvider/RainbowKitProvider';
+import { getDefaultWallets } from '../src/wallets/getDefaultWallets';
 import { render } from '@testing-library/react';
 import type { MockProviderOptions } from '@wagmi/core/connectors/mock';
 import React, { ReactElement } from 'react';
 import { createWalletClient, http } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import { WagmiConfig, configureChains, createConfig } from 'wagmi';
 import type { Chain } from 'wagmi';
 import { arbitrum, mainnet, optimism, polygon, zora } from 'wagmi/chains';
 import { MockConnector } from 'wagmi/connectors/mock';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { RainbowKitProvider } from '../src/components/RainbowKitProvider/RainbowKitProvider';
-import type { RainbowKitProviderProps } from '../src/components/RainbowKitProvider/RainbowKitProvider';
-import { getDefaultWallets } from '../src/wallets/getDefaultWallets';
 
 const defaultChains = [mainnet, polygon, optimism, arbitrum, zora];
 

@@ -190,7 +190,7 @@ function makeElementCool(
     // are tapping on the buttons in #cool-mode-demo which is an `id`
     // added to the CoolMode.tsx Component - otherwise we get double emoji showers!
     if (ignoreCoolModeDocsDemo) {
-      var element = document.getElementById('cool-mode-demo');
+      const element = document.getElementById('cool-mode-demo');
       if (element?.contains(e.target as any)) return;
     }
 
@@ -216,10 +216,10 @@ function makeElementCool(
     element.removeEventListener('mouseleave', disableAutoAddParticle);
 
     // Cancel animation loop once animations are done
-    let interval = setInterval(() => {
+    const _interval = setInterval(() => {
       if (animationFrame && particles.length === 0) {
         cancelAnimationFrame(animationFrame);
-        clearInterval(interval);
+        clearInterval(_interval);
 
         // Clean up container if this is the last instance
         if (--instanceCounter === 0) {

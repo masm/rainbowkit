@@ -1,11 +1,11 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 import { createGlobalThemeContract } from '@vanilla-extract/css';
 import {
+  RequiredConditionalValue,
   createMapValueFn,
   createNormalizeValueFn,
   createSprinkles,
   defineProperties,
-  RequiredConditionalValue,
 } from '@vanilla-extract/sprinkles';
 
 import './reset.css';

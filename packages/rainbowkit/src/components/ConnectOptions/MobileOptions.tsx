@@ -1,9 +1,8 @@
-import React, { useCallback, useContext, useState } from 'react';
 import { touchableStyles } from '../../css/touchableStyles';
 import { isIOS } from '../../utils/isMobile';
 import {
-  useWalletConnectors,
   WalletConnector,
+  useWalletConnectors,
 } from '../../wallets/useWalletConnectors';
 import { AsyncImage } from '../AsyncImage/AsyncImage';
 import { Box } from '../Box/Box';
@@ -17,6 +16,7 @@ import { useCoolMode } from '../RainbowKitProvider/useCoolMode';
 import { setWalletConnectDeepLink } from '../RainbowKitProvider/walletConnectDeepLink';
 import { Text } from '../Text/Text';
 import * as styles from './MobileOptions.css';
+import React, { useCallback, useContext, useState } from 'react';
 
 function WalletButton({
   onClose,

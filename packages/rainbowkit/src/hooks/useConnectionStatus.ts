@@ -1,5 +1,5 @@
-import { useAccount } from 'wagmi';
 import { useAuthenticationStatus } from '../components/RainbowKitProvider/AuthenticationContext';
+import { useAccount } from 'wagmi';
 
 export type ConnectionStatus =
   | 'disconnected'

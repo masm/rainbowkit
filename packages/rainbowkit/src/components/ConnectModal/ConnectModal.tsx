@@ -1,9 +1,9 @@
-import React from 'react';
 import { useConnectionStatus } from '../../hooks/useConnectionStatus';
 import ConnectOptions from '../ConnectOptions/ConnectOptions';
 import { Dialog } from '../Dialog/Dialog';
 import { DialogContent } from '../Dialog/DialogContent';
 import { SignIn } from '../SignIn/SignIn';
+import React from 'react';
 export interface ConnectModalProps {
   open: boolean;
   onClose: () => void;

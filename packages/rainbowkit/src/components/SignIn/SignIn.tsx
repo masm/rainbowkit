@@ -1,6 +1,3 @@
-import React, { useCallback, useRef } from 'react';
-import { UserRejectedRequestError } from 'viem';
-import { useAccount, useDisconnect, useNetwork, useSignMessage } from 'wagmi';
 import { touchableStyles } from '../../css/touchableStyles';
 import { isMobile } from '../../utils/isMobile';
 import { AsyncImage } from '../AsyncImage/AsyncImage';
@@ -9,6 +6,9 @@ import { ActionButton } from '../Button/ActionButton';
 import { CloseButton } from '../CloseButton/CloseButton';
 import { useAuthenticationAdapter } from '../RainbowKitProvider/AuthenticationContext';
 import { Text } from '../Text/Text';
+import React, { useCallback, useRef } from 'react';
+import { UserRejectedRequestError } from 'viem';
+import { useAccount, useDisconnect, useNetwork, useSignMessage } from 'wagmi';
 
 export const signInIcon = async () => (await import('./sign.png')).default;
 
@@ -25,7 +25,7 @@ export function SignIn({ onClose }: { onClose: () => void }) {
     try {
       const nonce = await authAdapter.getNonce();
       setState((x) => ({ ...x, nonce }));
-    } catch (error) {
+    } catch (_error) {
       setState((x) => ({
         ...x,
         errorMessage: 'Error preparing message, please retry!',
@@ -100,14 +100,14 @@ export function SignIn({ onClose }: { onClose: () => void }) {
         } else {
           throw new Error();
         }
-      } catch (error) {
+      } catch (_error) {
         return setState((x) => ({
           ...x,
           errorMessage: 'Error verifying signature, please retry!',
           status: 'idle',
         }));
       }
-    } catch (error) {
+    } catch (_error) {
       setState({
         errorMessage: 'Oops, something went wrong!',
         status: 'idle',

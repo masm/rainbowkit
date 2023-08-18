@@ -1,17 +1,17 @@
+import { useConnectionStatus } from '../../hooks/useConnectionStatus';
+import { AccountModal } from '../AccountModal/AccountModal';
+import { ChainModal } from '../ChainModal/ChainModal';
+import { ConnectModal } from '../ConnectModal/ConnectModal';
+import { useAuthenticationStatus } from './AuthenticationContext';
 import React, {
-  createContext,
   ReactNode,
+  createContext,
   useCallback,
   useContext,
   useMemo,
   useState,
 } from 'react';
 import { useAccount, useNetwork } from 'wagmi';
-import { useConnectionStatus } from '../../hooks/useConnectionStatus';
-import { AccountModal } from '../AccountModal/AccountModal';
-import { ChainModal } from '../ChainModal/ChainModal';
-import { ConnectModal } from '../ConnectModal/ConnectModal';
-import { useAuthenticationStatus } from './AuthenticationContext';
 
 function useModalStateValue() {
   const [isModalOpen, setModalOpen] = useState(false);

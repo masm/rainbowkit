@@ -1,45 +1,45 @@
-import React, { ReactNode, useContext, useEffect } from 'react';
 import { touchableStyles } from '../../css/touchableStyles';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import { BrowserType, getBrowser, isSafari } from '../../utils/browsers';
 import { getGradientRGBAs } from '../../utils/colors';
 import { InstructionStepName } from '../../wallets/Wallet';
 import {
-  useWalletConnectors,
   WalletConnector,
+  useWalletConnectors,
 } from '../../wallets/useWalletConnectors';
 import { AsyncImage } from '../AsyncImage/AsyncImage';
 import { loadImages } from '../AsyncImage/useAsyncImage';
 import { Box, BoxProps } from '../Box/Box';
 import { ActionButton } from '../Button/ActionButton';
 import { CreateIcon, preloadCreateIcon } from '../Icons/Create';
-import { preloadRefreshIcon, RefreshIcon } from '../Icons/Refresh';
-import { preloadScanIcon, ScanIcon } from '../Icons/Scan';
+import { RefreshIcon, preloadRefreshIcon } from '../Icons/Refresh';
+import { ScanIcon, preloadScanIcon } from '../Icons/Scan';
 import { SpinnerIcon } from '../Icons/Spinner';
 import { QRCode } from '../QRCode/QRCode';
 import { ModalSizeContext } from '../RainbowKitProvider/ModalSizeContext';
 import { Text } from '../Text/Text';
 import { WalletStep } from './DesktopOptions';
+import React, { ReactNode, useContext, useEffect } from 'react';
 
 const getBrowserSrc: () => Promise<string> = async () => {
   const browser = getBrowser();
   switch (browser) {
     case BrowserType.Arc:
-      return (await import(`../Icons/Arc.svg`)).default;
+      return (await import('../Icons/Arc.svg')).default;
     case BrowserType.Brave:
-      return (await import(`../Icons/Brave.svg`)).default;
+      return (await import('../Icons/Brave.svg')).default;
     case BrowserType.Chrome:
-      return (await import(`../Icons/Chrome.svg`)).default;
+      return (await import('../Icons/Chrome.svg')).default;
     case BrowserType.Edge:
-      return (await import(`../Icons/Edge.svg`)).default;
+      return (await import('../Icons/Edge.svg')).default;
     case BrowserType.Firefox:
-      return (await import(`../Icons/Firefox.svg`)).default;
+      return (await import('../Icons/Firefox.svg')).default;
     case BrowserType.Opera:
-      return (await import(`../Icons/Opera.svg`)).default;
+      return (await import('../Icons/Opera.svg')).default;
     case BrowserType.Safari:
-      return (await import(`../Icons/Safari.svg`)).default;
+      return (await import('../Icons/Safari.svg')).default;
     default:
-      return (await import(`../Icons/Browser.svg`)).default;
+      return (await import('../Icons/Browser.svg')).default;
   }
 };
 

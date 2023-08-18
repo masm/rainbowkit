@@ -1,25 +1,25 @@
+import { CompactIcon } from './CompactIcon';
+import { radio, ring } from './Playground.css';
+import { WideIcon } from './WideIcon';
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import {
+  RainbowKitProvider,
   __private__,
   darkTheme,
   lightTheme,
   midnightTheme,
-  RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import clsx from 'clsx';
 import { Box } from 'components/Box/Box';
 import { MeshGradient } from 'components/MeshGradient/MeshGradient';
-import { chains, Provider } from 'components/Provider/Provider';
+import { Provider, chains } from 'components/Provider/Provider';
 import { Text } from 'components/Text/Text';
 import { Wrapper } from 'components/Wrapper/Wrapper';
 import { motion } from 'framer-motion';
 import { isAndroid } from 'lib/isMobile';
 import { useMounted } from 'lib/useMounted';
 import React, { useState } from 'react';
-import { CompactIcon } from './CompactIcon';
-import { radio, ring } from './Playground.css';
-import { WideIcon } from './WideIcon';
 
 const { DesktopOptions, dialogContent } = __private__;
 

@@ -1,7 +1,7 @@
+import * as styles from './Link.css';
 import clsx from 'clsx';
 import { Box, BoxProps } from 'components/Box/Box';
 import React from 'react';
-import * as styles from './Link.css';
 
 type Props = {
   children?: React.ReactNode;

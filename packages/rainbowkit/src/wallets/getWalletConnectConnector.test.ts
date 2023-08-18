@@ -1,8 +1,8 @@
+import { getWalletConnectConnector } from './getWalletConnectConnector';
 import { describe, expect, expectTypeOf, it } from 'vitest';
 import { mainnet, polygon } from 'wagmi/chains';
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { WalletConnectLegacyConnector } from 'wagmi/connectors/walletConnectLegacy';
-import { getWalletConnectConnector } from './getWalletConnectConnector';
 
 /*
  * Be careful when writing these tests. This util caches the connector
