@@ -13,6 +13,7 @@ import type {
 declare global {
   interface Window {
     trustwallet: Window['ethereum'];
+    trustWallet: Window['ethereum'];
   }
 }
 
@@ -53,6 +54,8 @@ function getTrustWalletInjectedProvider(): Window['ethereum'] {
   // we begin our checks by relying on TW's global object.
   if (window['trustwallet']) {
     return window['trustwallet'];
+  } else if (window['trustWallet']) {
+    return window['trustWallet'];
   }
 
   // Trust Wallet was injected into window.ethereum.
